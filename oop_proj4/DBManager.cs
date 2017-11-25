@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Configuration;
-using System.Windows.Forms;
+using System.Data.SQLite;
+using System.IO;
 
 namespace oop_proj4
 {
@@ -14,34 +12,43 @@ namespace oop_proj4
     /// DB를 관리하는 singleton 클래스입니다.
     /// </summary>
     [Database]
-    class DBManager:DataContext
+    class DBManager : DataContext
     {
         private static DBManager _instance;
 
-        // classes can be mapped to table so that enable to use LINQ
-        [Table(Name = "Admin")] public class Admin
-        {
-            [Column(IsPrimaryKey = true, IsDbGenerated = true)] public int Id { get; set; }
-            [Column] public string Admin_id { get; set; }
-            [Column] public string Admin_pw { get; set; }
-        }
-        [Table(Name = "Member")] public class Member
-        {
-            [Column(IsPrimaryKey = true, IsDbGenerated = true)] public int Id { get; set; }
-            [Column] public string Name { get; set; }
-            [Column] public int Gender { get; set; }
-            [Column] public DateTime BirthDate{ get; set; }
-            [Column] public int RegisterationState { get; set; }
-            [Column] public int LeftDay { get; set; }
-            [Column] public string Memo{ get; set; }
-        }
-
         // singleton pattern constructor and instance method
-        private DBManager():base(ConfigurationManager.ConnectionStrings["db"].ToString()){}
+        private DBManager(SQLiteConnection conn) : base(conn) { }
         public static DBManager Instance()
         {
-            if (_instance == null) _instance = new DBManager();
+            if (_instance == null)
+            {
+                string dbPath = "database.db";
+                string connString = @"Data Source=" + dbPath;
+
+                // create database file if not exists
+                if (!File.Exists(dbPath))
+                {
+                    _instance = new DBManager(new SQLiteConnection(connString));
+                    _instance.InitDB();
+                }
+                else _instance = new DBManager(new SQLiteConnection(connString));
+
+            }
             return _instance;
+        }
+
+        /// <summary>
+        /// Create tables in case of db not found
+        /// </summary>
+        private void InitDB()
+        {
+            string admin_table = "CREATE TABLE Admin(Id integer primary key not null, Admin_id varchar(50) not null, Admin_pw varchar(50) not null)";
+            string admin_insert = "INSERT INTO Admin VALUES (0, 'dev', 'dev')";
+            _instance.ExecuteCommand(admin_table);
+            _instance.ExecuteCommand(admin_insert);
+
+            string member_table = "CREATE TABLE Member( `Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `Name` varchar ( 50 ) NOT NULL, `Gender` intEGER NOT NULL, `BirthDate` date NOT NULL, `RegisterationState` INTEGER NOT NULL, `LeftDay` INTEGER NOT NULL, `Memo` TEXT )";
+            _instance.ExecuteCommand(member_table);
         }
 
         /// <summary>
@@ -65,7 +72,5 @@ namespace oop_proj4
 
             return true;
         }
-
-
     }
 }
