@@ -14,6 +14,7 @@ namespace oop_proj4
         public MainForm()
         {
             InitializeComponent();
+            this.FormClosed += (s, e) => { Program.End(); };
         }
     }
 }
