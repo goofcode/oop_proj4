@@ -15,3 +15,4 @@ Telerik.WinControls.Themes.VisualStudio2012DarkTheme, Telerik.WinControls.Themes
 Telerik.WinControls.UI.RadPanel, Telerik.WinControls.UI, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
 Telerik.WinControls.Themes.Office2013DarkTheme, Telerik.WinControls.Themes.Office2013Dark, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
 Telerik.WinControls.RadThemeManager, Telerik.WinControls, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.UI.RadColorBox, Telerik.WinControls.UI, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
