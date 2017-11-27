@@ -74,7 +74,6 @@
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "로그인";
             this.btnLogin.ThemeName = "Windows8";
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 

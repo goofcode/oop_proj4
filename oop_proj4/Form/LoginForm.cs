@@ -8,20 +8,20 @@ namespace oop_proj4
         public LoginForm()
         {
             InitializeComponent();
-        }
 
-        private void btnLogin_Click(object sender, System.EventArgs e)
-        {
-            if (DBManager.Instance().CheckAdmin(this.txtID.Text, this.txtPassword.Text))
+            this.btnLogin.Click += (s, e) =>
             {
-                Program.ShowMainForm();
-                this.Hide();
-            }
-            else
-            {
-                RadMessageBox.SetThemeName(this.ThemeName);
-                RadMessageBox.Show("Wrong ID or PW", "Error", System.Windows.Forms.MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
+                if (DBManager.Instance().CheckAdmin(this.txtID.Text, this.txtPassword.Text))
+                {
+                    Program.ShowMainForm();
+                    this.Hide();
+                }
+                else
+                {
+                    RadMessageBox.SetThemeName(this.ThemeName);
+                    RadMessageBox.Show("Wrong ID or PW", "Error", System.Windows.Forms.MessageBoxButtons.OK, RadMessageIcon.Error);
+                }
+            };
         }
     }
 }

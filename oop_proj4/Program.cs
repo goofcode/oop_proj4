@@ -21,7 +21,7 @@ namespace oop_proj4
             loginForm = new LoginForm();
             mainForm = new MainForm();
 
-            Application.Run(loginForm);
+            Application.Run(mainForm);
         }
 
         public static void ShowMainForm(){ mainForm.Show(); }
