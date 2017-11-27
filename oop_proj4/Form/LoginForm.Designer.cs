@@ -28,81 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.IDTxt = new System.Windows.Forms.TextBox();
-            this.PWTxt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.LoginBtn = new System.Windows.Forms.Button();
+            System.Windows.Forms.PictureBox pictureBox1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
+            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.pnlLogin = new Telerik.WinControls.UI.RadPanel();
+            this.btnLogin = new Telerik.WinControls.UI.RadButton();
+            this.txtPassword = new Telerik.WinControls.UI.RadTextBox();
+            this.lblPW = new Telerik.WinControls.UI.RadLabel();
+            this.txtID = new Telerik.WinControls.UI.RadTextBox();
+            this.lblID = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlLogin)).BeginInit();
+            this.pnlLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblPW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // IDTxt
+            // pnlLogin
             // 
-            this.IDTxt.Location = new System.Drawing.Point(78, 67);
-            this.IDTxt.Name = "IDTxt";
-            this.IDTxt.Size = new System.Drawing.Size(196, 21);
-            this.IDTxt.TabIndex = 0;
-            //this.IDTxt.TextChanged += new System.EventHandler(this.IDTxt_TextChanged);
+            this.pnlLogin.BackColor = System.Drawing.Color.Black;
+            this.pnlLogin.Controls.Add(this.btnLogin);
+            this.pnlLogin.Controls.Add(this.txtPassword);
+            this.pnlLogin.Controls.Add(this.lblPW);
+            this.pnlLogin.Controls.Add(this.txtID);
+            this.pnlLogin.Controls.Add(this.lblID);
+            this.pnlLogin.EnableCodedUITests = true;
+            this.pnlLogin.ForeColor = System.Drawing.Color.Black;
+            this.pnlLogin.Location = new System.Drawing.Point(216, 206);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(278, 150);
+            this.pnlLogin.TabIndex = 4;
             // 
-            // PWTxt
+            // btnLogin
             // 
-            this.PWTxt.Location = new System.Drawing.Point(78, 109);
-            this.PWTxt.Name = "PWTxt";
-            this.PWTxt.Size = new System.Drawing.Size(196, 21);
-            this.PWTxt.TabIndex = 1;
-            this.PWTxt.UseSystemPasswordChar = true;
+            this.btnLogin.Location = new System.Drawing.Point(201, 67);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(57, 53);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "로그인";
+            this.btnLogin.ThemeName = "Windows8";
             // 
-            // label1
+            // txtPassword
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 12);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ID";
+            this.txtPassword.Location = new System.Drawing.Point(49, 98);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '▲';
+            this.txtPassword.Size = new System.Drawing.Size(146, 31);
+            this.txtPassword.TabIndex = 3;
+            this.txtPassword.ThemeName = "Windows8";
             // 
-            // label2
+            // lblPW
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 12);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "PW";
+            this.lblPW.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPW.ForeColor = System.Drawing.Color.White;
+            this.lblPW.Location = new System.Drawing.Point(13, 95);
+            this.lblPW.Name = "lblPW";
+            this.lblPW.Size = new System.Drawing.Size(32, 25);
+            this.lblPW.TabIndex = 2;
+            this.lblPW.Text = "PW";
+            this.lblPW.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblPW.ThemeName = "Windows8";
             // 
-            // LoginBtn
+            // txtID
             // 
-            this.LoginBtn.Location = new System.Drawing.Point(192, 148);
-            this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(82, 35);
-            this.LoginBtn.TabIndex = 2;
-            this.LoginBtn.Text = "Login";
-            this.LoginBtn.UseVisualStyleBackColor = true;
-            //this.LoginBtn.Click += new System.EventHandler(this.L_Click);
+            this.txtID.Location = new System.Drawing.Point(49, 67);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(145, 31);
+            this.txtID.TabIndex = 1;
+            this.txtID.ThemeName = "Windows8";
+            // 
+            // lblID
+            // 
+            this.lblID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.Color.White;
+            this.lblID.Location = new System.Drawing.Point(13, 65);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(24, 25);
+            this.lblID.TabIndex = 0;
+            this.lblID.Text = "ID";
+            this.lblID.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblID.ThemeName = "Windows8";
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Font = new System.Drawing.Font("맑은 고딕", 20.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.radLabel2.Location = new System.Drawing.Point(277, 155);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(205, 41);
+            this.radLabel2.TabIndex = 1;
+            this.radLabel2.Text = "ADMIN LOGIN";
+            this.radLabel2.ThemeName = "Windows8";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            pictureBox1.Location = new System.Drawing.Point(216, 151);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(54, 49);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 209);
-            this.Controls.Add(this.LoginBtn);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.PWTxt);
-            this.Controls.Add(this.IDTxt);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(715, 418);
+            this.Controls.Add(pictureBox1);
+            this.Controls.Add(this.radLabel2);
+            this.Controls.Add(this.pnlLogin);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.ThemeName = "Windows8";
+            ((System.ComponentModel.ISupportInitialize)(this.pnlLogin)).EndInit();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblPW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox IDTxt;
-        private System.Windows.Forms.TextBox PWTxt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button LoginBtn;
+        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
+        private Telerik.WinControls.UI.RadPanel pnlLogin;
+        private Telerik.WinControls.UI.RadLabel lblID;
+        private Telerik.WinControls.UI.RadTextBox txtID;
+        private Telerik.WinControls.UI.RadButton btnLogin;
+        private Telerik.WinControls.UI.RadTextBox txtPassword;
+        private Telerik.WinControls.UI.RadLabel lblPW;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
     }
 }
 
