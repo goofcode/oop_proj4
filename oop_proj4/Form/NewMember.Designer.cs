@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMember));
             this.btnCancel = new Telerik.WinControls.UI.RadButton();
             this.btnApply = new Telerik.WinControls.UI.RadButton();
             this.txtMemo = new Telerik.WinControls.UI.RadTextBox();
@@ -270,12 +271,14 @@
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.btnCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "NewMember";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "회원 추가";
             this.ThemeName = "Windows8";
             this.TopMost = true;
