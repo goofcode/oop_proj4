@@ -31,6 +31,7 @@ namespace oop_proj4
                 this.returnMember.Id = int.Parse(txtId.Text);
                 this.returnMember.Name = txtName.Text;
                 this.returnMember.Tel = txtTel.Text;
+                this.returnMember.Gender = int.Parse(txtGender.Text);
                 this.returnMember.BirthDate = dtpBirth.Value;
                 this.returnMember.RegisterationState = int.Parse(txtState.Text);
                 this.returnMember.LeftDay = int.Parse(txtLeftDay.Text);

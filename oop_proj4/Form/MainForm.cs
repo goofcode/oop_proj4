@@ -1,5 +1,7 @@
 ﻿using System.Data.Linq;
+using System.Drawing;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
 namespace oop_proj4
 {
@@ -8,21 +10,9 @@ namespace oop_proj4
         public MainForm()
         {
             InitializeComponent();
+
             this.FormClosed += (s, e) => { Program.End(); };
-                
-            int dividedWidth = this.grdPage.Width / this.grdPage.Columns.Count;
-            foreach (Telerik.WinControls.UI.GridViewColumn column in this.grdPage.Columns) {
-                column.Width = dividedWidth;
-            }
-
-            Table<Member> members = DBManager.Instance().GetTable<Member>();
-            grdPage.DataSource = members;
-            // @TODO : members 로 부터 직접 그리드뷰에 넣기.. BirthDate, 성별, 등록상태 처리해줘야 함
-
-            this.radDesktopAlert1.CaptionText = "사장님";
-            this.radDesktopAlert1.ContentText = "나빠요.";
-            this.radDesktopAlert1.Show();
-
+            
             this.btnNew.Click += (s, e) =>
             {
                 NewMember NewMember = new NewMember();
@@ -31,30 +21,88 @@ namespace oop_proj4
                 if (NewMember.result == System.Windows.Forms.DialogResult.OK)
                 {
                     DBManager.Instance().insertMember(NewMember.returnMember);
-                    grdPage.Rows.Add(NewMember.returnMember.Name,
+                    this.grdPage.Rows.Add(NewMember.returnMember.Name,
                                      NewMember.returnMember.Tel,
                                      NewMember.returnMember.Gender,
                                      NewMember.returnMember.BirthDate.ToShortDateString(),
                                      NewMember.returnMember.RegisterationState,
                                      NewMember.returnMember.LeftDay,
                                      NewMember.returnMember.Memo);
-                    // @TODO : 새로고침 해줘야함
+
+                    this.grdPage.Update();
                 }
             };
 
             this.btnEdit.Click += (s, e) =>
             {
-                Member selectedMember = (Member) grdPage.SelectedRows[0].DataBoundItem;
+                Member selectedMember = (Member) this.grdPage.SelectedRows[0].DataBoundItem;
+                editNewMember(selectedMember);
+                this.grdPage.Select();
+            };
 
-                NewMember editStudent = new NewMember();
-                editStudent.ShowDialog(2, selectedMember);
+            this.grdPage.CellDoubleClick += (s, e) =>
+            {
+                int rowIndex = e.RowIndex;
 
-                if (editStudent.result == System.Windows.Forms.DialogResult.OK)
+                if (rowIndex >= 0)
                 {
-                    DBManager.Instance().updateMember(editStudent.returnMember);
-                    // @TODO : 새로고침 해줘야함
+                    Member selectedMember = (Member) this.grdPage.Rows[rowIndex].DataBoundItem;
+                    editNewMember(selectedMember);
                 }
             };
+
+            this.grdPage.CellPaint += (s, e) =>
+            {
+                if (e.Cell != null && e.Cell.RowInfo is GridViewDataRowInfo && e.Cell.ColumnInfo.Name == "Name")
+                {
+                    Pen pen;
+                    if ((int)e.Cell.RowInfo.Cells["Gender"].Value == 1)
+                    {
+                        pen = Pens.Blue;
+                    }
+                    else
+                    {
+                        pen = Pens.Red;
+                    }
+
+                    using (Font font = new Font("맑은 고딕", 8))
+                    {
+                        e.Graphics.DrawEllipse(pen, e.Cell.RowInfo.Height / 2 - 5, e.Cell.RowInfo.Height / 2 - 5, 10, 10);
+                    }   
+                }
+            };
+
+            Table<Member> members = DBManager.Instance().GetTable<Member>();
+            this.grdPage.DataSource = members;
+
+            ConditionalFormattingObject obj = new ConditionalFormattingObject("GenderFormat", ConditionTypes.Equal, "1", "", true);
+            obj.CellForeColor = System.Drawing.Color.Blue;
+            this.grdPage.Columns["Gender"].ConditionalFormattingObjectList.Add(obj);
+
+            obj = new ConditionalFormattingObject("GenderFormat", ConditionTypes.Equal, "2", "", true);
+            obj.CellForeColor = System.Drawing.Color.Red;
+            this.grdPage.Columns["Gender"].ConditionalFormattingObjectList.Add(obj);
+
+            obj = new ConditionalFormattingObject("StateFormat", ConditionTypes.Equal, "2", "", true);
+            obj.RowBackColor = System.Drawing.Color.PaleVioletRed;
+            this.grdPage.Columns["RegisterationState"].ConditionalFormattingObjectList.Add(obj);
+
+            obj = new ConditionalFormattingObject("LeftDayFormat", ConditionTypes.LessOrEqual, "30", "", true);
+            obj.CellForeColor = System.Drawing.Color.Red;
+            this.grdPage.Columns["LeftDay"].ConditionalFormattingObjectList.Add(obj);
+
+            this.grdPage.Columns["Name"].TextAlignment = ContentAlignment.MiddleRight;
+        }
+
+        private void editNewMember(Member selectedMember)
+        {
+            NewMember editMember = new NewMember();
+            editMember.ShowDialog(2, selectedMember);
+
+            if (editMember.result == System.Windows.Forms.DialogResult.OK)
+            {
+                DBManager.Instance().updateMember(editMember.returnMember);
+            }
         }
     }
 }
