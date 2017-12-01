@@ -25,7 +25,7 @@ namespace oop_proj4
         {
             if (_instance == null)
             {
-                string dbPath = "database.db";
+                string dbPath = "..\\..\\database.db";
                 string connString = @"Data Source=" + dbPath;
 
                 // exit if db not exists
@@ -102,7 +102,6 @@ namespace oop_proj4
             series.DataPoints.Add(new PieDataPoint(male_count, "남"));
             series.DataPoints.Add(new PieDataPoint(female_count, "여"));
             series.ShowLabels = true;
-            series.DisplayMember = "남";
             return series;
 
        
