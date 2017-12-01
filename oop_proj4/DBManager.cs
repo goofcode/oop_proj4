@@ -2,6 +2,7 @@
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Data.SQLite;
+using System.Data;
 using System.IO;
 using System.Text;
 using System.Security.Cryptography;
@@ -101,10 +102,8 @@ namespace oop_proj4
             PieSeries series = new PieSeries();
             series.DataPoints.Add(new PieDataPoint(male_count, "남"));
             series.DataPoints.Add(new PieDataPoint(female_count, "여"));
-            series.ShowLabels = true;
-            return series;
 
-       
+            return series;
         }
 
         public int GetAge(Member member)
