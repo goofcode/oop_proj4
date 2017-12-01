@@ -4,6 +4,7 @@ using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Configuration;
 using System.Data.SQLite;
+using System.Data;
 using System.IO;
 using System.Text;
 using System.Security.Cryptography;
@@ -17,9 +18,11 @@ namespace oop_proj4
     [Database]
     class DBManager : DataContext
     {
-        private static DBManager _instance;
+        public enum RegisterationState {active};
 
-        // singleton pattern constructor and instance method
+
+        // singleton pattern 
+        private static DBManager _instance;
         private DBManager(SQLiteConnection conn) : base(conn) { }
         public static DBManager Instance()
         {
@@ -63,10 +66,6 @@ namespace oop_proj4
                                        ")";
             string dev_admin_insert = "INSERT INTO Admin VALUES (0, 'dev', '" + GetMD5HashString("dev") + "')";
 
-            _instance.ExecuteCommand(create_admin_tabe);
-            _instance.ExecuteCommand(dev_admin_insert);
-
-
             // create and set member
             string create_member_table = "CREATE TABLE Member( " +
                                          "`Id`                  INTEGER         NOT NULL    PRIMARY KEY     AUTOINCREMENT, " +
@@ -83,9 +82,31 @@ namespace oop_proj4
                                         "INSERT INTO Member VALUES (3, '한대리', '010-1234-5678', 2, '1997-11-12', 2, 30, NULL)",
                                         "INSERT INTO Member VALUES (4, '지사장', '010-1234-5678', 1, '1995-11-28', 1, 123, NULL)" };
 
+            string create_transaction_table = "CREATE TABLE Transaction( " +
+                 "`Id`                  INTEGER         NOT NULL    PRIMARY KEY     AUTOINCREMENT, " +
+                 "`MemberId             INTEGER         NOT NULL, " +
+                 "`Date`                DATE            NOT NULL, " +
+                 "`Type`                INTEGER         NOT NULL, " +   
+                 "`PayMethod`           INTEGER         NOT NULL, " +
+                 "`Memo`                TEXT " +
+                 ")";
+
+            string[] insert_transactions = { "INSERT INTO Member VALUES (1, '1', '1997-12-23', 0, 0, NULL)",
+                                            "INSERT INTO Member VALUES (2, '2', '1993-03-24', 0, 1, NULL)",
+                                            "INSERT INTO Member VALUES (3, '1', '1997-11-12', 2, 2, NULL)",
+                                            "INSERT INTO Member VALUES (4, '3', '1995-11-28', 1, 1, NULL)" };
+
+
+            _instance.ExecuteCommand(create_admin_tabe);
             _instance.ExecuteCommand(create_member_table);
+            _instance.ExecuteCommand(create_transaction_table);
+
+            _instance.ExecuteCommand(dev_admin_insert);
             foreach (string insert_member in insert_members){
                 _instance.ExecuteCommand(insert_member);
+            }
+            foreach (string insert_transaction in insert_transactions){
+                _instance.ExecuteCommand(insert_transaction);
             }
         }
 
@@ -123,5 +144,7 @@ namespace oop_proj4
             var query = "UPDATE Member SET Name = '" + member.Name + "', Tel = '" + member.Tel + "', Gender = " + member.Gender + ", BirthDate = '" + member.BirthDate.ToShortDateString() + "', RegisterationState = " + member.RegisterationState + ", LeftDay = " + member.LeftDay + ", Memo = '" + member.Memo + "' WHERE Id = " + member.Id;
             _instance.ExecuteCommand(query);
         }
+
+        public Table<Member> GetAllMember() { return _instance.GetTable<Member>();}
     }
 }
