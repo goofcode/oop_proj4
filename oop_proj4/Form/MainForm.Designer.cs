@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-
             Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
             Telerik.WinControls.UI.CategoricalAxis categoricalAxis1 = new Telerik.WinControls.UI.CategoricalAxis();
             Telerik.WinControls.UI.LinearAxis linearAxis1 = new Telerik.WinControls.UI.LinearAxis();
@@ -128,11 +127,15 @@
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint58 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint59 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint60 = new Telerik.Charting.CategoricalDataPoint();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.pvMain = new Telerik.WinControls.UI.RadPageView();
             this.pageGroupAccount = new Telerik.WinControls.UI.RadPageViewItemPage();
             this.pageManage = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnEdit = new Telerik.WinControls.UI.RadButton();
+            this.btnNew = new Telerik.WinControls.UI.RadButton();
+            this.grdPage = new Telerik.WinControls.UI.RadGridView();
+            this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pageStatistics = new Telerik.WinControls.UI.RadPageViewPage();
             this.rad = new Telerik.WinControls.UI.RadPageView();
             this.일반 = new Telerik.WinControls.UI.RadPageViewPage();
@@ -155,12 +158,15 @@
             this.pageSetting = new Telerik.WinControls.UI.RadPageViewPage();
             this.pageLogout = new Telerik.WinControls.UI.RadPageViewPage();
             this.object_6abb8877_465c_4679_8322_baa7ddac60d1 = new Telerik.WinControls.RootRadElement();
-            this.grdPage = new Telerik.WinControls.UI.RadGridView();
             this.radDesktopAlert1 = new Telerik.WinControls.UI.RadDesktopAlert(this.components);
-            this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pvMain)).BeginInit();
             this.pvMain.SuspendLayout();
-
+            this.pageManage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPage.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             this.pageStatistics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rad)).BeginInit();
             this.rad.SuspendLayout();
@@ -179,7 +185,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radChartView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radChartView6)).BeginInit();
-
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,10 +203,8 @@
             this.pvMain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pvMain.Location = new System.Drawing.Point(0, 0);
             this.pvMain.Name = "pvMain";
-
             this.pvMain.SelectedPage = this.pageManage;
             this.pvMain.Size = new System.Drawing.Size(1314, 572);
-
             this.pvMain.TabIndex = 0;
             this.pvMain.ThemeName = "Windows8";
             this.pvMain.ViewMode = Telerik.WinControls.UI.PageViewMode.Backstage;
@@ -212,7 +215,7 @@
             // 
             // pageGroupAccount
             // 
-            this.pageGroupAccount.ItemSize = new System.Drawing.SizeF(117F, 31F);
+            this.pageGroupAccount.ItemSize = new System.Drawing.SizeF(97F, 27F);
             this.pageGroupAccount.ItemType = Telerik.WinControls.UI.PageViewItemType.GroupHeaderItem;
             this.pageGroupAccount.Location = new System.Drawing.Point(0, 0);
             this.pageGroupAccount.Name = "pageGroupAccount";
@@ -221,23 +224,118 @@
             // 
             // pageManage
             // 
+            this.pageManage.Controls.Add(this.btnEdit);
+            this.pageManage.Controls.Add(this.btnNew);
             this.pageManage.Controls.Add(this.grdPage);
-            this.pageManage.ItemSize = new System.Drawing.SizeF(117F, 31F);
+            this.pageManage.ItemSize = new System.Drawing.SizeF(97F, 29F);
             this.pageManage.Location = new System.Drawing.Point(154, 5);
             this.pageManage.Name = "pageManage";
             this.pageManage.Size = new System.Drawing.Size(1155, 562);
             this.pageManage.Text = "회원 관리";
             this.pageManage.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(116, 5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(106, 42);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "정보수정";
+            this.btnEdit.ThemeName = "Windows8";
+            // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(4, 5);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(106, 42);
+            this.btnNew.TabIndex = 5;
+            this.btnNew.Text = "신규회원";
+            this.btnNew.ThemeName = "Windows8";
+            // 
+            // grdPage
+            // 
+            this.grdPage.AutoSizeRows = true;
+            this.grdPage.EnableCustomDrawing = true;
+            this.grdPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdPage.Location = new System.Drawing.Point(3, 53);
+            // 
+            // 
+            // 
+            this.grdPage.MasterTemplate.AllowAddNewRow = false;
+            this.grdPage.MasterTemplate.AllowColumnReorder = false;
+            this.grdPage.MasterTemplate.AllowDeleteRow = false;
+            this.grdPage.MasterTemplate.AllowEditRow = false;
+            this.grdPage.MasterTemplate.AllowRowResize = false;
+            this.grdPage.MasterTemplate.AllowSearchRow = true;
+            this.grdPage.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn1.FieldName = "Name";
+            gridViewTextBoxColumn1.HeaderText = "이름";
+            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "Name";
+            gridViewTextBoxColumn1.Width = 162;
+            gridViewTextBoxColumn2.FieldName = "Tel";
+            gridViewTextBoxColumn2.HeaderText = "전화번호";
+            gridViewTextBoxColumn2.IsAutoGenerated = true;
+            gridViewTextBoxColumn2.Name = "Tel";
+            gridViewTextBoxColumn2.Width = 162;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.FieldName = "Gender";
+            gridViewDecimalColumn1.HeaderText = "성별";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.Name = "Gender";
+            gridViewDecimalColumn1.Width = 162;
+            gridViewDateTimeColumn1.FieldName = "BirthDate";
+            gridViewDateTimeColumn1.HeaderText = "생년월일";
+            gridViewDateTimeColumn1.IsAutoGenerated = true;
+            gridViewDateTimeColumn1.Name = "BirthDate";
+            gridViewDateTimeColumn1.Width = 162;
+            gridViewDecimalColumn2.DataType = typeof(int);
+            gridViewDecimalColumn2.FieldName = "RegisterationState";
+            gridViewDecimalColumn2.HeaderText = "등록상태";
+            gridViewDecimalColumn2.IsAutoGenerated = true;
+            gridViewDecimalColumn2.Name = "RegisterationState";
+            gridViewDecimalColumn2.Width = 162;
+            gridViewDecimalColumn3.DataType = typeof(int);
+            gridViewDecimalColumn3.FieldName = "LeftDay";
+            gridViewDecimalColumn3.HeaderText = "만기일";
+            gridViewDecimalColumn3.IsAutoGenerated = true;
+            gridViewDecimalColumn3.Name = "LeftDay";
+            gridViewDecimalColumn3.Width = 162;
+            gridViewTextBoxColumn3.FieldName = "Memo";
+            gridViewTextBoxColumn3.HeaderText = "메모";
+            gridViewTextBoxColumn3.IsAutoGenerated = true;
+            gridViewTextBoxColumn3.Name = "Memo";
+            gridViewTextBoxColumn3.Width = 162;
+            this.grdPage.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewDecimalColumn1,
+            gridViewDateTimeColumn1,
+            gridViewDecimalColumn2,
+            gridViewDecimalColumn3,
+            gridViewTextBoxColumn3});
+            this.grdPage.MasterTemplate.DataSource = this.memberBindingSource;
+            this.grdPage.MasterTemplate.EnableFiltering = true;
+            this.grdPage.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
+            this.grdPage.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.grdPage.Name = "grdPage";
+            this.grdPage.ReadOnly = true;
+            this.grdPage.Size = new System.Drawing.Size(1149, 499);
+            this.grdPage.TabIndex = 4;
+            this.grdPage.ThemeName = "Windows8";
+            // 
+            // memberBindingSource
+            // 
+            this.memberBindingSource.DataSource = typeof(oop_proj4.Member);
+            // 
             // pageStatistics
             // 
-
             this.pageStatistics.Controls.Add(this.rad);
             this.pageStatistics.ItemSize = new System.Drawing.SizeF(97F, 29F);
             this.pageStatistics.Location = new System.Drawing.Point(154, 5);
             this.pageStatistics.Name = "pageStatistics";
-            this.pageStatistics.Size = new System.Drawing.Size(1278, 845);
-
+            this.pageStatistics.Size = new System.Drawing.Size(1155, 562);
             this.pageStatistics.Text = "통계";
             this.pageStatistics.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -253,7 +351,7 @@
             this.rad.Name = "rad";
             this.rad.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rad.SelectedPage = this.일반;
-            this.rad.Size = new System.Drawing.Size(1278, 687);
+            this.rad.Size = new System.Drawing.Size(1155, 687);
             this.rad.TabIndex = 0;
             this.rad.Text = "rad";
             this.rad.ThemeName = "Windows8";
@@ -264,10 +362,9 @@
             this.일반.Controls.Add(this.radTextBox4);
             this.일반.Controls.Add(this.radChartView3);
             this.일반.Controls.Add(this.radChartView4);
-            this.일반.ItemSize = new System.Drawing.SizeF(37F, 26F);
-            this.일반.Location = new System.Drawing.Point(5, 29);
+            this.일반.Location = new System.Drawing.Point(5, 27);
             this.일반.Name = "일반";
-            this.일반.Size = new System.Drawing.Size(1268, 653);
+            this.일반.Size = new System.Drawing.Size(1145, 655);
             this.일반.Tag = "";
             this.일반.Text = "일반";
             // 
@@ -277,7 +374,7 @@
             this.radTextBox3.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radTextBox3.Location = new System.Drawing.Point(514, 67);
             this.radTextBox3.Name = "radTextBox3";
-            this.radTextBox3.Size = new System.Drawing.Size(254, 85);
+            this.radTextBox3.Size = new System.Drawing.Size(254, 117);
             this.radTextBox3.TabIndex = 7;
             this.radTextBox3.Text = "못된샛기";
             this.radTextBox3.ThemeName = "Windows8";
@@ -288,7 +385,7 @@
             this.radTextBox4.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radTextBox4.Location = new System.Drawing.Point(101, 67);
             this.radTextBox4.Name = "radTextBox4";
-            this.radTextBox4.Size = new System.Drawing.Size(248, 89);
+            this.radTextBox4.Size = new System.Drawing.Size(248, 121);
             this.radTextBox4.TabIndex = 6;
             this.radTextBox4.Text = "사장샛기";
             this.radTextBox4.ThemeName = "Windows8";
@@ -462,7 +559,6 @@
             this.연간.Controls.Add(this.radTextBox2);
             this.연간.Controls.Add(this.radChartView1);
             this.연간.Controls.Add(this.radChartView2);
-            this.연간.ItemSize = new System.Drawing.SizeF(37F, 26F);
             this.연간.Location = new System.Drawing.Point(5, 29);
             this.연간.Name = "연간";
             this.연간.Size = new System.Drawing.Size(1268, 653);
@@ -474,7 +570,7 @@
             this.radTextBox1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radTextBox1.Location = new System.Drawing.Point(509, 44);
             this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(254, 85);
+            this.radTextBox1.Size = new System.Drawing.Size(254, 117);
             this.radTextBox1.TabIndex = 11;
             this.radTextBox1.Text = "못된샛기";
             this.radTextBox1.ThemeName = "Windows8";
@@ -485,7 +581,7 @@
             this.radTextBox2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radTextBox2.Location = new System.Drawing.Point(96, 44);
             this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.Size = new System.Drawing.Size(248, 89);
+            this.radTextBox2.Size = new System.Drawing.Size(248, 121);
             this.radTextBox2.TabIndex = 10;
             this.radTextBox2.Text = "사장샛기";
             this.radTextBox2.ThemeName = "Windows8";
@@ -659,7 +755,6 @@
             this.월간.Controls.Add(this.radTextBox6);
             this.월간.Controls.Add(this.radChartView5);
             this.월간.Controls.Add(this.radChartView6);
-            this.월간.ItemSize = new System.Drawing.SizeF(37F, 26F);
             this.월간.Location = new System.Drawing.Point(5, 29);
             this.월간.Name = "월간";
             this.월간.Size = new System.Drawing.Size(1268, 653);
@@ -671,7 +766,7 @@
             this.radTextBox5.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radTextBox5.Location = new System.Drawing.Point(546, 82);
             this.radTextBox5.Name = "radTextBox5";
-            this.radTextBox5.Size = new System.Drawing.Size(254, 85);
+            this.radTextBox5.Size = new System.Drawing.Size(254, 117);
             this.radTextBox5.TabIndex = 11;
             this.radTextBox5.Text = "못된샛기";
             this.radTextBox5.ThemeName = "Windows8";
@@ -682,7 +777,7 @@
             this.radTextBox6.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radTextBox6.Location = new System.Drawing.Point(133, 82);
             this.radTextBox6.Name = "radTextBox6";
-            this.radTextBox6.Size = new System.Drawing.Size(248, 89);
+            this.radTextBox6.Size = new System.Drawing.Size(248, 121);
             this.radTextBox6.TabIndex = 10;
             this.radTextBox6.Text = "사장나빠";
             this.radTextBox6.ThemeName = "Windows8";
@@ -852,18 +947,16 @@
             // 
             // pageAccounting
             // 
-
             this.pageAccounting.ItemSize = new System.Drawing.SizeF(97F, 29F);
             this.pageAccounting.Location = new System.Drawing.Point(154, 5);
             this.pageAccounting.Name = "pageAccounting";
             this.pageAccounting.Size = new System.Drawing.Size(1278, 845);
-
             this.pageAccounting.Text = "회계";
             this.pageAccounting.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pageGroupUser
             // 
-            this.pageGroupUser.ItemSize = new System.Drawing.SizeF(117F, 31F);
+            this.pageGroupUser.ItemSize = new System.Drawing.SizeF(97F, 27F);
             this.pageGroupUser.ItemType = Telerik.WinControls.UI.PageViewItemType.GroupHeaderItem;
             this.pageGroupUser.Location = new System.Drawing.Point(0, 0);
             this.pageGroupUser.Name = "pageGroupUser";
@@ -872,7 +965,7 @@
             // 
             // pageSetting
             // 
-            this.pageSetting.ItemSize = new System.Drawing.SizeF(117F, 31F);
+            this.pageSetting.ItemSize = new System.Drawing.SizeF(97F, 29F);
             this.pageSetting.Location = new System.Drawing.Point(154, 5);
             this.pageSetting.Name = "pageSetting";
             this.pageSetting.Size = new System.Drawing.Size(1155, 562);
@@ -881,7 +974,7 @@
             // 
             // pageLogout
             // 
-            this.pageLogout.ItemSize = new System.Drawing.SizeF(117F, 31F);
+            this.pageLogout.ItemSize = new System.Drawing.SizeF(97F, 29F);
             this.pageLogout.Location = new System.Drawing.Point(154, 5);
             this.pageLogout.Name = "pageLogout";
             this.pageLogout.Size = new System.Drawing.Size(1155, 562);
@@ -894,79 +987,17 @@
             this.object_6abb8877_465c_4679_8322_baa7ddac60d1.StretchHorizontally = true;
             this.object_6abb8877_465c_4679_8322_baa7ddac60d1.StretchVertically = true;
             // 
-            // grdPage
-            // 
-            this.grdPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdPage.Location = new System.Drawing.Point(3, 53);
-            // 
-            // 
-            // 
-            this.grdPage.MasterTemplate.AllowAddNewRow = false;
-            this.grdPage.MasterTemplate.AllowColumnReorder = false;
-            this.grdPage.MasterTemplate.AllowDragToGroup = false;
-            this.grdPage.MasterTemplate.AllowRowResize = false;
-            gridViewTextBoxColumn1.FieldName = "Name";
-            gridViewTextBoxColumn1.HeaderText = "이름";
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "Name";
-            gridViewTextBoxColumn1.Width = 54;
-            gridViewDecimalColumn1.DataType = typeof(int);
-            gridViewDecimalColumn1.FieldName = "Gender";
-            gridViewDecimalColumn1.HeaderText = "성별";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.Name = "Gender";
-            gridViewDecimalColumn1.Width = 64;
-            gridViewDateTimeColumn1.FieldName = "BirthDate";
-            gridViewDateTimeColumn1.HeaderText = "생년월일";
-            gridViewDateTimeColumn1.IsAutoGenerated = true;
-            gridViewDateTimeColumn1.Name = "BirthDate";
-            gridViewDateTimeColumn1.Width = 79;
-            gridViewDecimalColumn2.DataType = typeof(int);
-            gridViewDecimalColumn2.FieldName = "RegisterationState";
-            gridViewDecimalColumn2.HeaderText = "등록상태";
-            gridViewDecimalColumn2.IsAutoGenerated = true;
-            gridViewDecimalColumn2.Name = "RegisterationState";
-            gridViewDecimalColumn2.Width = 146;
-            gridViewDecimalColumn3.DataType = typeof(int);
-            gridViewDecimalColumn3.FieldName = "LeftDay";
-            gridViewDecimalColumn3.HeaderText = "잔여일";
-            gridViewDecimalColumn3.IsAutoGenerated = true;
-            gridViewDecimalColumn3.Name = "LeftDay";
-            gridViewDecimalColumn3.Width = 66;
-            gridViewTextBoxColumn2.FieldName = "Memo";
-            gridViewTextBoxColumn2.HeaderText = "메모";
-            gridViewTextBoxColumn2.IsAutoGenerated = true;
-            gridViewTextBoxColumn2.Name = "Memo";
-            gridViewTextBoxColumn2.Width = 58;
-            this.grdPage.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewDecimalColumn1,
-            gridViewDateTimeColumn1,
-            gridViewDecimalColumn2,
-            gridViewDecimalColumn3,
-            gridViewTextBoxColumn2});
-            this.grdPage.MasterTemplate.DataSource = this.memberBindingSource;
-            this.grdPage.MasterTemplate.ViewDefinition = tableViewDefinition1;
-            this.grdPage.Name = "grdPage";
-            this.grdPage.ReadOnly = true;
-            this.grdPage.Size = new System.Drawing.Size(1149, 499);
-            this.grdPage.TabIndex = 4;
-            this.grdPage.ThemeName = "Windows8";
-            // 
             // radDesktopAlert1
             // 
             this.radDesktopAlert1.ThemeName = "Windows8";
             // 
-            // memberBindingSource
-            // 
-            this.memberBindingSource.DataSource = typeof(oop_proj4.Member);
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1310, 569);
             this.Controls.Add(this.pvMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -979,7 +1010,12 @@
             this.ThemeName = "Windows8";
             ((System.ComponentModel.ISupportInitialize)(this.pvMain)).EndInit();
             this.pvMain.ResumeLayout(false);
-
+            this.pageManage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPage.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).EndInit();
             this.pageStatistics.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rad)).EndInit();
             this.rad.ResumeLayout(false);
@@ -1001,7 +1037,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radChartView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radChartView6)).EndInit();
-
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -1017,8 +1052,6 @@
         private Telerik.WinControls.UI.RadPageViewItemPage pageGroupUser;
         private Telerik.WinControls.UI.RadPageViewPage pageSetting;
         private Telerik.WinControls.UI.RadPageViewPage pageLogout;
-
-        private System.Windows.Forms.BindingSource memberBindingSource;
         private Telerik.WinControls.UI.RadGridView grdPage;
         private Telerik.WinControls.RootRadElement object_6abb8877_465c_4679_8322_baa7ddac60d1;
         private Telerik.WinControls.UI.RadDesktopAlert radDesktopAlert1;
@@ -1039,6 +1072,8 @@
         private Telerik.WinControls.UI.RadTextBox radTextBox6;
         private Telerik.WinControls.UI.RadChartView radChartView5;
         private Telerik.WinControls.UI.RadChartView radChartView6;
-
+        private Telerik.WinControls.UI.RadButton btnEdit;
+        private Telerik.WinControls.UI.RadButton btnNew;
+        private System.Windows.Forms.BindingSource memberBindingSource;
     }
 }

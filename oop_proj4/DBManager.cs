@@ -71,16 +71,17 @@ namespace oop_proj4
             string create_member_table = "CREATE TABLE Member( " +
                                          "`Id`                  INTEGER         NOT NULL    PRIMARY KEY     AUTOINCREMENT, " +
                                          "`Name`                VARCHAR( 50 )   NOT NULL, " +
+                                         "`Tel`                 VARCHAR( 50 )   NOT NULL, " +
                                          "`Gender`              INTEGER         NOT NULL, " +
                                          "`BirthDate`           DATE            NOT NULL, " +
                                          "`RegisterationState`  INTEGER         NOT NULL, " +
                                          "`LeftDay`             INTEGER         NOT NULL, " +
                                          "`Memo`                TEXT " +
                                          ")";
-            string[] insert_members = { "INSERT INTO Member VALUES (1, '미필띠후', 1, '1997-12-23 00:00:00', 0, 30, 'aka 산업띠후')",
-                                        "INSERT INTO Member VALUES (2, '한주임', 1, '1993-03-24 00:00:00', 0, 330, NULL)",
-                                        "INSERT INTO Member VALUES (3, '한대리', 2, '1997-11-12 00:00:00', 2, 30, NULL)",
-                                        "INSERT INTO Member VALUES (4, '지사장', 1, '1995-11-28 00:00:00', 1, 123, NULL)" };
+            string[] insert_members = { "INSERT INTO Member VALUES (1, '미필띠후', '010-1234-5678', 1, '1997-12-23', 0, 30, 'aka 산업띠후')",
+                                        "INSERT INTO Member VALUES (2, '한주임', '010-1234-5678', 1, '1993-03-24', 0, 330, NULL)",
+                                        "INSERT INTO Member VALUES (3, '한대리', '010-1234-5678', 2, '1997-11-12', 2, 30, NULL)",
+                                        "INSERT INTO Member VALUES (4, '지사장', '010-1234-5678', 1, '1995-11-28', 1, 123, NULL)" };
 
             _instance.ExecuteCommand(create_member_table);
             foreach (string insert_member in insert_members){
@@ -109,6 +110,18 @@ namespace oop_proj4
                 return false;
 
             return true;
+        }
+
+        public void insertMember(Member member)
+        {
+            var query = "INSERT INTO Member VALUES (" + member.Id + ", '" + member.Name + "', '" + member.Tel + "', " + member.Gender + ", '1997-12-23 00:00:00', " + member.RegisterationState + ", 30, '" + member.Memo + "')";
+            _instance.ExecuteCommand(query);
+        }
+
+        public void updateMember(Member member)
+        {
+            var query = "UPDATE Member SET Name = '" + member.Name + "', Tel = '" + member.Tel + "', Gender = " + member.Gender + ", BirthDate = '" + member.BirthDate.ToShortDateString() + "', RegisterationState = " + member.RegisterationState + ", LeftDay = " + member.LeftDay + ", Memo = '" + member.Memo + "' WHERE Id = " + member.Id;
+            _instance.ExecuteCommand(query);
         }
     }
 }

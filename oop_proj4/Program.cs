@@ -1,5 +1,4 @@
-﻿using oop_proj4.Form;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 
@@ -21,7 +20,7 @@ namespace oop_proj4
             loginForm = new LoginForm();
             mainForm = new MainForm();
 
-            Application.Run(mainForm);
+            Application.Run(loginForm);
         }
 
         public static void ShowMainForm(){ mainForm.Show(); }
