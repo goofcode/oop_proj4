@@ -2,6 +2,7 @@
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Data.SQLite;
+using System.Data;
 using System.IO;
 using System.Text;
 using System.Security.Cryptography;
@@ -51,7 +52,6 @@ namespace oop_proj4
         /// <summary>
         /// Create tables in case of db not found
         /// * This method needs to be fixed on deployment
-        /// </summary>        
         /// <summary>
         /// checks if given id and pw are valid or not
         /// </summary>
@@ -86,7 +86,7 @@ namespace oop_proj4
             var query = "UPDATE Member SET Name = '" + member.Name + "', Tel = '" + member.Tel + "', Gender = " + member.Gender + ", BirthDate = '" + member.BirthDate.ToShortDateString() + "', RegisterationState = " + member.RegisterationState + ", LeftDay = " + member.LeftDay + ", Memo = '" + member.Memo + "' WHERE Id = " + member.Id;
             _instance.ExecuteCommand(query);
         }
-
+        
         public PieSeries GetGenderPieSeries()
         {
             Table<Member> members = _instance.GetTable<Member>();
@@ -101,11 +101,7 @@ namespace oop_proj4
             PieSeries series = new PieSeries();
             series.DataPoints.Add(new PieDataPoint(male_count, "남"));
             series.DataPoints.Add(new PieDataPoint(female_count, "여"));
-            series.ShowLabels = true;
-            series.DisplayMember = "남";
             return series;
-
-       
         }
 
         public int GetAge(Member member)
