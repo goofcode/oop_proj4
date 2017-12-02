@@ -72,6 +72,19 @@ namespace oop_proj4
                 }
             };
 
+            this.MemberStatisticPage.Paint += (s, e) =>
+            {
+                this.MemberStatisticGenderChart.Series.Clear();
+                this.MemberStatisticAgeChart.Series.Clear();
+                this.YearlyMoneyChart.Series.Clear();
+                this.MonthlyMoneyDiffChart.Series.Clear();
+                this.YearlyStatisticsMembersChart.Series.Clear();
+                this.YearlyStatisticsMoneyChart.Series.Clear();
+                this.MemberStatisticGenderChart.Series.Add(DBManager.Instance().GetGenderPieSeries());
+                this.MemberStatisticAgeChart.Series.Add(DBManager.Instance().GetAgeGroupPieSeries());
+                
+            };
+
             Table<Member> members = DBManager.Instance().GetTable<Member>();
             this.grdPage.DataSource = members;
 
@@ -122,11 +135,7 @@ namespace oop_proj4
 
         private void radPageViewPage1_Paint_1(object sender, System.Windows.Forms.PaintEventArgs e)
         {
-            LineSeries lineseria = new LineSeries();
-            MemberStatisticGenderChart.Series.Add(lineseria);
-            lineseria.ValueMember = "Value";
-            lineseria.CategoryMember = "name";
-            lineseria.DataSource= DBManager.Instance().GetTable<Member>();
+          
            
         }
 
@@ -146,6 +155,36 @@ namespace oop_proj4
         }
 
         private void MemberStatisticAgeChart_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void MonthStatisticPageMonthlyMembers_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void radTextBox3_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void radLabel1_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void radLabel3_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void radLabel4_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void MonthlyStatisticsMembersChart_Click(object sender, System.EventArgs e)
         {
 
         }
