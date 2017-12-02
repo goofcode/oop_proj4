@@ -1,5 +1,6 @@
 ﻿using System.Data.Linq;
 using System.Drawing;
+using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 
@@ -20,7 +21,7 @@ namespace oop_proj4
 
                 if (NewMember.result == System.Windows.Forms.DialogResult.OK)
                 {
-                    DBManager.Instance().insertMember(NewMember.returnMember);
+                    DBManager.Instance().AddMember(NewMember.returnMember);
                     this.grdPage.Rows.Add(NewMember.returnMember.Name,
                                      NewMember.returnMember.Tel,
                                      NewMember.returnMember.Gender,
@@ -36,7 +37,7 @@ namespace oop_proj4
             this.btnEdit.Click += (s, e) =>
             {
                 Member selectedMember = (Member) this.grdPage.SelectedRows[0].DataBoundItem;
-                editNewMember(selectedMember);
+                EditNewMember(selectedMember);
                 this.grdPage.Select();
             };
 
@@ -47,7 +48,7 @@ namespace oop_proj4
                 if (rowIndex >= 0)
                 {
                     Member selectedMember = (Member) this.grdPage.Rows[rowIndex].DataBoundItem;
-                    editNewMember(selectedMember);
+                    EditNewMember(selectedMember);
                 }
             };
 
@@ -71,6 +72,44 @@ namespace oop_proj4
                     }    
                 }
             };
+
+            this.pageLogout.Paint += (s, e) =>
+            {
+                Program.End();
+            };
+
+            this.EditAdminBtn.Click += (s, e) =>
+            {
+                EditAdminForm editAdminForm = new EditAdminForm();
+                editAdminForm.ShowDialog();
+            };
+            this.NewAdminBtn.Click += (s, e) =>
+            {
+                 NewAdminForm newAdminForm = new NewAdminForm();
+                 newAdminForm.ShowDialog();
+                 this.pageSetting.Refresh();
+            };
+            this.DeleteAminBtn.Click += (s, e) =>
+            {
+                if( this.AdminListView.Items.Count != 1)
+                {
+                    DeleteAdminForm deleteAdminForm = new DeleteAdminForm(this.AdminListView.SelectedItem.Text);
+                    deleteAdminForm.ShowDialog();
+                    this.pageSetting.Refresh();
+                }
+                else
+                {
+                    RadMessageBox.SetThemeName(this.ThemeName);
+                    RadMessageBox.Show("마지막 관리자를 삭제할 수 없습니다", "Delete", System.Windows.Forms.MessageBoxButtons.OK, RadMessageIcon.Info);
+                }
+            };
+
+            this.pageSetting.Paint += (s, e) =>
+            {
+                this.AdminListView.DataSource = DBManager.Instance().GetAdminIdList();
+            };
+            
+
 
             this.MemberStatisticPage.Paint += (s, e) =>
             {
@@ -116,14 +155,14 @@ namespace oop_proj4
             this.grdPage.Columns["Name"].TextAlignment = ContentAlignment.MiddleRight;
         }
 
-        private void editNewMember(Member selectedMember)
+        private void EditNewMember(Member selectedMember)
         {
             NewMember editMember = new NewMember();
             editMember.ShowDialog(2, selectedMember);
 
             if (editMember.result == System.Windows.Forms.DialogResult.OK)
             {
-                DBManager.Instance().updateMember(editMember.returnMember);
+                DBManager.Instance().UpdateMember(editMember.returnMember);
             }
         }
 
