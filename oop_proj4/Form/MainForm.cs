@@ -73,25 +73,28 @@ namespace oop_proj4
             };
 
             Table<Member> members = DBManager.Instance().GetTable<Member>();
-            this.grdPage.DataSource = members;
+            foreach (Member member in members)
+            {
+                this.grdPage.Rows.Add(new object[] { false, member.Id, member.Name,
+                member.Tel, member.Gender == 1 ? "남자" : "여자" });
+                this.grdPage.DataSource = member;
+            }
 
             ConditionalFormattingObject obj = new ConditionalFormattingObject("GenderFormat", ConditionTypes.Equal, "1", "", true);
             obj.CellForeColor = System.Drawing.Color.Blue;
-            this.grdPage.Columns["Gender"].ConditionalFormattingObjectList.Add(obj);
+            this.grdPage.Columns["columnGender"].ConditionalFormattingObjectList.Add(obj);
 
             obj = new ConditionalFormattingObject("GenderFormat", ConditionTypes.Equal, "2", "", true);
             obj.CellForeColor = System.Drawing.Color.Red;
-            this.grdPage.Columns["Gender"].ConditionalFormattingObjectList.Add(obj);
+            this.grdPage.Columns["columnGender"].ConditionalFormattingObjectList.Add(obj);
 
             obj = new ConditionalFormattingObject("StateFormat", ConditionTypes.Equal, "2", "", true);
             obj.RowBackColor = System.Drawing.Color.PaleVioletRed;
-            this.grdPage.Columns["RegisterationState"].ConditionalFormattingObjectList.Add(obj);
+            this.grdPage.Columns["columnRegistrationState"].ConditionalFormattingObjectList.Add(obj);
 
             obj = new ConditionalFormattingObject("LeftDayFormat", ConditionTypes.LessOrEqual, "30", "", true);
             obj.CellForeColor = System.Drawing.Color.Red;
-            this.grdPage.Columns["LeftDay"].ConditionalFormattingObjectList.Add(obj);
-
-            this.grdPage.Columns["Name"].TextAlignment = ContentAlignment.MiddleRight;
+            this.grdPage.Columns["columnLeftDay"].ConditionalFormattingObjectList.Add(obj);
         }
 
         private void editNewMember(Member selectedMember)
