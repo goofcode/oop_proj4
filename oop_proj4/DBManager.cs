@@ -118,18 +118,18 @@ namespace oop_proj4
         {
             Table<Member> members = _instance.GetTable<Member>();
 
-            string[] legendname = {"10 대 이하","10 대","20 대","30 대", "40 대", "50 대", "60 대 이상"};
+            string[] legendname = {"10 대 이하","10 대","20 대","30 대", "40 대", "50 대 이상"};
 
-            int[] ageGroup = new int[7];
+            int[] ageGroup = new int[6];
             
             foreach(Member member in members)
             {
                 int age = GetAge(member);
-                ageGroup[(age < 70) ? age / 10 : 6]++;
+                ageGroup[(age < 50) ? age / 10 : 6]++;
             }
 
             PieSeries series = new PieSeries();
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
                 series.DataPoints.Add(new PieDataPoint(ageGroup[i], legendname[i]));
             return series;
             
@@ -175,7 +175,7 @@ namespace oop_proj4
         public LineSeries GetNewMemberLineSeries(int year)
         {
             Table<Member> members = _instance.GetTable<Member>();
-            DateTime date = new DateTime(year, 2, 1);
+            DateTime date = new DateTime(year, 1, 1);
 
             string[] Months = { " ", "1 월", "2 월", "3 월", "4 월", "5 월", "6 월", "7 월", "8 월", "9 월", "10 월", "11 월", "12 월" };
             int[] MonthNewMemCount = new int[13];
@@ -190,6 +190,63 @@ namespace oop_proj4
             for (int i = 1; i <= 12; i++)
             {
                 series.DataPoints.Add(new CategoricalDataPoint(MonthNewMemCount[i], Months[i]));
+            }
+            series.ShowLabels = true;
+            return series;
+        }
+
+        public int GetMonTotalAmount(DateTime compareDate)
+        {
+            Table<Transaction> transactions = _instance.GetTable<Transaction>();
+
+            int sum = 0;
+            foreach(Transaction t in transactions)
+                if (t.Date.Year == compareDate.Year && t.Date.Month == compareDate.Month) sum+=t.Amount;
+            return sum;
+        }
+        public LineSeries GetTotalAmountLineSeries(int year)
+        {
+            Table<Transaction> members = _instance.GetTable<Transaction>();
+            DateTime date = new DateTime(year, 1, 1);
+
+            string[] Months = { " ", "1 월", "2 월", "3 월", "4 월", "5 월", "6 월", "7 월", "8 월", "9 월", "10 월", "11 월", "12 월" };
+            int[] MonthAmount = new int[13];
+
+            for (int i = 1; i <= 12; i++)
+            {
+                MonthAmount[i] = GetMonTotalAmount(date);
+                date = date.AddMonths(1);
+            }
+            LineSeries series = new LineSeries();
+            for (int i = 1; i <= 12; i++)
+            {
+                series.DataPoints.Add(new CategoricalDataPoint(MonthAmount[i], Months[i]));
+            }
+            series.ShowLabels = true;
+            return series;
+        }
+
+        public int GetMonOverMonAmount(DateTime Date)
+        {
+            return GetMonTotalAmount(Date) - GetMonTotalAmount(Date.AddMonths(-1));
+        }
+        public LineSeries GetMonOverAmountLineSeries(int year)
+        {
+            Table<Transaction> members = _instance.GetTable<Transaction>();
+            DateTime date = new DateTime(year, 1, 1);
+
+            string[] Months = { " ", "1 월", "2 월", "3 월", "4 월", "5 월", "6 월", "7 월", "8 월", "9 월", "10 월", "11 월", "12 월" };
+            int[] monOverAmount = new int[13];
+
+            for (int i = 1; i <= 12; i++)
+            {
+                monOverAmount[i] = GetMonOverMonAmount(date);
+                date = date.AddMonths(1);
+            }
+            LineSeries series = new LineSeries();
+            for (int i = 1; i <= 12; i++)
+            {
+                series.DataPoints.Add(new CategoricalDataPoint(monOverAmount[i], Months[i]));
             }
             series.ShowLabels = true;
             return series;
