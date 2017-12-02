@@ -68,7 +68,7 @@ namespace oop_proj4
                     using (Font font = new Font("맑은 고딕", 8))
                     {
                         e.Graphics.DrawEllipse(pen, e.Cell.RowInfo.Height / 2 - 5, e.Cell.RowInfo.Height / 2 - 5, 10, 10);
-                    }   
+                    }    
                 }
             };
 
@@ -76,13 +76,21 @@ namespace oop_proj4
             {
                 this.MemberStatisticGenderChart.Series.Clear();
                 this.MemberStatisticAgeChart.Series.Clear();
-                this.YearlyMoneyChart.Series.Clear();
-                this.MonthlyMoneyDiffChart.Series.Clear();
-                this.YearlyStatisticsMembersChart.Series.Clear();
-                this.YearlyStatisticsMoneyChart.Series.Clear();
                 this.MemberStatisticGenderChart.Series.Add(DBManager.Instance().GetGenderPieSeries());
                 this.MemberStatisticAgeChart.Series.Add(DBManager.Instance().GetAgeGroupPieSeries());
-                
+                };
+            this.YearStatisticPage.Paint += (s, e) =>
+            {
+                this.YearlyStatisticsMembersChart.Series.Clear();
+                this.YearlyStatisticsMoneyChart.Series.Clear();
+
+            };
+            this.StatisticsAccountPage.Paint += (s, e) =>
+            {
+                this.YearlyMoneyChart.Series.Clear();
+                this.MonthlyMoneyDiffChart.Series.Clear();
+                this.YearlyMoneyChart.Series.Add(DBManager.Instance().GetTotalAmountLineSeries(2017));
+                this.MonthlyMoneyDiffChart.Series.Add(DBManager.Instance().GetMonOverAmountLineSeries(2017));
             };
 
             Table<Member> members = DBManager.Instance().GetTable<Member>();
