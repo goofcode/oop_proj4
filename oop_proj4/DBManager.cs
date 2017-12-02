@@ -125,7 +125,7 @@ namespace oop_proj4
             foreach(Member member in members)
             {
                 int age = GetAge(member);
-                ageGroup[(age < 50) ? age / 10 : 6]++;
+                ageGroup[(age < 50) ? age / 10 : 5]++;
             }
 
             PieSeries series = new PieSeries();
@@ -168,9 +168,13 @@ namespace oop_proj4
         public int GetNewMemCount(DateTime compareDate)
         {
             Table<Member> members = _instance.GetTable<Member>();
-            return (from member in members
-                    where member.RegisterationDate.Year == compareDate.Year && member.RegisterationDate.Month == member.RegisterationDate.Month
-                    select member).Count();
+
+            int count = 0;
+            foreach(Member mem in members)
+            {
+                if (mem.RegisterationDate.Year == compareDate.Year && mem.RegisterationDate.Month == compareDate.Month) count++;
+            }
+            return count;
         }
         public LineSeries GetNewMemberLineSeries(int year)
         {
@@ -182,9 +186,7 @@ namespace oop_proj4
 
             for (int i = 1; i <= 12; i++)
             {
-                MonthNewMemCount[i] = GetNewMemCount(date);
-                date.AddMonths(1);
-
+                MonthNewMemCount[i] = GetNewMemCount(date.AddMonths(i-1));
             }
             LineSeries series = new LineSeries();
             for (int i = 1; i <= 12; i++)
