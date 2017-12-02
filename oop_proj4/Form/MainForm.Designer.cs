@@ -37,7 +37,6 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
             Telerik.WinControls.UI.CategoricalAxis categoricalAxis1 = new Telerik.WinControls.UI.CategoricalAxis();
@@ -134,6 +133,7 @@
             this.pvMain = new Telerik.WinControls.UI.RadPageView();
             this.pageGroupAccount = new Telerik.WinControls.UI.RadPageViewItemPage();
             this.pageManage = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnRemove = new Telerik.WinControls.UI.RadButton();
             this.btnEdit = new Telerik.WinControls.UI.RadButton();
             this.btnNew = new Telerik.WinControls.UI.RadButton();
             this.grdPage = new Telerik.WinControls.UI.RadGridView();
@@ -164,6 +164,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pvMain)).BeginInit();
             this.pvMain.SuspendLayout();
             this.pageManage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPage)).BeginInit();
@@ -226,6 +227,7 @@
             // 
             // pageManage
             // 
+            this.pageManage.Controls.Add(this.btnRemove);
             this.pageManage.Controls.Add(this.btnEdit);
             this.pageManage.Controls.Add(this.btnNew);
             this.pageManage.Controls.Add(this.grdPage);
@@ -235,6 +237,15 @@
             this.pageManage.Size = new System.Drawing.Size(1155, 562);
             this.pageManage.Text = "회원 관리";
             this.pageManage.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(228, 5);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(106, 42);
+            this.btnRemove.TabIndex = 7;
+            this.btnRemove.Text = "삭제";
+            this.btnRemove.ThemeName = "Windows8";
             // 
             // btnEdit
             // 
@@ -272,35 +283,38 @@
             this.grdPage.MasterTemplate.AllowSearchRow = true;
             this.grdPage.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.grdPage.MasterTemplate.ClipboardCopyMode = Telerik.WinControls.UI.GridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            gridViewCheckBoxColumn1.HeaderText = "  ";
-            gridViewCheckBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            gridViewCheckBoxColumn1.Checked = Telerik.WinControls.Enumerations.ToggleState.On;
+            gridViewCheckBoxColumn1.DataType = typeof(int);
+            gridViewCheckBoxColumn1.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
+            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn1.EnableHeaderCheckBox = true;
+            gridViewCheckBoxColumn1.HeaderText = "체크";
+            gridViewCheckBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             gridViewCheckBoxColumn1.Name = "columnCheckbox";
-            gridViewCheckBoxColumn1.Width = 47;
+            gridViewCheckBoxColumn1.Width = 123;
             gridViewTextBoxColumn1.HeaderText = "아이디";
             gridViewTextBoxColumn1.IsVisible = false;
             gridViewTextBoxColumn1.Name = "columnID";
             gridViewTextBoxColumn1.Width = 78;
             gridViewTextBoxColumn2.HeaderText = "이름";
             gridViewTextBoxColumn2.Name = "columnName";
-            gridViewTextBoxColumn2.Width = 81;
+            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn2.Width = 183;
             gridViewTextBoxColumn3.HeaderText = "전화번호";
             gridViewTextBoxColumn3.Name = "columnTel";
-            gridViewTextBoxColumn3.Width = 81;
+            gridViewTextBoxColumn3.Width = 183;
             gridViewTextBoxColumn4.HeaderText = "성별";
             gridViewTextBoxColumn4.Name = "columnGender";
-            gridViewTextBoxColumn4.Width = 266;
-            gridViewTextBoxColumn5.HeaderText = "생년월일";
-            gridViewTextBoxColumn5.Name = "columnBirth";
-            gridViewTextBoxColumn5.Width = 278;
-            gridViewTextBoxColumn6.HeaderText = "등록상태";
-            gridViewTextBoxColumn6.Name = "columnRegistrationState";
-            gridViewTextBoxColumn6.Width = 291;
-            gridViewTextBoxColumn7.HeaderText = "잔여일";
-            gridViewTextBoxColumn7.Name = "columnLeftDay";
-            gridViewTextBoxColumn7.Width = 5;
-            gridViewTextBoxColumn8.HeaderText = "메모";
-            gridViewTextBoxColumn8.Name = "columnMemo";
-            gridViewTextBoxColumn8.Width = 86;
+            gridViewTextBoxColumn4.Width = 183;
+            gridViewTextBoxColumn5.HeaderText = "등록상태";
+            gridViewTextBoxColumn5.Name = "columnRegistrationState";
+            gridViewTextBoxColumn5.Width = 183;
+            gridViewTextBoxColumn6.HeaderText = "잔여일";
+            gridViewTextBoxColumn6.Name = "columnLeftDay";
+            gridViewTextBoxColumn6.Width = 183;
+            gridViewTextBoxColumn7.HeaderText = "메모";
+            gridViewTextBoxColumn7.Name = "columnMemo";
+            gridViewTextBoxColumn7.Width = 96;
             this.grdPage.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewCheckBoxColumn1,
             gridViewTextBoxColumn1,
@@ -309,8 +323,7 @@
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8});
+            gridViewTextBoxColumn7});
             this.grdPage.MasterTemplate.EnableFiltering = true;
             this.grdPage.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.grdPage.MasterTemplate.ViewDefinition = tableViewDefinition1;
@@ -1006,6 +1019,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pvMain)).EndInit();
             this.pvMain.ResumeLayout(false);
             this.pageManage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPage.MasterTemplate)).EndInit();
@@ -1070,5 +1084,6 @@
         private Telerik.WinControls.UI.RadButton btnEdit;
         private Telerik.WinControls.UI.RadButton btnNew;
         private System.Windows.Forms.BindingSource memberBindingSource;
+        private Telerik.WinControls.UI.RadButton btnRemove;
     }
 }

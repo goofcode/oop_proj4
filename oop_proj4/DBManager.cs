@@ -123,5 +123,20 @@ namespace oop_proj4
             var query = "UPDATE Member SET Name = '" + member.Name + "', Tel = '" + member.Tel + "', Gender = " + member.Gender + ", BirthDate = '" + member.BirthDate.ToShortDateString() + "', RegisterationState = " + member.RegisterationState + ", LeftDay = " + member.LeftDay + ", Memo = '" + member.Memo + "' WHERE Id = " + member.Id;
             _instance.ExecuteCommand(query);
         }
+
+        public Member getMember(int id)
+        {
+            Table<Member> Members = _instance.GetTable<Member>();
+
+            var query = from mem in Members
+                        where mem.Id == id
+                        select mem;
+
+
+            foreach (var member in query)
+                return member;
+
+            return null;
+        }
     }
 }
