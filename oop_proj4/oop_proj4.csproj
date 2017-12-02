@@ -118,6 +118,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="database.db" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Member.datasource" />
     <None Include="Properties\Settings.settings">

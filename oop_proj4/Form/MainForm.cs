@@ -83,7 +83,8 @@ namespace oop_proj4
             {
                 this.YearlyStatisticsMembersChart.Series.Clear();
                 this.YearlyStatisticsMoneyChart.Series.Clear();
-
+                this.YearlyStatisticsMembersChart.Series.Add(DBManager.Instance().GetAccMemberLineSeries(2017));
+                this.YearlyStatisticsMoneyChart.Series.Add(DBManager.Instance().GetNewMemberLineSeries(2017));
             };
             this.StatisticsAccountPage.Paint += (s, e) =>
             {
