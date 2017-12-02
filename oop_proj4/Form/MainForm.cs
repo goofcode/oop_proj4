@@ -104,5 +104,50 @@ namespace oop_proj4
                 DBManager.Instance().updateMember(editMember.returnMember);
             }
         }
+
+        private void rad_SelectedPageChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void radPageViewPage1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+
+        }
+
+        private void 월간_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+
+        }
+
+        private void radPageViewPage1_Paint_1(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+            LineSeries lineseria = new LineSeries();
+            MemberStatisticGenderChart.Series.Add(lineseria);
+            lineseria.ValueMember = "Value";
+            lineseria.CategoryMember = "name";
+            lineseria.DataSource= DBManager.Instance().GetTable<Member>();
+           
+        }
+
+        private void radChartView7_Click(object sender, System.EventArgs e)
+        {
+            
+        }
+
+        private void memberBindingSource_CurrentChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void radChartView5_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void MemberStatisticAgeChart_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,6 +38,8 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
+            Telerik.WinControls.UI.PieSeries pieSeries1 = new Telerik.WinControls.UI.PieSeries();
+            Telerik.WinControls.UI.CartesianArea cartesianArea2 = new Telerik.WinControls.UI.CartesianArea();
             Telerik.WinControls.UI.CategoricalAxis categoricalAxis1 = new Telerik.WinControls.UI.CategoricalAxis();
             Telerik.WinControls.UI.LinearAxis linearAxis1 = new Telerik.WinControls.UI.LinearAxis();
             Telerik.WinControls.UI.BarSeries barSeries1 = new Telerik.WinControls.UI.BarSeries();
@@ -52,7 +54,7 @@
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint8 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint9 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint10 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.WinControls.UI.CartesianArea cartesianArea2 = new Telerik.WinControls.UI.CartesianArea();
+            Telerik.WinControls.UI.CartesianArea cartesianArea3 = new Telerik.WinControls.UI.CartesianArea();
             Telerik.WinControls.UI.CategoricalAxis categoricalAxis2 = new Telerik.WinControls.UI.CategoricalAxis();
             Telerik.WinControls.UI.LinearAxis linearAxis2 = new Telerik.WinControls.UI.LinearAxis();
             Telerik.WinControls.UI.LineSeries lineSeries1 = new Telerik.WinControls.UI.LineSeries();
@@ -67,7 +69,7 @@
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint18 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint19 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint20 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.WinControls.UI.CartesianArea cartesianArea3 = new Telerik.WinControls.UI.CartesianArea();
+            Telerik.WinControls.UI.CartesianArea cartesianArea4 = new Telerik.WinControls.UI.CartesianArea();
             Telerik.WinControls.UI.CategoricalAxis categoricalAxis3 = new Telerik.WinControls.UI.CategoricalAxis();
             Telerik.WinControls.UI.LinearAxis linearAxis3 = new Telerik.WinControls.UI.LinearAxis();
             Telerik.WinControls.UI.BarSeries barSeries3 = new Telerik.WinControls.UI.BarSeries();
@@ -82,7 +84,7 @@
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint28 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint29 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint30 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.WinControls.UI.CartesianArea cartesianArea4 = new Telerik.WinControls.UI.CartesianArea();
+            Telerik.WinControls.UI.CartesianArea cartesianArea5 = new Telerik.WinControls.UI.CartesianArea();
             Telerik.WinControls.UI.CategoricalAxis categoricalAxis4 = new Telerik.WinControls.UI.CategoricalAxis();
             Telerik.WinControls.UI.LinearAxis linearAxis4 = new Telerik.WinControls.UI.LinearAxis();
             Telerik.WinControls.UI.LineSeries lineSeries3 = new Telerik.WinControls.UI.LineSeries();
@@ -97,36 +99,6 @@
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint38 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint39 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint40 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.WinControls.UI.CartesianArea cartesianArea5 = new Telerik.WinControls.UI.CartesianArea();
-            Telerik.WinControls.UI.CategoricalAxis categoricalAxis5 = new Telerik.WinControls.UI.CategoricalAxis();
-            Telerik.WinControls.UI.LinearAxis linearAxis5 = new Telerik.WinControls.UI.LinearAxis();
-            Telerik.WinControls.UI.BarSeries barSeries5 = new Telerik.WinControls.UI.BarSeries();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint41 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint42 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint43 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint44 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint45 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.WinControls.UI.BarSeries barSeries6 = new Telerik.WinControls.UI.BarSeries();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint46 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint47 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint48 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint49 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint50 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.WinControls.UI.CartesianArea cartesianArea6 = new Telerik.WinControls.UI.CartesianArea();
-            Telerik.WinControls.UI.CategoricalAxis categoricalAxis6 = new Telerik.WinControls.UI.CategoricalAxis();
-            Telerik.WinControls.UI.LinearAxis linearAxis6 = new Telerik.WinControls.UI.LinearAxis();
-            Telerik.WinControls.UI.LineSeries lineSeries5 = new Telerik.WinControls.UI.LineSeries();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint51 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint52 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint53 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint54 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint55 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.WinControls.UI.LineSeries lineSeries6 = new Telerik.WinControls.UI.LineSeries();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint56 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint57 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint58 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint59 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.Charting.CategoricalDataPoint categoricalDataPoint60 = new Telerik.Charting.CategoricalDataPoint();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.pvMain = new Telerik.WinControls.UI.RadPageView();
@@ -138,27 +110,26 @@
             this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pageStatistics = new Telerik.WinControls.UI.RadPageViewPage();
             this.rad = new Telerik.WinControls.UI.RadPageView();
-            this.일반 = new Telerik.WinControls.UI.RadPageViewPage();
-            this.radTextBox3 = new Telerik.WinControls.UI.RadTextBox();
-            this.radTextBox4 = new Telerik.WinControls.UI.RadTextBox();
-            this.radChartView3 = new Telerik.WinControls.UI.RadChartView();
-            this.radChartView4 = new Telerik.WinControls.UI.RadChartView();
-            this.연간 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.MemberStatisticPage = new Telerik.WinControls.UI.RadPageViewPage();
+            this.MemberStatisticAgeChart = new Telerik.WinControls.UI.RadChartView();
+            this.MemberStatisticGenderChart = new Telerik.WinControls.UI.RadChartView();
+            this.YearStatisticPage = new Telerik.WinControls.UI.RadPageViewPage();
             this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
             this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
-            this.radChartView1 = new Telerik.WinControls.UI.RadChartView();
-            this.radChartView2 = new Telerik.WinControls.UI.RadChartView();
-            this.월간 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.YearStatisticPageChart2 = new Telerik.WinControls.UI.RadChartView();
+            this.YearStatisticPagechart = new Telerik.WinControls.UI.RadChartView();
+            this.MonthStatisticPage = new Telerik.WinControls.UI.RadPageViewPage();
             this.radTextBox5 = new Telerik.WinControls.UI.RadTextBox();
             this.radTextBox6 = new Telerik.WinControls.UI.RadTextBox();
-            this.radChartView5 = new Telerik.WinControls.UI.RadChartView();
-            this.radChartView6 = new Telerik.WinControls.UI.RadChartView();
+            this.MonthStatisticPageChart2 = new Telerik.WinControls.UI.RadChartView();
+            this.MonthStatisticPageChart1 = new Telerik.WinControls.UI.RadChartView();
             this.pageAccounting = new Telerik.WinControls.UI.RadPageViewPage();
             this.pageGroupUser = new Telerik.WinControls.UI.RadPageViewItemPage();
             this.pageSetting = new Telerik.WinControls.UI.RadPageViewPage();
             this.pageLogout = new Telerik.WinControls.UI.RadPageViewPage();
             this.object_6abb8877_465c_4679_8322_baa7ddac60d1 = new Telerik.WinControls.RootRadElement();
             this.radDesktopAlert1 = new Telerik.WinControls.UI.RadDesktopAlert(this.components);
+            this.memberBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pvMain)).BeginInit();
             this.pvMain.SuspendLayout();
             this.pageManage.SuspendLayout();
@@ -170,21 +141,20 @@
             this.pageStatistics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rad)).BeginInit();
             this.rad.SuspendLayout();
-            this.일반.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView4)).BeginInit();
-            this.연간.SuspendLayout();
+            this.MemberStatisticPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticAgeChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticGenderChart)).BeginInit();
+            this.YearStatisticPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView2)).BeginInit();
-            this.월간.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.YearStatisticPageChart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YearStatisticPagechart)).BeginInit();
+            this.MonthStatisticPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonthStatisticPageChart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonthStatisticPageChart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,7 +173,7 @@
             this.pvMain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pvMain.Location = new System.Drawing.Point(0, 0);
             this.pvMain.Name = "pvMain";
-            this.pvMain.SelectedPage = this.pageManage;
+            this.pvMain.SelectedPage = this.pageStatistics;
             this.pvMain.Size = new System.Drawing.Size(1314, 572);
             this.pvMain.TabIndex = 0;
             this.pvMain.ThemeName = "Windows8";
@@ -273,40 +243,40 @@
             gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             gridViewTextBoxColumn1.IsAutoGenerated = true;
             gridViewTextBoxColumn1.Name = "Name";
-            gridViewTextBoxColumn1.Width = 162;
+            gridViewTextBoxColumn1.Width = 161;
             gridViewTextBoxColumn2.FieldName = "Tel";
             gridViewTextBoxColumn2.HeaderText = "전화번호";
             gridViewTextBoxColumn2.IsAutoGenerated = true;
             gridViewTextBoxColumn2.Name = "Tel";
-            gridViewTextBoxColumn2.Width = 162;
+            gridViewTextBoxColumn2.Width = 161;
             gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.FieldName = "Gender";
             gridViewDecimalColumn1.HeaderText = "성별";
             gridViewDecimalColumn1.IsAutoGenerated = true;
             gridViewDecimalColumn1.Name = "Gender";
-            gridViewDecimalColumn1.Width = 162;
+            gridViewDecimalColumn1.Width = 161;
             gridViewDateTimeColumn1.FieldName = "BirthDate";
             gridViewDateTimeColumn1.HeaderText = "생년월일";
             gridViewDateTimeColumn1.IsAutoGenerated = true;
             gridViewDateTimeColumn1.Name = "BirthDate";
-            gridViewDateTimeColumn1.Width = 162;
+            gridViewDateTimeColumn1.Width = 161;
             gridViewDecimalColumn2.DataType = typeof(int);
             gridViewDecimalColumn2.FieldName = "RegisterationState";
             gridViewDecimalColumn2.HeaderText = "등록상태";
             gridViewDecimalColumn2.IsAutoGenerated = true;
             gridViewDecimalColumn2.Name = "RegisterationState";
-            gridViewDecimalColumn2.Width = 162;
+            gridViewDecimalColumn2.Width = 161;
             gridViewDecimalColumn3.DataType = typeof(int);
             gridViewDecimalColumn3.FieldName = "LeftDay";
             gridViewDecimalColumn3.HeaderText = "만기일";
             gridViewDecimalColumn3.IsAutoGenerated = true;
             gridViewDecimalColumn3.Name = "LeftDay";
-            gridViewDecimalColumn3.Width = 162;
+            gridViewDecimalColumn3.Width = 161;
             gridViewTextBoxColumn3.FieldName = "Memo";
             gridViewTextBoxColumn3.HeaderText = "메모";
             gridViewTextBoxColumn3.IsAutoGenerated = true;
             gridViewTextBoxColumn3.Name = "Memo";
-            gridViewTextBoxColumn3.Width = 162;
+            gridViewTextBoxColumn3.Width = 161;
             this.grdPage.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -328,6 +298,7 @@
             // memberBindingSource
             // 
             this.memberBindingSource.DataSource = typeof(oop_proj4.Member);
+            this.memberBindingSource.CurrentChanged += new System.EventHandler(this.memberBindingSource_CurrentChanged);
             // 
             // pageStatistics
             // 
@@ -341,59 +312,96 @@
             // 
             // rad
             // 
-            this.rad.Controls.Add(this.일반);
-            this.rad.Controls.Add(this.연간);
-            this.rad.Controls.Add(this.월간);
-            this.rad.DefaultPage = this.일반;
-            this.rad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rad.Controls.Add(this.MemberStatisticPage);
+            this.rad.Controls.Add(this.YearStatisticPage);
+            this.rad.Controls.Add(this.MonthStatisticPage);
+            this.rad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rad.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.rad.Location = new System.Drawing.Point(0, 0);
             this.rad.Name = "rad";
             this.rad.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rad.SelectedPage = this.일반;
-            this.rad.Size = new System.Drawing.Size(1155, 687);
+            this.rad.SelectedPage = this.MonthStatisticPage;
+            this.rad.Size = new System.Drawing.Size(1155, 562);
             this.rad.TabIndex = 0;
             this.rad.Text = "rad";
             this.rad.ThemeName = "Windows8";
+            this.rad.SelectedPageChanged += new System.EventHandler(this.rad_SelectedPageChanged);
+            ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.rad.GetChildAt(0).GetChildAt(3))).Text = "월간";
             // 
-            // 일반
+            // MemberStatisticPage
             // 
-            this.일반.Controls.Add(this.radTextBox3);
-            this.일반.Controls.Add(this.radTextBox4);
-            this.일반.Controls.Add(this.radChartView3);
-            this.일반.Controls.Add(this.radChartView4);
-            this.일반.Location = new System.Drawing.Point(5, 27);
-            this.일반.Name = "일반";
-            this.일반.Size = new System.Drawing.Size(1145, 655);
-            this.일반.Tag = "";
-            this.일반.Text = "일반";
+            this.MemberStatisticPage.Controls.Add(this.MemberStatisticAgeChart);
+            this.MemberStatisticPage.Controls.Add(this.MemberStatisticGenderChart);
+            this.MemberStatisticPage.ItemSize = new System.Drawing.SizeF(37F, 26F);
+            this.MemberStatisticPage.Location = new System.Drawing.Point(5, 29);
+            this.MemberStatisticPage.Name = "MemberStatisticPage";
+            this.MemberStatisticPage.Size = new System.Drawing.Size(1145, 528);
+            this.MemberStatisticPage.Text = "회원";
+            this.MemberStatisticPage.Paint += new System.Windows.Forms.PaintEventHandler(this.radPageViewPage1_Paint_1);
             // 
-            // radTextBox3
+            // MemberStatisticAgeChart
             // 
-            this.radTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radTextBox3.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox3.Location = new System.Drawing.Point(514, 67);
-            this.radTextBox3.Name = "radTextBox3";
-            this.radTextBox3.Size = new System.Drawing.Size(254, 117);
-            this.radTextBox3.TabIndex = 7;
-            this.radTextBox3.Text = "못된샛기";
-            this.radTextBox3.ThemeName = "Windows8";
+            this.MemberStatisticAgeChart.AreaDesign = cartesianArea1;
+            this.MemberStatisticAgeChart.Location = new System.Drawing.Point(507, 55);
+            this.MemberStatisticAgeChart.Name = "MemberStatisticAgeChart";
+            this.MemberStatisticAgeChart.ShowGrid = false;
+            this.MemberStatisticAgeChart.Size = new System.Drawing.Size(414, 390);
+            this.MemberStatisticAgeChart.TabIndex = 1;
+            this.MemberStatisticAgeChart.Text = "radChartView1";
+            this.MemberStatisticAgeChart.Click += new System.EventHandler(this.MemberStatisticAgeChart_Click);
             // 
-            // radTextBox4
+            // MemberStatisticGenderChart
             // 
-            this.radTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radTextBox4.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox4.Location = new System.Drawing.Point(101, 67);
-            this.radTextBox4.Name = "radTextBox4";
-            this.radTextBox4.Size = new System.Drawing.Size(248, 121);
-            this.radTextBox4.TabIndex = 6;
-            this.radTextBox4.Text = "사장샛기";
-            this.radTextBox4.ThemeName = "Windows8";
-            this.radTextBox4.UseGenericBorderPaint = true;
+            this.MemberStatisticGenderChart.AreaType = Telerik.WinControls.UI.ChartAreaType.Pie;
+            this.MemberStatisticGenderChart.Location = new System.Drawing.Point(21, 55);
+            this.MemberStatisticGenderChart.Name = "MemberStatisticGenderChart";
+            pieSeries1.ShowLabels = true;
+            this.MemberStatisticGenderChart.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
+            pieSeries1});
+            this.MemberStatisticGenderChart.ShowGrid = false;
+            this.MemberStatisticGenderChart.Size = new System.Drawing.Size(401, 390);
+            this.MemberStatisticGenderChart.TabIndex = 0;
+            this.MemberStatisticGenderChart.Text = "radChartView7";
+            this.MemberStatisticGenderChart.Click += new System.EventHandler(this.radChartView7_Click);
             // 
-            // radChartView3
+            // YearStatisticPage
             // 
-            this.radChartView3.AreaDesign = cartesianArea1;
+            this.YearStatisticPage.Controls.Add(this.radTextBox1);
+            this.YearStatisticPage.Controls.Add(this.radTextBox2);
+            this.YearStatisticPage.Controls.Add(this.YearStatisticPageChart2);
+            this.YearStatisticPage.Controls.Add(this.YearStatisticPagechart);
+            this.YearStatisticPage.ItemSize = new System.Drawing.SizeF(37F, 26F);
+            this.YearStatisticPage.Location = new System.Drawing.Point(5, 29);
+            this.YearStatisticPage.Name = "YearStatisticPage";
+            this.YearStatisticPage.Size = new System.Drawing.Size(1145, 528);
+            this.YearStatisticPage.Text = "연간";
+            // 
+            // radTextBox1
+            // 
+            this.radTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.radTextBox1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTextBox1.Location = new System.Drawing.Point(509, 44);
+            this.radTextBox1.Name = "radTextBox1";
+            this.radTextBox1.Size = new System.Drawing.Size(254, 85);
+            this.radTextBox1.TabIndex = 11;
+            this.radTextBox1.Text = "못된샛기";
+            this.radTextBox1.ThemeName = "Windows8";
+            // 
+            // radTextBox2
+            // 
+            this.radTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.radTextBox2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTextBox2.Location = new System.Drawing.Point(96, 44);
+            this.radTextBox2.Name = "radTextBox2";
+            this.radTextBox2.Size = new System.Drawing.Size(248, 89);
+            this.radTextBox2.TabIndex = 10;
+            this.radTextBox2.Text = "사장샛기";
+            this.radTextBox2.ThemeName = "Windows8";
+            this.radTextBox2.UseGenericBorderPaint = true;
+            // 
+            // YearStatisticPageChart2
+            // 
+            this.YearStatisticPageChart2.AreaDesign = cartesianArea2;
             categoricalAxis1.GradientPercentage = 10F;
             categoricalAxis1.IsPrimary = true;
             categoricalAxis1.LabelRotationAngle = 300D;
@@ -404,12 +412,12 @@
             linearAxis1.MajorStep = 10D;
             linearAxis1.TickOrigin = null;
             linearAxis1.Title = "";
-            this.radChartView3.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
+            this.YearStatisticPageChart2.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
             categoricalAxis1,
             linearAxis1});
-            this.radChartView3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radChartView3.Location = new System.Drawing.Point(454, 189);
-            this.radChartView3.Name = "radChartView3";
+            this.YearStatisticPageChart2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.YearStatisticPageChart2.Location = new System.Drawing.Point(449, 166);
+            this.YearStatisticPageChart2.Name = "YearStatisticPageChart2";
             categoricalDataPoint1.Category = "A";
             categoricalDataPoint1.Label = 77D;
             categoricalDataPoint1.Value = 77D;
@@ -459,18 +467,18 @@
             barSeries2.HorizontalAxis = categoricalAxis1;
             barSeries2.LabelMode = Telerik.WinControls.UI.BarLabelModes.Top;
             barSeries2.VerticalAxis = linearAxis1;
-            this.radChartView3.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
+            this.YearStatisticPageChart2.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
             barSeries1,
             barSeries2});
-            this.radChartView3.ShowGrid = false;
-            this.radChartView3.Size = new System.Drawing.Size(376, 366);
-            this.radChartView3.TabIndex = 5;
-            this.radChartView3.Text = "radChartView3";
-            this.radChartView3.ThemeName = "Windows8";
+            this.YearStatisticPageChart2.ShowGrid = false;
+            this.YearStatisticPageChart2.Size = new System.Drawing.Size(376, 366);
+            this.YearStatisticPageChart2.TabIndex = 9;
+            this.YearStatisticPageChart2.Text = "radChartView1";
+            this.YearStatisticPageChart2.ThemeName = "Windows8";
             // 
-            // radChartView4
+            // YearStatisticPagechart
             // 
-            this.radChartView4.AreaDesign = cartesianArea2;
+            this.YearStatisticPagechart.AreaDesign = cartesianArea3;
             categoricalAxis2.BackColor = System.Drawing.SystemColors.ButtonFace;
             categoricalAxis2.BackColor2 = System.Drawing.SystemColors.ButtonFace;
             categoricalAxis2.BackColor3 = System.Drawing.SystemColors.ButtonFace;
@@ -488,12 +496,12 @@
             linearAxis2.MajorStep = 10D;
             linearAxis2.TickOrigin = null;
             linearAxis2.Title = "";
-            this.radChartView4.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
+            this.YearStatisticPagechart.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
             categoricalAxis2,
             linearAxis2});
-            this.radChartView4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radChartView4.Location = new System.Drawing.Point(22, 189);
-            this.radChartView4.Name = "radChartView4";
+            this.YearStatisticPagechart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.YearStatisticPagechart.Location = new System.Drawing.Point(17, 166);
+            this.YearStatisticPagechart.Name = "YearStatisticPagechart";
             categoricalDataPoint11.Category = "미필 띠후";
             categoricalDataPoint11.Label = 60D;
             categoricalDataPoint11.Value = 60D;
@@ -544,52 +552,54 @@
             lineSeries2.LabelAngle = 90D;
             lineSeries2.LabelDistanceToPoint = 15D;
             lineSeries2.VerticalAxis = linearAxis2;
-            this.radChartView4.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
+            this.YearStatisticPagechart.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
             lineSeries1,
             lineSeries2});
-            this.radChartView4.ShowGrid = false;
-            this.radChartView4.Size = new System.Drawing.Size(365, 366);
-            this.radChartView4.TabIndex = 4;
-            this.radChartView4.Text = "radChartView4";
-            this.radChartView4.ThemeName = "Windows8";
+            this.YearStatisticPagechart.ShowGrid = false;
+            this.YearStatisticPagechart.Size = new System.Drawing.Size(365, 366);
+            this.YearStatisticPagechart.TabIndex = 8;
+            this.YearStatisticPagechart.Text = "radChartView2";
+            this.YearStatisticPagechart.ThemeName = "Windows8";
             // 
-            // 연간
+            // MonthStatisticPage
             // 
-            this.연간.Controls.Add(this.radTextBox1);
-            this.연간.Controls.Add(this.radTextBox2);
-            this.연간.Controls.Add(this.radChartView1);
-            this.연간.Controls.Add(this.radChartView2);
-            this.연간.Location = new System.Drawing.Point(5, 29);
-            this.연간.Name = "연간";
-            this.연간.Size = new System.Drawing.Size(1268, 653);
-            this.연간.Text = "연간";
+            this.MonthStatisticPage.Controls.Add(this.radTextBox5);
+            this.MonthStatisticPage.Controls.Add(this.radTextBox6);
+            this.MonthStatisticPage.Controls.Add(this.MonthStatisticPageChart2);
+            this.MonthStatisticPage.Controls.Add(this.MonthStatisticPageChart1);
+            this.MonthStatisticPage.ItemSize = new System.Drawing.SizeF(37F, 26F);
+            this.MonthStatisticPage.Location = new System.Drawing.Point(5, 29);
+            this.MonthStatisticPage.Name = "MonthStatisticPage";
+            this.MonthStatisticPage.Size = new System.Drawing.Size(1145, 528);
+            this.MonthStatisticPage.Text = "월간";
+            this.MonthStatisticPage.Paint += new System.Windows.Forms.PaintEventHandler(this.월간_Paint);
             // 
-            // radTextBox1
+            // radTextBox5
             // 
-            this.radTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radTextBox1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox1.Location = new System.Drawing.Point(509, 44);
-            this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(254, 117);
-            this.radTextBox1.TabIndex = 11;
-            this.radTextBox1.Text = "못된샛기";
-            this.radTextBox1.ThemeName = "Windows8";
+            this.radTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.radTextBox5.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTextBox5.Location = new System.Drawing.Point(546, 82);
+            this.radTextBox5.Name = "radTextBox5";
+            this.radTextBox5.Size = new System.Drawing.Size(254, 85);
+            this.radTextBox5.TabIndex = 11;
+            this.radTextBox5.Text = "못된샛기";
+            this.radTextBox5.ThemeName = "Windows8";
             // 
-            // radTextBox2
+            // radTextBox6
             // 
-            this.radTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radTextBox2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox2.Location = new System.Drawing.Point(96, 44);
-            this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.Size = new System.Drawing.Size(248, 121);
-            this.radTextBox2.TabIndex = 10;
-            this.radTextBox2.Text = "사장샛기";
-            this.radTextBox2.ThemeName = "Windows8";
-            this.radTextBox2.UseGenericBorderPaint = true;
+            this.radTextBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.radTextBox6.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTextBox6.Location = new System.Drawing.Point(133, 82);
+            this.radTextBox6.Name = "radTextBox6";
+            this.radTextBox6.Size = new System.Drawing.Size(248, 89);
+            this.radTextBox6.TabIndex = 10;
+            this.radTextBox6.Text = "사장나빠";
+            this.radTextBox6.ThemeName = "Windows8";
+            this.radTextBox6.UseGenericBorderPaint = true;
             // 
-            // radChartView1
+            // MonthStatisticPageChart2
             // 
-            this.radChartView1.AreaDesign = cartesianArea3;
+            this.MonthStatisticPageChart2.AreaDesign = cartesianArea4;
             categoricalAxis3.GradientPercentage = 10F;
             categoricalAxis3.IsPrimary = true;
             categoricalAxis3.LabelRotationAngle = 300D;
@@ -600,12 +610,12 @@
             linearAxis3.MajorStep = 10D;
             linearAxis3.TickOrigin = null;
             linearAxis3.Title = "";
-            this.radChartView1.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
+            this.MonthStatisticPageChart2.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
             categoricalAxis3,
             linearAxis3});
-            this.radChartView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radChartView1.Location = new System.Drawing.Point(449, 166);
-            this.radChartView1.Name = "radChartView1";
+            this.MonthStatisticPageChart2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.MonthStatisticPageChart2.Location = new System.Drawing.Point(486, 204);
+            this.MonthStatisticPageChart2.Name = "MonthStatisticPageChart2";
             categoricalDataPoint21.Category = "A";
             categoricalDataPoint21.Label = 77D;
             categoricalDataPoint21.Value = 77D;
@@ -655,18 +665,19 @@
             barSeries4.HorizontalAxis = categoricalAxis3;
             barSeries4.LabelMode = Telerik.WinControls.UI.BarLabelModes.Top;
             barSeries4.VerticalAxis = linearAxis3;
-            this.radChartView1.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
+            this.MonthStatisticPageChart2.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
             barSeries3,
             barSeries4});
-            this.radChartView1.ShowGrid = false;
-            this.radChartView1.Size = new System.Drawing.Size(376, 366);
-            this.radChartView1.TabIndex = 9;
-            this.radChartView1.Text = "radChartView1";
-            this.radChartView1.ThemeName = "Windows8";
+            this.MonthStatisticPageChart2.ShowGrid = false;
+            this.MonthStatisticPageChart2.Size = new System.Drawing.Size(376, 366);
+            this.MonthStatisticPageChart2.TabIndex = 9;
+            this.MonthStatisticPageChart2.Text = "radChartView5";
+            this.MonthStatisticPageChart2.ThemeName = "Windows8";
+            this.MonthStatisticPageChart2.Click += new System.EventHandler(this.radChartView5_Click);
             // 
-            // radChartView2
+            // MonthStatisticPageChart1
             // 
-            this.radChartView2.AreaDesign = cartesianArea4;
+            this.MonthStatisticPageChart1.AreaDesign = cartesianArea5;
             categoricalAxis4.BackColor = System.Drawing.SystemColors.ButtonFace;
             categoricalAxis4.BackColor2 = System.Drawing.SystemColors.ButtonFace;
             categoricalAxis4.BackColor3 = System.Drawing.SystemColors.ButtonFace;
@@ -684,12 +695,12 @@
             linearAxis4.MajorStep = 10D;
             linearAxis4.TickOrigin = null;
             linearAxis4.Title = "";
-            this.radChartView2.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
+            this.MonthStatisticPageChart1.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
             categoricalAxis4,
             linearAxis4});
-            this.radChartView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radChartView2.Location = new System.Drawing.Point(17, 166);
-            this.radChartView2.Name = "radChartView2";
+            this.MonthStatisticPageChart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.MonthStatisticPageChart1.Location = new System.Drawing.Point(54, 204);
+            this.MonthStatisticPageChart1.Name = "MonthStatisticPageChart1";
             categoricalDataPoint31.Category = "미필 띠후";
             categoricalDataPoint31.Label = 60D;
             categoricalDataPoint31.Value = 60D;
@@ -740,217 +751,21 @@
             lineSeries4.LabelAngle = 90D;
             lineSeries4.LabelDistanceToPoint = 15D;
             lineSeries4.VerticalAxis = linearAxis4;
-            this.radChartView2.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
+            this.MonthStatisticPageChart1.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
             lineSeries3,
             lineSeries4});
-            this.radChartView2.ShowGrid = false;
-            this.radChartView2.Size = new System.Drawing.Size(365, 366);
-            this.radChartView2.TabIndex = 8;
-            this.radChartView2.Text = "radChartView2";
-            this.radChartView2.ThemeName = "Windows8";
-            // 
-            // 월간
-            // 
-            this.월간.Controls.Add(this.radTextBox5);
-            this.월간.Controls.Add(this.radTextBox6);
-            this.월간.Controls.Add(this.radChartView5);
-            this.월간.Controls.Add(this.radChartView6);
-            this.월간.Location = new System.Drawing.Point(5, 29);
-            this.월간.Name = "월간";
-            this.월간.Size = new System.Drawing.Size(1268, 653);
-            this.월간.Text = "월간";
-            // 
-            // radTextBox5
-            // 
-            this.radTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radTextBox5.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox5.Location = new System.Drawing.Point(546, 82);
-            this.radTextBox5.Name = "radTextBox5";
-            this.radTextBox5.Size = new System.Drawing.Size(254, 117);
-            this.radTextBox5.TabIndex = 11;
-            this.radTextBox5.Text = "못된샛기";
-            this.radTextBox5.ThemeName = "Windows8";
-            // 
-            // radTextBox6
-            // 
-            this.radTextBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radTextBox6.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox6.Location = new System.Drawing.Point(133, 82);
-            this.radTextBox6.Name = "radTextBox6";
-            this.radTextBox6.Size = new System.Drawing.Size(248, 121);
-            this.radTextBox6.TabIndex = 10;
-            this.radTextBox6.Text = "사장나빠";
-            this.radTextBox6.ThemeName = "Windows8";
-            this.radTextBox6.UseGenericBorderPaint = true;
-            // 
-            // radChartView5
-            // 
-            this.radChartView5.AreaDesign = cartesianArea5;
-            categoricalAxis5.GradientPercentage = 10F;
-            categoricalAxis5.IsPrimary = true;
-            categoricalAxis5.LabelRotationAngle = 300D;
-            categoricalAxis5.Title = "";
-            linearAxis5.AxisType = Telerik.Charting.AxisType.Second;
-            linearAxis5.IsPrimary = true;
-            linearAxis5.LabelRotationAngle = 300D;
-            linearAxis5.MajorStep = 10D;
-            linearAxis5.TickOrigin = null;
-            linearAxis5.Title = "";
-            this.radChartView5.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
-            categoricalAxis5,
-            linearAxis5});
-            this.radChartView5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radChartView5.Location = new System.Drawing.Point(486, 204);
-            this.radChartView5.Name = "radChartView5";
-            categoricalDataPoint41.Category = "A";
-            categoricalDataPoint41.Label = 77D;
-            categoricalDataPoint41.Value = 77D;
-            categoricalDataPoint42.Category = "B";
-            categoricalDataPoint42.Label = 58D;
-            categoricalDataPoint42.Value = 58D;
-            categoricalDataPoint43.Category = "C";
-            categoricalDataPoint43.Label = 18D;
-            categoricalDataPoint43.Value = 18D;
-            categoricalDataPoint44.Category = "D";
-            categoricalDataPoint44.Label = 16D;
-            categoricalDataPoint44.Value = 16D;
-            categoricalDataPoint45.Category = "E";
-            categoricalDataPoint45.Label = 76D;
-            categoricalDataPoint45.Value = 76D;
-            barSeries5.DataPoints.AddRange(new Telerik.Charting.DataPoint[] {
-            categoricalDataPoint41,
-            categoricalDataPoint42,
-            categoricalDataPoint43,
-            categoricalDataPoint44,
-            categoricalDataPoint45});
-            barSeries5.HorizontalAxis = categoricalAxis5;
-            barSeries5.LabelMode = Telerik.WinControls.UI.BarLabelModes.Top;
-            barSeries5.LegendTitle = null;
-            barSeries5.VerticalAxis = linearAxis5;
-            categoricalDataPoint46.Category = "A";
-            categoricalDataPoint46.Label = 15D;
-            categoricalDataPoint46.Value = 15D;
-            categoricalDataPoint47.Category = "B";
-            categoricalDataPoint47.Label = 60D;
-            categoricalDataPoint47.Value = 60D;
-            categoricalDataPoint48.Category = "C";
-            categoricalDataPoint48.Label = 66D;
-            categoricalDataPoint48.Value = 66D;
-            categoricalDataPoint49.Category = "D";
-            categoricalDataPoint49.Label = 82D;
-            categoricalDataPoint49.Value = 82D;
-            categoricalDataPoint50.Category = "E";
-            categoricalDataPoint50.Label = 79D;
-            categoricalDataPoint50.Value = 79D;
-            barSeries6.DataPoints.AddRange(new Telerik.Charting.DataPoint[] {
-            categoricalDataPoint46,
-            categoricalDataPoint47,
-            categoricalDataPoint48,
-            categoricalDataPoint49,
-            categoricalDataPoint50});
-            barSeries6.HorizontalAxis = categoricalAxis5;
-            barSeries6.LabelMode = Telerik.WinControls.UI.BarLabelModes.Top;
-            barSeries6.VerticalAxis = linearAxis5;
-            this.radChartView5.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
-            barSeries5,
-            barSeries6});
-            this.radChartView5.ShowGrid = false;
-            this.radChartView5.Size = new System.Drawing.Size(376, 366);
-            this.radChartView5.TabIndex = 9;
-            this.radChartView5.Text = "radChartView5";
-            this.radChartView5.ThemeName = "Windows8";
-            // 
-            // radChartView6
-            // 
-            this.radChartView6.AreaDesign = cartesianArea6;
-            categoricalAxis6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            categoricalAxis6.BackColor2 = System.Drawing.SystemColors.ButtonFace;
-            categoricalAxis6.BackColor3 = System.Drawing.SystemColors.ButtonFace;
-            categoricalAxis6.BackColor4 = System.Drawing.SystemColors.ButtonFace;
-            categoricalAxis6.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            categoricalAxis6.BorderBottomShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            categoricalAxis6.IsPrimary = true;
-            categoricalAxis6.LabelRotationAngle = 300D;
-            categoricalAxis6.ScaleBreakBackColor = System.Drawing.SystemColors.ButtonFace;
-            categoricalAxis6.Title = "";
-            linearAxis6.AxisType = Telerik.Charting.AxisType.Second;
-            linearAxis6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            linearAxis6.IsPrimary = true;
-            linearAxis6.LabelRotationAngle = 300D;
-            linearAxis6.MajorStep = 10D;
-            linearAxis6.TickOrigin = null;
-            linearAxis6.Title = "";
-            this.radChartView6.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
-            categoricalAxis6,
-            linearAxis6});
-            this.radChartView6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.radChartView6.Location = new System.Drawing.Point(54, 204);
-            this.radChartView6.Name = "radChartView6";
-            categoricalDataPoint51.Category = "미필 띠후";
-            categoricalDataPoint51.Label = 60D;
-            categoricalDataPoint51.Value = 60D;
-            categoricalDataPoint52.Category = "지사장";
-            categoricalDataPoint52.Label = 75D;
-            categoricalDataPoint52.Value = 75D;
-            categoricalDataPoint53.Category = "한주임";
-            categoricalDataPoint53.Label = 80D;
-            categoricalDataPoint53.Value = 80D;
-            categoricalDataPoint54.Category = "한대리";
-            categoricalDataPoint54.Label = 90D;
-            categoricalDataPoint54.Value = 90D;
-            categoricalDataPoint55.Category = "리틀";
-            categoricalDataPoint55.Label = 11D;
-            categoricalDataPoint55.Value = 11D;
-            lineSeries5.DataPoints.AddRange(new Telerik.Charting.DataPoint[] {
-            categoricalDataPoint51,
-            categoricalDataPoint52,
-            categoricalDataPoint53,
-            categoricalDataPoint54,
-            categoricalDataPoint55});
-            lineSeries5.HorizontalAxis = categoricalAxis6;
-            lineSeries5.LabelAngle = 90D;
-            lineSeries5.LabelDistanceToPoint = 15D;
-            lineSeries5.VerticalAxis = linearAxis6;
-            categoricalDataPoint56.Category = "미필 띠후";
-            categoricalDataPoint56.Label = 82D;
-            categoricalDataPoint56.Value = 82D;
-            categoricalDataPoint57.Category = "지사장";
-            categoricalDataPoint57.Label = 47D;
-            categoricalDataPoint57.Value = 47D;
-            categoricalDataPoint58.Category = "한주임";
-            categoricalDataPoint58.Label = 47D;
-            categoricalDataPoint58.Value = 47D;
-            categoricalDataPoint59.Category = "한대리";
-            categoricalDataPoint59.Label = 67D;
-            categoricalDataPoint59.Value = 67D;
-            categoricalDataPoint60.Category = "리틀";
-            categoricalDataPoint60.Label = 22D;
-            categoricalDataPoint60.Value = 22D;
-            lineSeries6.DataPoints.AddRange(new Telerik.Charting.DataPoint[] {
-            categoricalDataPoint56,
-            categoricalDataPoint57,
-            categoricalDataPoint58,
-            categoricalDataPoint59,
-            categoricalDataPoint60});
-            lineSeries6.HorizontalAxis = categoricalAxis6;
-            lineSeries6.LabelAngle = 90D;
-            lineSeries6.LabelDistanceToPoint = 15D;
-            lineSeries6.VerticalAxis = linearAxis6;
-            this.radChartView6.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
-            lineSeries5,
-            lineSeries6});
-            this.radChartView6.ShowGrid = false;
-            this.radChartView6.Size = new System.Drawing.Size(365, 366);
-            this.radChartView6.TabIndex = 8;
-            this.radChartView6.Text = "radChartView6";
-            this.radChartView6.ThemeName = "Windows8";
+            this.MonthStatisticPageChart1.ShowGrid = false;
+            this.MonthStatisticPageChart1.Size = new System.Drawing.Size(365, 366);
+            this.MonthStatisticPageChart1.TabIndex = 8;
+            this.MonthStatisticPageChart1.Text = "radChartView6";
+            this.MonthStatisticPageChart1.ThemeName = "Windows8";
             // 
             // pageAccounting
             // 
             this.pageAccounting.ItemSize = new System.Drawing.SizeF(97F, 29F);
             this.pageAccounting.Location = new System.Drawing.Point(154, 5);
             this.pageAccounting.Name = "pageAccounting";
-            this.pageAccounting.Size = new System.Drawing.Size(1278, 845);
+            this.pageAccounting.Size = new System.Drawing.Size(1155, 562);
             this.pageAccounting.Text = "회계";
             this.pageAccounting.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -991,9 +806,13 @@
             // 
             this.radDesktopAlert1.ThemeName = "Windows8";
             // 
+            // memberBindingSource1
+            // 
+            this.memberBindingSource1.DataSource = typeof(oop_proj4.Member);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1310, 569);
             this.Controls.Add(this.pvMain);
@@ -1019,24 +838,22 @@
             this.pageStatistics.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rad)).EndInit();
             this.rad.ResumeLayout(false);
-            this.일반.ResumeLayout(false);
-            this.일반.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView4)).EndInit();
-            this.연간.ResumeLayout(false);
-            this.연간.PerformLayout();
+            this.MemberStatisticPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticAgeChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticGenderChart)).EndInit();
+            this.YearStatisticPage.ResumeLayout(false);
+            this.YearStatisticPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView2)).EndInit();
-            this.월간.ResumeLayout(false);
-            this.월간.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.YearStatisticPageChart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YearStatisticPagechart)).EndInit();
+            this.MonthStatisticPage.ResumeLayout(false);
+            this.MonthStatisticPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radChartView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonthStatisticPageChart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonthStatisticPageChart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -1057,23 +874,22 @@
         private Telerik.WinControls.UI.RadDesktopAlert radDesktopAlert1;
 
         private Telerik.WinControls.UI.RadPageView rad;
-        private Telerik.WinControls.UI.RadPageViewPage 일반;
-        private Telerik.WinControls.UI.RadTextBox radTextBox3;
-        private Telerik.WinControls.UI.RadTextBox radTextBox4;
-        private Telerik.WinControls.UI.RadChartView radChartView3;
-        private Telerik.WinControls.UI.RadChartView radChartView4;
-        private Telerik.WinControls.UI.RadPageViewPage 연간;
+        private Telerik.WinControls.UI.RadPageViewPage YearStatisticPage;
         private Telerik.WinControls.UI.RadTextBox radTextBox1;
         private Telerik.WinControls.UI.RadTextBox radTextBox2;
-        private Telerik.WinControls.UI.RadChartView radChartView1;
-        private Telerik.WinControls.UI.RadChartView radChartView2;
-        private Telerik.WinControls.UI.RadPageViewPage 월간;
+        private Telerik.WinControls.UI.RadChartView YearStatisticPageChart2;
+        private Telerik.WinControls.UI.RadChartView YearStatisticPagechart;
+        private Telerik.WinControls.UI.RadPageViewPage MonthStatisticPage;
         private Telerik.WinControls.UI.RadTextBox radTextBox5;
         private Telerik.WinControls.UI.RadTextBox radTextBox6;
-        private Telerik.WinControls.UI.RadChartView radChartView5;
-        private Telerik.WinControls.UI.RadChartView radChartView6;
+        private Telerik.WinControls.UI.RadChartView MonthStatisticPageChart2;
+        private Telerik.WinControls.UI.RadChartView MonthStatisticPageChart1;
         private Telerik.WinControls.UI.RadButton btnEdit;
         private Telerik.WinControls.UI.RadButton btnNew;
         private System.Windows.Forms.BindingSource memberBindingSource;
+        private Telerik.WinControls.UI.RadPageViewPage MemberStatisticPage;
+        private Telerik.WinControls.UI.RadChartView MemberStatisticGenderChart;
+        private System.Windows.Forms.BindingSource memberBindingSource1;
+        private Telerik.WinControls.UI.RadChartView MemberStatisticAgeChart;
     }
 }
