@@ -8,6 +8,7 @@ namespace oop_proj4
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)] public int Id { get; set; }
         [Column] public string MemberId { get; set; }
+        [Column] public int Amount { get; set; }
         [Column] public DateTime Date { get; set; }
         [Column] public int Type { get; set; }
         [Column] public int PayMethod { get; set; }
