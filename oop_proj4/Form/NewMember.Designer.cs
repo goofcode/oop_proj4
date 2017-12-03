@@ -45,8 +45,8 @@
             this.txtGender = new Telerik.WinControls.UI.RadTextBox();
             this.txtState = new Telerik.WinControls.UI.RadTextBox();
             this.dtpBirth = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.txtLeftDay = new Telerik.WinControls.UI.RadTextBox();
-            this.txtLeftDayLabel = new Telerik.WinControls.UI.RadTextBox();
+            this.txtEndDate = new Telerik.WinControls.UI.RadTextBox();
+            this.dtpEnd = new Telerik.WinControls.UI.RadDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnApply)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMemo)).BeginInit();
@@ -63,8 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLeftDay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLeftDayLabel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -227,33 +227,38 @@
             this.dtpBirth.ThemeName = "Windows8";
             this.dtpBirth.Value = new System.DateTime(2017, 11, 27, 0, 0, 0, 0);
             // 
-            // txtLeftDay
+            // txtEndDate
             // 
-            this.txtLeftDay.Location = new System.Drawing.Point(316, 135);
-            this.txtLeftDay.Name = "txtLeftDay";
-            this.txtLeftDay.Size = new System.Drawing.Size(111, 31);
-            this.txtLeftDay.TabIndex = 26;
-            this.txtLeftDay.ThemeName = "Windows8";
+            this.txtEndDate.AcceptsTab = true;
+            this.txtEndDate.Enabled = false;
+            this.txtEndDate.Location = new System.Drawing.Point(220, 133);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.ReadOnly = true;
+            this.txtEndDate.Size = new System.Drawing.Size(83, 31);
+            this.txtEndDate.TabIndex = 27;
+            this.txtEndDate.Text = "· 마감일";
+            this.txtEndDate.ThemeName = "Windows8";
             // 
-            // txtLeftDayLabel
+            // dtpEnd
             // 
-            this.txtLeftDayLabel.AcceptsTab = true;
-            this.txtLeftDayLabel.Enabled = false;
-            this.txtLeftDayLabel.Location = new System.Drawing.Point(220, 133);
-            this.txtLeftDayLabel.Name = "txtLeftDayLabel";
-            this.txtLeftDayLabel.ReadOnly = true;
-            this.txtLeftDayLabel.Size = new System.Drawing.Size(83, 31);
-            this.txtLeftDayLabel.TabIndex = 27;
-            this.txtLeftDayLabel.Text = "· 잔여일";
-            this.txtLeftDayLabel.ThemeName = "Windows8";
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEnd.Location = new System.Drawing.Point(316, 133);
+            this.dtpEnd.MaxDate = new System.DateTime(2017, 11, 27, 0, 0, 0, 0);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(111, 31);
+            this.dtpEnd.TabIndex = 25;
+            this.dtpEnd.TabStop = false;
+            this.dtpEnd.Text = "2017-11-27";
+            this.dtpEnd.ThemeName = "Windows8";
+            this.dtpEnd.Value = new System.DateTime(2017, 11, 27, 0, 0, 0, 0);
             // 
             // NewMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 415);
-            this.Controls.Add(this.txtLeftDayLabel);
-            this.Controls.Add(this.txtLeftDay);
+            this.Controls.Add(this.dtpEnd);
+            this.Controls.Add(this.txtEndDate);
             this.Controls.Add(this.dtpBirth);
             this.Controls.Add(this.txtState);
             this.Controls.Add(this.txtGender);
@@ -298,8 +303,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtState)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLeftDay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLeftDayLabel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -323,7 +328,7 @@
         private Telerik.WinControls.UI.RadTextBox txtGender;
         private Telerik.WinControls.UI.RadTextBox txtState;
         private Telerik.WinControls.UI.RadDateTimePicker dtpBirth;
-        private Telerik.WinControls.UI.RadTextBox txtLeftDay;
-        private Telerik.WinControls.UI.RadTextBox txtLeftDayLabel;
+        private Telerik.WinControls.UI.RadTextBox txtEndDate;
+        private Telerik.WinControls.UI.RadDateTimePicker dtpEnd;
     }
 }

@@ -1,5 +1,7 @@
-﻿using System.Data.Linq;
+﻿using System;
+using System.Data.Linq;
 using System.Drawing;
+using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 
@@ -21,13 +23,7 @@ namespace oop_proj4
                 if (NewMember.result == System.Windows.Forms.DialogResult.OK)
                 {
                     DBManager.Instance().insertMember(NewMember.returnMember);
-                    this.grdPage.Rows.Add(NewMember.returnMember.Name,
-                                     NewMember.returnMember.Tel,
-                                     NewMember.returnMember.Gender,
-                                     NewMember.returnMember.BirthDate.ToShortDateString(),
-                                     NewMember.returnMember.RegisterationState,
-                                     NewMember.returnMember.LeftDay,
-                                     NewMember.returnMember.Memo);
+                    this.appendMemberToGridView(NewMember.returnMember);
 
                     this.grdPage.Update();
                 }
@@ -35,28 +31,49 @@ namespace oop_proj4
 
             this.btnEdit.Click += (s, e) =>
             {
-                Member selectedMember = (Member) this.grdPage.SelectedRows[0].DataBoundItem;
-                editNewMember(selectedMember);
-                this.grdPage.Select();
+                int id = Convert.ToInt32(this.grdPage.SelectedRows[0].Cells["columnId"].Value);
+                Member selectedMember = DBManager.Instance().getMember(id);
+                editNewMember(selectedMember, this.grdPage.SelectedRows[0].Index);
             };
 
             this.grdPage.CellDoubleClick += (s, e) =>
             {
+                if (e.ColumnIndex == this.grdPage.Columns["columnCheckbox"].Index)
+                    return;
+
                 int rowIndex = e.RowIndex;
 
                 if (rowIndex >= 0)
                 {
-                    Member selectedMember = (Member) this.grdPage.Rows[rowIndex].DataBoundItem;
-                    editNewMember(selectedMember);
+                    int id = Convert.ToInt32(this.grdPage.Rows[rowIndex].Cells["columnId"].Value);
+                    Member selectedMember = DBManager.Instance().getMember(id);
+                    editNewMember(selectedMember, rowIndex);
+                }
+            };
+
+            this.grdPage.CellClick += (s, e) =>
+            {
+                if (e.ColumnIndex == this.grdPage.Columns["columnCheckbox"].Index)
+                {
+                    int rowIndex = e.RowIndex;
+
+                    if (rowIndex < 0)
+                        return;
+
+                    int value = (int)this.grdPage.Rows[rowIndex].Cells["columnCheckbox"].Value;
+                    if (value == 0)
+                        this.grdPage.Rows[rowIndex].Cells["columnCheckbox"].Value = 1;
+                    else
+                        this.grdPage.Rows[rowIndex].Cells["columnCheckbox"].Value = 0;
                 }
             };
 
             this.grdPage.CellPaint += (s, e) =>
             {
-                if (e.Cell != null && e.Cell.RowInfo is GridViewDataRowInfo && e.Cell.ColumnInfo.Name == "Name")
+                if (e.Cell != null && e.Cell.RowInfo is GridViewDataRowInfo && e.Cell.ColumnInfo.Name == "columnName")
                 {
                     Pen pen;
-                    if ((int)e.Cell.RowInfo.Cells["Gender"].Value == 1)
+                    if (e.Cell.RowInfo.Cells["columnGender"].Value == "남자")
                     {
                         pen = Pens.Blue;
                     }
@@ -82,32 +99,55 @@ namespace oop_proj4
                 this.YearlyStatisticsMoneyChart.Series.Clear();
                 this.MemberStatisticGenderChart.Series.Add(DBManager.Instance().GetGenderPieSeries());
                 this.MemberStatisticAgeChart.Series.Add(DBManager.Instance().GetAgeGroupPieSeries());
-                
+            };
+
+            this.btnRemove.Click += (s, e) =>
+            {
+                DialogResult dialogResult = RadMessageBox.Show("정말 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    for (int i = this.grdPage.Rows.Count - 1; i >= 0; i--)
+                    {
+                        if ((int)this.grdPage.Rows[i].Cells["columnCheckbox"].Value == 1)
+                        {
+                            this.grdPage.Rows.RemoveAt(i);
+                        }
+                    }
+                }
+
             };
 
             Table<Member> members = DBManager.Instance().GetTable<Member>();
-            this.grdPage.DataSource = members;
 
-            ConditionalFormattingObject obj = new ConditionalFormattingObject("GenderFormat", ConditionTypes.Equal, "1", "", true);
+            foreach (Member member in members)
+            {
+                this.appendMemberToGridView(member);
+            }
+            this.grdPage.BestFitColumns();  
+
+            ConditionalFormattingObject obj = new ConditionalFormattingObject("GenderFormat", ConditionTypes.Equal, "남자", "", true);
             obj.CellForeColor = System.Drawing.Color.Blue;
-            this.grdPage.Columns["Gender"].ConditionalFormattingObjectList.Add(obj);
+            this.grdPage.Columns["columnGender"].ConditionalFormattingObjectList.Add(obj);
 
-            obj = new ConditionalFormattingObject("GenderFormat", ConditionTypes.Equal, "2", "", true);
+            obj = new ConditionalFormattingObject("GenderFormat", ConditionTypes.Equal, "여자", "", true);
             obj.CellForeColor = System.Drawing.Color.Red;
-            this.grdPage.Columns["Gender"].ConditionalFormattingObjectList.Add(obj);
+            this.grdPage.Columns["columnGender"].ConditionalFormattingObjectList.Add(obj);
+            
+            obj = new ConditionalFormattingObject("StateFormat", ConditionTypes.Equal, "정지", "", true);
+            obj.CellForeColor = Color.Silver;
+            this.grdPage.Columns["columnRegistrationState"].ConditionalFormattingObjectList.Add(obj);   
 
-            obj = new ConditionalFormattingObject("StateFormat", ConditionTypes.Equal, "2", "", true);
+            obj = new ConditionalFormattingObject("StateFormat", ConditionTypes.Equal, "탈퇴", "", true);
             obj.RowBackColor = System.Drawing.Color.PaleVioletRed;
-            this.grdPage.Columns["RegisterationState"].ConditionalFormattingObjectList.Add(obj);
+            this.grdPage.Columns["columnRegistrationState"].ConditionalFormattingObjectList.Add(obj);
 
             obj = new ConditionalFormattingObject("LeftDayFormat", ConditionTypes.LessOrEqual, "30", "", true);
             obj.CellForeColor = System.Drawing.Color.Red;
-            this.grdPage.Columns["LeftDay"].ConditionalFormattingObjectList.Add(obj);
-
-            this.grdPage.Columns["Name"].TextAlignment = ContentAlignment.MiddleRight;
+            this.grdPage.Columns["columnLeftDay"].ConditionalFormattingObjectList.Add(obj);
         }
 
-        private void editNewMember(Member selectedMember)
+        private void editNewMember(Member selectedMember, int rowIndex)
         {
             NewMember editMember = new NewMember();
             editMember.ShowDialog(2, selectedMember);
@@ -115,78 +155,34 @@ namespace oop_proj4
             if (editMember.result == System.Windows.Forms.DialogResult.OK)
             {
                 DBManager.Instance().updateMember(editMember.returnMember);
+                this.updateMemberToGridView(editMember.returnMember, rowIndex);
             }
         }
 
-        private void rad_SelectedPageChanged(object sender, System.EventArgs e)
+        private object[] getRowDataFromMember(Member member)
         {
-
+            return new object[] {
+                    0
+                    , member.Id // 숨김
+                    , member.Name
+                    , member.Tel
+                    , member.ToStringGender()
+                    , member.ToStringRegistrationState()
+                    , member.EndDate
+                    , member.Memo
+                };
         }
 
-        private void radPageViewPage1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        private void appendMemberToGridView(Member member)
         {
-
+            this.grdPage.Rows.Add(this.getRowDataFromMember(member));
         }
 
-        private void 월간_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        private void updateMemberToGridView(Member member, int rowIndex)
         {
-
-        }
-
-        private void radPageViewPage1_Paint_1(object sender, System.Windows.Forms.PaintEventArgs e)
-        {
-          
-           
-        }
-
-        private void radChartView7_Click(object sender, System.EventArgs e)
-        {
-            
-        }
-
-        private void memberBindingSource_CurrentChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void radChartView5_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void MemberStatisticAgeChart_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void MonthStatisticPageMonthlyMembers_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void radTextBox3_TextChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void radLabel1_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void radLabel3_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void radLabel4_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void MonthlyStatisticsMembersChart_Click(object sender, System.EventArgs e)
-        {
-
+            object[] rowdata = this.getRowDataFromMember(member);
+            for (int i = 0; i < rowdata.Length; i++)
+                this.grdPage.Rows[rowIndex].Cells[i].Value = rowdata[i];
         }
     }
 }

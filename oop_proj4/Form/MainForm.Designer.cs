@@ -29,14 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.PieSeries pieSeries1 = new Telerik.WinControls.UI.PieSeries();
+            Telerik.Charting.PieDataPoint pieDataPoint1 = new Telerik.Charting.PieDataPoint();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            Telerik.WinControls.UI.PieSeries pieSeries2 = new Telerik.WinControls.UI.PieSeries();
             Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
             Telerik.WinControls.UI.CategoricalAxis categoricalAxis1 = new Telerik.WinControls.UI.CategoricalAxis();
             Telerik.WinControls.UI.LinearAxis linearAxis1 = new Telerik.WinControls.UI.LinearAxis();
@@ -67,10 +72,6 @@
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint18 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint19 = new Telerik.Charting.CategoricalDataPoint();
             Telerik.Charting.CategoricalDataPoint categoricalDataPoint20 = new Telerik.Charting.CategoricalDataPoint();
-            Telerik.WinControls.UI.PieSeries pieSeries2 = new Telerik.WinControls.UI.PieSeries();
-            Telerik.WinControls.UI.PieSeries pieSeries1 = new Telerik.WinControls.UI.PieSeries();
-            Telerik.Charting.PieDataPoint pieDataPoint1 = new Telerik.Charting.PieDataPoint();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             Telerik.WinControls.UI.CartesianArea cartesianArea3 = new Telerik.WinControls.UI.CartesianArea();
             Telerik.WinControls.UI.CategoricalAxis categoricalAxis3 = new Telerik.WinControls.UI.CategoricalAxis();
             Telerik.WinControls.UI.LinearAxis linearAxis3 = new Telerik.WinControls.UI.LinearAxis();
@@ -105,37 +106,39 @@
             this.pvMain = new Telerik.WinControls.UI.RadPageView();
             this.pageGroupAccount = new Telerik.WinControls.UI.RadPageViewItemPage();
             this.pageManage = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnRemove = new Telerik.WinControls.UI.RadButton();
             this.btnEdit = new Telerik.WinControls.UI.RadButton();
             this.btnNew = new Telerik.WinControls.UI.RadButton();
             this.grdPage = new Telerik.WinControls.UI.RadGridView();
             this.pageStatistics = new Telerik.WinControls.UI.RadPageViewPage();
             this.rad = new Telerik.WinControls.UI.RadPageView();
             this.MemberStatisticPage = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.MemberStatisticAgeChart = new Telerik.WinControls.UI.RadChartView();
+            this.MemberStatisticGenderChart = new Telerik.WinControls.UI.RadChartView();
             this.YearStatisticPage = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.YearlyStatisticsMoneyChart = new Telerik.WinControls.UI.RadChartView();
             this.YearlyStatisticsMembersChart = new Telerik.WinControls.UI.RadChartView();
-            this.pageAccounting = new Telerik.WinControls.UI.RadPageViewPage();
-            this.pageGroupUser = new Telerik.WinControls.UI.RadPageViewItemPage();
-            this.pageSetting = new Telerik.WinControls.UI.RadPageViewPage();
-            this.pageLogout = new Telerik.WinControls.UI.RadPageViewPage();
-            this.object_6abb8877_465c_4679_8322_baa7ddac60d1 = new Telerik.WinControls.RootRadElement();
-            this.radDesktopAlert1 = new Telerik.WinControls.UI.RadDesktopAlert(this.components);
-            this.MemberStatisticGenderChart = new Telerik.WinControls.UI.RadChartView();
-            this.MemberStatisticAgeChart = new Telerik.WinControls.UI.RadChartView();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.StatisticsAccountPage = new Telerik.WinControls.UI.RadPageViewPage();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.MonthlyMoneyDiffChart = new Telerik.WinControls.UI.RadChartView();
             this.YearlyMoneyChart = new Telerik.WinControls.UI.RadChartView();
+            this.pageAccounting = new Telerik.WinControls.UI.RadPageViewPage();
+            this.pageGroupUser = new Telerik.WinControls.UI.RadPageViewItemPage();
+            this.pageSetting = new Telerik.WinControls.UI.RadPageViewPage();
+            this.pageLogout = new Telerik.WinControls.UI.RadPageViewPage();
             this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.object_6abb8877_465c_4679_8322_baa7ddac60d1 = new Telerik.WinControls.RootRadElement();
+            this.radDesktopAlert1 = new Telerik.WinControls.UI.RadDesktopAlert(this.components);
             this.memberBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pvMain)).BeginInit();
             this.pvMain.SuspendLayout();
             this.pageManage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPage)).BeginInit();
@@ -144,15 +147,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.rad)).BeginInit();
             this.rad.SuspendLayout();
             this.MemberStatisticPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticAgeChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticGenderChart)).BeginInit();
             this.YearStatisticPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearlyStatisticsMoneyChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearlyStatisticsMembersChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticGenderChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticAgeChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             this.StatisticsAccountPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
@@ -190,7 +193,7 @@
             // 
             // pageGroupAccount
             // 
-            this.pageGroupAccount.ItemSize = new System.Drawing.SizeF(117F, 31F);
+            this.pageGroupAccount.ItemSize = new System.Drawing.SizeF(97F, 27F);
             this.pageGroupAccount.ItemType = Telerik.WinControls.UI.PageViewItemType.GroupHeaderItem;
             this.pageGroupAccount.Location = new System.Drawing.Point(0, 0);
             this.pageGroupAccount.Name = "pageGroupAccount";
@@ -199,15 +202,25 @@
             // 
             // pageManage
             // 
+            this.pageManage.Controls.Add(this.btnRemove);
             this.pageManage.Controls.Add(this.btnEdit);
             this.pageManage.Controls.Add(this.btnNew);
             this.pageManage.Controls.Add(this.grdPage);
-            this.pageManage.ItemSize = new System.Drawing.SizeF(117F, 31F);
+            this.pageManage.ItemSize = new System.Drawing.SizeF(97F, 29F);
             this.pageManage.Location = new System.Drawing.Point(154, 5);
             this.pageManage.Name = "pageManage";
             this.pageManage.Size = new System.Drawing.Size(1155, 562);
             this.pageManage.Text = "회원 관리";
             this.pageManage.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(228, 5);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(106, 42);
+            this.btnRemove.TabIndex = 7;
+            this.btnRemove.Text = "삭제";
+            this.btnRemove.ThemeName = "Windows8";
             // 
             // btnEdit
             // 
@@ -230,6 +243,7 @@
             // grdPage
             // 
             this.grdPage.AutoSizeRows = true;
+            this.grdPage.CausesValidation = false;
             this.grdPage.EnableCustomDrawing = true;
             this.grdPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdPage.Location = new System.Drawing.Point(3, 53);
@@ -243,54 +257,48 @@
             this.grdPage.MasterTemplate.AllowRowResize = false;
             this.grdPage.MasterTemplate.AllowSearchRow = true;
             this.grdPage.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FieldName = "Name";
-            gridViewTextBoxColumn1.HeaderText = "이름";
-            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "Name";
-            gridViewTextBoxColumn1.Width = 161;
-            gridViewTextBoxColumn2.FieldName = "Tel";
-            gridViewTextBoxColumn2.HeaderText = "전화번호";
-            gridViewTextBoxColumn2.IsAutoGenerated = true;
-            gridViewTextBoxColumn2.Name = "Tel";
-            gridViewTextBoxColumn2.Width = 161;
-            gridViewDecimalColumn1.DataType = typeof(int);
-            gridViewDecimalColumn1.FieldName = "Gender";
-            gridViewDecimalColumn1.HeaderText = "성별";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.Name = "Gender";
-            gridViewDecimalColumn1.Width = 161;
-            gridViewDateTimeColumn1.FieldName = "BirthDate";
-            gridViewDateTimeColumn1.HeaderText = "생년월일";
-            gridViewDateTimeColumn1.IsAutoGenerated = true;
-            gridViewDateTimeColumn1.Name = "BirthDate";
-            gridViewDateTimeColumn1.Width = 161;
-            gridViewDecimalColumn2.DataType = typeof(int);
-            gridViewDecimalColumn2.FieldName = "RegisterationState";
-            gridViewDecimalColumn2.HeaderText = "등록상태";
-            gridViewDecimalColumn2.IsAutoGenerated = true;
-            gridViewDecimalColumn2.Name = "RegisterationState";
-            gridViewDecimalColumn2.Width = 161;
-            gridViewDecimalColumn3.DataType = typeof(int);
-            gridViewDecimalColumn3.FieldName = "LeftDay";
-            gridViewDecimalColumn3.HeaderText = "만기일";
-            gridViewDecimalColumn3.IsAutoGenerated = true;
-            gridViewDecimalColumn3.Name = "LeftDay";
-            gridViewDecimalColumn3.Width = 161;
-            gridViewTextBoxColumn3.FieldName = "Memo";
-            gridViewTextBoxColumn3.HeaderText = "메모";
-            gridViewTextBoxColumn3.IsAutoGenerated = true;
-            gridViewTextBoxColumn3.Name = "Memo";
-            gridViewTextBoxColumn3.Width = 161;
+            this.grdPage.MasterTemplate.ClipboardCopyMode = Telerik.WinControls.UI.GridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            gridViewCheckBoxColumn1.Checked = Telerik.WinControls.Enumerations.ToggleState.On;
+            gridViewCheckBoxColumn1.DataType = typeof(int);
+            gridViewCheckBoxColumn1.EditMode = Telerik.WinControls.UI.EditMode.OnValueChange;
+            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn1.EnableHeaderCheckBox = true;
+            gridViewCheckBoxColumn1.HeaderText = "체크";
+            gridViewCheckBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            gridViewCheckBoxColumn1.Name = "columnCheckbox";
+            gridViewCheckBoxColumn1.Width = 123;
+            gridViewTextBoxColumn1.HeaderText = "아이디";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "columnID";
+            gridViewTextBoxColumn1.Width = 78;
+            gridViewTextBoxColumn2.HeaderText = "이름";
+            gridViewTextBoxColumn2.Name = "columnName";
+            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn2.Width = 183;
+            gridViewTextBoxColumn3.HeaderText = "전화번호";
+            gridViewTextBoxColumn3.Name = "columnTel";
+            gridViewTextBoxColumn3.Width = 183;
+            gridViewTextBoxColumn4.HeaderText = "성별";
+            gridViewTextBoxColumn4.Name = "columnGender";
+            gridViewTextBoxColumn4.Width = 183;
+            gridViewTextBoxColumn5.HeaderText = "등록상태";
+            gridViewTextBoxColumn5.Name = "columnRegistrationState";
+            gridViewTextBoxColumn5.Width = 183;
+            gridViewTextBoxColumn6.HeaderText = "마감일";
+            gridViewTextBoxColumn6.Name = "columnEndDate";
+            gridViewTextBoxColumn6.Width = 183;
+            gridViewTextBoxColumn7.HeaderText = "메모";
+            gridViewTextBoxColumn7.Name = "columnMemo";
+            gridViewTextBoxColumn7.Width = 96;
             this.grdPage.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewCheckBoxColumn1,
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
-            gridViewDecimalColumn1,
-            gridViewDateTimeColumn1,
-            gridViewDecimalColumn2,
-            gridViewDecimalColumn3,
-            gridViewTextBoxColumn3});
-            this.grdPage.MasterTemplate.DataSource = this.memberBindingSource;
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7});
             this.grdPage.MasterTemplate.EnableFiltering = true;
             this.grdPage.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.grdPage.MasterTemplate.ViewDefinition = tableViewDefinition1;
@@ -303,7 +311,7 @@
             // pageStatistics
             // 
             this.pageStatistics.Controls.Add(this.rad);
-            this.pageStatistics.ItemSize = new System.Drawing.SizeF(117F, 31F);
+            this.pageStatistics.ItemSize = new System.Drawing.SizeF(97F, 29F);
             this.pageStatistics.Location = new System.Drawing.Point(154, 5);
             this.pageStatistics.Name = "pageStatistics";
             this.pageStatistics.Size = new System.Drawing.Size(1155, 562);
@@ -325,7 +333,6 @@
             this.rad.TabIndex = 0;
             this.rad.Text = "rad";
             this.rad.ThemeName = "Windows8";
-            this.rad.SelectedPageChanged += new System.EventHandler(this.rad_SelectedPageChanged);
             ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.rad.GetChildAt(0).GetChildAt(3))).Text = "회계";
             // 
             // MemberStatisticPage
@@ -335,12 +342,84 @@
             this.MemberStatisticPage.Controls.Add(this.radLabel1);
             this.MemberStatisticPage.Controls.Add(this.MemberStatisticAgeChart);
             this.MemberStatisticPage.Controls.Add(this.MemberStatisticGenderChart);
-            this.MemberStatisticPage.ItemSize = new System.Drawing.SizeF(61F, 24F);
             this.MemberStatisticPage.Location = new System.Drawing.Point(5, 27);
             this.MemberStatisticPage.Name = "MemberStatisticPage";
             this.MemberStatisticPage.Size = new System.Drawing.Size(1145, 530);
             this.MemberStatisticPage.Text = "회원 분포";
-            this.MemberStatisticPage.Paint += new System.Windows.Forms.PaintEventHandler(this.radPageViewPage1_Paint_1);
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 30F);
+            this.radLabel2.Location = new System.Drawing.Point(582, 34);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(286, 60);
+            this.radLabel2.TabIndex = 5;
+            this.radLabel2.Text = "회원 연령 분포";
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 30F);
+            this.radLabel1.Location = new System.Drawing.Point(88, 34);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(286, 60);
+            this.radLabel1.TabIndex = 4;
+            this.radLabel1.Text = "회원 성별 분포";
+            this.radLabel1.ThemeName = "Windows8";
+            // 
+            // MemberStatisticAgeChart
+            // 
+            this.MemberStatisticAgeChart.AreaType = Telerik.WinControls.UI.ChartAreaType.Pie;
+            this.MemberStatisticAgeChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.MemberStatisticAgeChart.Location = new System.Drawing.Point(536, 100);
+            this.MemberStatisticAgeChart.Name = "MemberStatisticAgeChart";
+            pieSeries1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(162)))), ((int)(((byte)(200)))));
+            pieSeries1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(162)))), ((int)(((byte)(200)))));
+            pieDataPoint1.Label = 0D;
+            pieDataPoint1.LegendTitle = "0";
+            pieDataPoint1.OffsetFromCenter = 0D;
+            pieDataPoint1.RadiusAspectRatio = 1F;
+            pieDataPoint1.Value = 0D;
+            pieSeries1.DataPoints.AddRange(new Telerik.Charting.DataPoint[] {
+            pieDataPoint1});
+            pieSeries1.DataSource = ((object)(resources.GetObject("pieSeries1.DataSource")));
+            this.MemberStatisticAgeChart.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
+            pieSeries1});
+            this.MemberStatisticAgeChart.ShowGrid = false;
+            this.MemberStatisticAgeChart.ShowLegend = true;
+            this.MemberStatisticAgeChart.Size = new System.Drawing.Size(414, 390);
+            this.MemberStatisticAgeChart.TabIndex = 1;
+            this.MemberStatisticAgeChart.Text = "radChartView1";
+            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticAgeChart.GetChildAt(0))).DrawBorder = false;
+            // 
+            // MemberStatisticGenderChart
+            // 
+            this.MemberStatisticGenderChart.AreaType = Telerik.WinControls.UI.ChartAreaType.Pie;
+            this.MemberStatisticGenderChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.MemberStatisticGenderChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.MemberStatisticGenderChart.Location = new System.Drawing.Point(35, 100);
+            this.MemberStatisticGenderChart.Name = "MemberStatisticGenderChart";
+            pieSeries2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            pieSeries2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            pieSeries2.LabelsOffsetFromCenter = 0F;
+            pieSeries2.ShowLabels = true;
+            this.MemberStatisticGenderChart.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
+            pieSeries2});
+            this.MemberStatisticGenderChart.ShowGrid = false;
+            this.MemberStatisticGenderChart.ShowLegend = true;
+            this.MemberStatisticGenderChart.ShowToolTip = true;
+            this.MemberStatisticGenderChart.Size = new System.Drawing.Size(401, 390);
+            this.MemberStatisticGenderChart.TabIndex = 0;
+            this.MemberStatisticGenderChart.TabStop = false;
+            this.MemberStatisticGenderChart.Text = "radChartView7";
+            this.MemberStatisticGenderChart.ThemeName = "Windows8";
+            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).CanFocus = false;
+            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).DrawBorder = false;
+            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).BorderBoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders;
+            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).BorderWidth = 0F;
+            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).BorderTopWidth = 0F;
+            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).BorderBottomWidth = 0F;
+            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).AutoSize = true;
             // 
             // YearStatisticPage
             // 
@@ -348,11 +427,28 @@
             this.YearStatisticPage.Controls.Add(this.radLabel3);
             this.YearStatisticPage.Controls.Add(this.YearlyStatisticsMoneyChart);
             this.YearStatisticPage.Controls.Add(this.YearlyStatisticsMembersChart);
-            this.YearStatisticPage.ItemSize = new System.Drawing.SizeF(61F, 24F);
             this.YearStatisticPage.Location = new System.Drawing.Point(5, 27);
             this.YearStatisticPage.Name = "YearStatisticPage";
             this.YearStatisticPage.Size = new System.Drawing.Size(1145, 530);
             this.YearStatisticPage.Text = "연간 회원";
+            // 
+            // radLabel4
+            // 
+            this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 30F);
+            this.radLabel4.Location = new System.Drawing.Point(643, 34);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(192, 60);
+            this.radLabel4.TabIndex = 11;
+            this.radLabel4.Text = "신규 회원";
+            // 
+            // radLabel3
+            // 
+            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 30F);
+            this.radLabel3.Location = new System.Drawing.Point(123, 34);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(203, 60);
+            this.radLabel3.TabIndex = 10;
+            this.radLabel3.Text = "총 인원 수";
             // 
             // YearlyStatisticsMoneyChart
             // 
@@ -519,149 +615,6 @@
             this.YearlyStatisticsMembersChart.ThemeName = "Windows8";
             ((Telerik.WinControls.UI.RadChartElement)(this.YearlyStatisticsMembersChart.GetChildAt(0))).DrawBorder = false;
             // 
-            // pageAccounting
-            // 
-            this.pageAccounting.ItemSize = new System.Drawing.SizeF(117F, 31F);
-            this.pageAccounting.Location = new System.Drawing.Point(154, 5);
-            this.pageAccounting.Name = "pageAccounting";
-            this.pageAccounting.Size = new System.Drawing.Size(1155, 562);
-            this.pageAccounting.Text = "회계";
-            this.pageAccounting.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pageGroupUser
-            // 
-            this.pageGroupUser.ItemSize = new System.Drawing.SizeF(117F, 31F);
-            this.pageGroupUser.ItemType = Telerik.WinControls.UI.PageViewItemType.GroupHeaderItem;
-            this.pageGroupUser.Location = new System.Drawing.Point(0, 0);
-            this.pageGroupUser.Name = "pageGroupUser";
-            this.pageGroupUser.Size = new System.Drawing.Size(0, 0);
-            this.pageGroupUser.Text = "프로그램 설정";
-            // 
-            // pageSetting
-            // 
-            this.pageSetting.ItemSize = new System.Drawing.SizeF(117F, 31F);
-            this.pageSetting.Location = new System.Drawing.Point(154, 5);
-            this.pageSetting.Name = "pageSetting";
-            this.pageSetting.Size = new System.Drawing.Size(1155, 562);
-            this.pageSetting.Text = "설정";
-            this.pageSetting.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pageLogout
-            // 
-            this.pageLogout.ItemSize = new System.Drawing.SizeF(117F, 31F);
-            this.pageLogout.Location = new System.Drawing.Point(154, 5);
-            this.pageLogout.Name = "pageLogout";
-            this.pageLogout.Size = new System.Drawing.Size(1155, 562);
-            this.pageLogout.Text = "로그아웃";
-            this.pageLogout.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // object_6abb8877_465c_4679_8322_baa7ddac60d1
-            // 
-            this.object_6abb8877_465c_4679_8322_baa7ddac60d1.Name = "object_6abb8877_465c_4679_8322_baa7ddac60d1";
-            this.object_6abb8877_465c_4679_8322_baa7ddac60d1.StretchHorizontally = true;
-            this.object_6abb8877_465c_4679_8322_baa7ddac60d1.StretchVertically = true;
-            // 
-            // radDesktopAlert1
-            // 
-            this.radDesktopAlert1.ThemeName = "Windows8";
-            // 
-            // MemberStatisticGenderChart
-            // 
-            this.MemberStatisticGenderChart.AreaType = Telerik.WinControls.UI.ChartAreaType.Pie;
-            this.MemberStatisticGenderChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.MemberStatisticGenderChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.MemberStatisticGenderChart.Location = new System.Drawing.Point(35, 100);
-            this.MemberStatisticGenderChart.Name = "MemberStatisticGenderChart";
-            pieSeries2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            pieSeries2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            pieSeries2.LabelsOffsetFromCenter = 0F;
-            pieSeries2.ShowLabels = true;
-            this.MemberStatisticGenderChart.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
-            pieSeries2});
-            this.MemberStatisticGenderChart.ShowGrid = false;
-            this.MemberStatisticGenderChart.ShowLegend = true;
-            this.MemberStatisticGenderChart.ShowToolTip = true;
-            this.MemberStatisticGenderChart.Size = new System.Drawing.Size(401, 390);
-            this.MemberStatisticGenderChart.TabIndex = 0;
-            this.MemberStatisticGenderChart.TabStop = false;
-            this.MemberStatisticGenderChart.Text = "radChartView7";
-            this.MemberStatisticGenderChart.ThemeName = "Windows8";
-            this.MemberStatisticGenderChart.Click += new System.EventHandler(this.radChartView7_Click);
-            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).CanFocus = false;
-            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).DrawBorder = false;
-            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).BorderBoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders;
-            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).BorderWidth = 0F;
-            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).BorderTopWidth = 0F;
-            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).BorderBottomWidth = 0F;
-            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticGenderChart.GetChildAt(0))).AutoSize = true;
-            // 
-            // MemberStatisticAgeChart
-            // 
-            this.MemberStatisticAgeChart.AreaType = Telerik.WinControls.UI.ChartAreaType.Pie;
-            this.MemberStatisticAgeChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.MemberStatisticAgeChart.Location = new System.Drawing.Point(536, 100);
-            this.MemberStatisticAgeChart.Name = "MemberStatisticAgeChart";
-            pieSeries1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(162)))), ((int)(((byte)(200)))));
-            pieSeries1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(162)))), ((int)(((byte)(200)))));
-            pieDataPoint1.Label = 0D;
-            pieDataPoint1.LegendTitle = "0";
-            pieDataPoint1.OffsetFromCenter = 0D;
-            pieDataPoint1.RadiusAspectRatio = 1F;
-            pieDataPoint1.Value = 0D;
-            pieSeries1.DataPoints.AddRange(new Telerik.Charting.DataPoint[] {
-            pieDataPoint1});
-            pieSeries1.DataSource = ((object)(resources.GetObject("pieSeries1.DataSource")));
-            this.MemberStatisticAgeChart.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
-            pieSeries1});
-            this.MemberStatisticAgeChart.ShowGrid = false;
-            this.MemberStatisticAgeChart.ShowLegend = true;
-            this.MemberStatisticAgeChart.Size = new System.Drawing.Size(414, 390);
-            this.MemberStatisticAgeChart.TabIndex = 1;
-            this.MemberStatisticAgeChart.Text = "radChartView1";
-            this.MemberStatisticAgeChart.Click += new System.EventHandler(this.MemberStatisticAgeChart_Click);
-            ((Telerik.WinControls.UI.RadChartElement)(this.MemberStatisticAgeChart.GetChildAt(0))).DrawBorder = false;
-            // 
-            // radLabel1
-            // 
-            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 30F);
-            this.radLabel1.Location = new System.Drawing.Point(88, 34);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(286, 60);
-            this.radLabel1.TabIndex = 4;
-            this.radLabel1.Text = "회원 성별 분포";
-            this.radLabel1.ThemeName = "Windows8";
-            this.radLabel1.Click += new System.EventHandler(this.radLabel1_Click);
-            // 
-            // radLabel2
-            // 
-            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 30F);
-            this.radLabel2.Location = new System.Drawing.Point(582, 34);
-            this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(286, 60);
-            this.radLabel2.TabIndex = 5;
-            this.radLabel2.Text = "회원 연령 분포";
-            // 
-            // radLabel3
-            // 
-            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 30F);
-            this.radLabel3.Location = new System.Drawing.Point(123, 34);
-            this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(203, 60);
-            this.radLabel3.TabIndex = 10;
-            this.radLabel3.Text = "총 인원 수";
-            this.radLabel3.Click += new System.EventHandler(this.radLabel3_Click);
-            // 
-            // radLabel4
-            // 
-            this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 30F);
-            this.radLabel4.Location = new System.Drawing.Point(643, 34);
-            this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(192, 60);
-            this.radLabel4.TabIndex = 11;
-            this.radLabel4.Text = "신규 회원";
-            this.radLabel4.Click += new System.EventHandler(this.radLabel4_Click);
-            // 
             // StatisticsAccountPage
             // 
             this.StatisticsAccountPage.BackColor = System.Drawing.Color.Transparent;
@@ -670,10 +623,9 @@
             this.StatisticsAccountPage.Controls.Add(this.radLabel5);
             this.StatisticsAccountPage.Controls.Add(this.MonthlyMoneyDiffChart);
             this.StatisticsAccountPage.Controls.Add(this.YearlyMoneyChart);
-            this.StatisticsAccountPage.ItemSize = new System.Drawing.SizeF(35F, 24F);
-            this.StatisticsAccountPage.Location = new System.Drawing.Point(5, 27);
+            this.StatisticsAccountPage.Location = new System.Drawing.Point(5, 29);
             this.StatisticsAccountPage.Name = "StatisticsAccountPage";
-            this.StatisticsAccountPage.Size = new System.Drawing.Size(1145, 530);
+            this.StatisticsAccountPage.Size = new System.Drawing.Size(1145, 528);
             this.StatisticsAccountPage.Text = "회계";
             // 
             // radLabel6
@@ -862,13 +814,57 @@
             this.YearlyMoneyChart.TabIndex = 12;
             this.YearlyMoneyChart.Text = "radChartView6";
             this.YearlyMoneyChart.ThemeName = "Windows8";
-            this.YearlyMoneyChart.Click += new System.EventHandler(this.MonthlyStatisticsMembersChart_Click);
             ((Telerik.WinControls.UI.RadChartElement)(this.YearlyMoneyChart.GetChildAt(0))).DrawBorder = false;
+            // 
+            // pageAccounting
+            // 
+            this.pageAccounting.ItemSize = new System.Drawing.SizeF(97F, 29F);
+            this.pageAccounting.Location = new System.Drawing.Point(154, 5);
+            this.pageAccounting.Name = "pageAccounting";
+            this.pageAccounting.Size = new System.Drawing.Size(1155, 562);
+            this.pageAccounting.Text = "회계";
+            this.pageAccounting.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pageGroupUser
+            // 
+            this.pageGroupUser.ItemSize = new System.Drawing.SizeF(97F, 27F);
+            this.pageGroupUser.ItemType = Telerik.WinControls.UI.PageViewItemType.GroupHeaderItem;
+            this.pageGroupUser.Location = new System.Drawing.Point(0, 0);
+            this.pageGroupUser.Name = "pageGroupUser";
+            this.pageGroupUser.Size = new System.Drawing.Size(0, 0);
+            this.pageGroupUser.Text = "프로그램 설정";
+            // 
+            // pageSetting
+            // 
+            this.pageSetting.ItemSize = new System.Drawing.SizeF(97F, 29F);
+            this.pageSetting.Location = new System.Drawing.Point(154, 5);
+            this.pageSetting.Name = "pageSetting";
+            this.pageSetting.Size = new System.Drawing.Size(1155, 562);
+            this.pageSetting.Text = "설정";
+            this.pageSetting.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pageLogout
+            // 
+            this.pageLogout.ItemSize = new System.Drawing.SizeF(97F, 29F);
+            this.pageLogout.Location = new System.Drawing.Point(154, 5);
+            this.pageLogout.Name = "pageLogout";
+            this.pageLogout.Size = new System.Drawing.Size(1155, 562);
+            this.pageLogout.Text = "로그아웃";
+            this.pageLogout.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // memberBindingSource
             // 
             this.memberBindingSource.DataSource = typeof(oop_proj4.Member);
-            this.memberBindingSource.CurrentChanged += new System.EventHandler(this.memberBindingSource_CurrentChanged);
+            // 
+            // object_6abb8877_465c_4679_8322_baa7ddac60d1
+            // 
+            this.object_6abb8877_465c_4679_8322_baa7ddac60d1.Name = "object_6abb8877_465c_4679_8322_baa7ddac60d1";
+            this.object_6abb8877_465c_4679_8322_baa7ddac60d1.StretchHorizontally = true;
+            this.object_6abb8877_465c_4679_8322_baa7ddac60d1.StretchVertically = true;
+            // 
+            // radDesktopAlert1
+            // 
+            this.radDesktopAlert1.ThemeName = "Windows8";
             // 
             // memberBindingSource1
             // 
@@ -876,7 +872,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1310, 569);
             this.Controls.Add(this.pvMain);
@@ -894,6 +890,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pvMain)).EndInit();
             this.pvMain.ResumeLayout(false);
             this.pageManage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPage.MasterTemplate)).EndInit();
@@ -903,16 +900,16 @@
             this.rad.ResumeLayout(false);
             this.MemberStatisticPage.ResumeLayout(false);
             this.MemberStatisticPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticAgeChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticGenderChart)).EndInit();
             this.YearStatisticPage.ResumeLayout(false);
             this.YearStatisticPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearlyStatisticsMoneyChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearlyStatisticsMembersChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticGenderChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MemberStatisticAgeChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             this.StatisticsAccountPage.ResumeLayout(false);
             this.StatisticsAccountPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
@@ -947,6 +944,7 @@
         private Telerik.WinControls.UI.RadButton btnEdit;
         private Telerik.WinControls.UI.RadButton btnNew;
         private System.Windows.Forms.BindingSource memberBindingSource;
+
         private Telerik.WinControls.UI.RadPageViewPage MemberStatisticPage;
         private System.Windows.Forms.BindingSource memberBindingSource1;
         private Telerik.WinControls.UI.RadLabel radLabel2;
@@ -960,5 +958,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadChartView MonthlyMoneyDiffChart;
         private Telerik.WinControls.UI.RadChartView YearlyMoneyChart;
+        private Telerik.WinControls.UI.RadButton btnRemove;
+
     }
 }

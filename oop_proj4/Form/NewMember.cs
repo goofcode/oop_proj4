@@ -34,7 +34,7 @@ namespace oop_proj4
                 this.returnMember.Gender = int.Parse(txtGender.Text);
                 this.returnMember.BirthDate = dtpBirth.Value;
                 this.returnMember.RegisterationState = int.Parse(txtState.Text);
-                this.returnMember.LeftDay = int.Parse(txtLeftDay.Text);
+                this.returnMember.EndDate = dtpEnd.Value;
                 this.returnMember.Memo = txtMemo.Text;
 
                 this.Close();
@@ -68,7 +68,7 @@ namespace oop_proj4
                 this.txtGender.Text = this.returnMember.Gender.ToString();
                 this.txtState.Text = this.returnMember.RegisterationState.ToString();
                 this.dtpBirth.Value = this.returnMember.BirthDate;
-                this.txtLeftDay.Text = this.returnMember.LeftDay.ToString();
+                this.dtpEnd.Value = this.returnMember.EndDate;
                 this.txtMemo.Text = this.returnMember.Memo;
 
                 this.btnApply.Text = "적용";
