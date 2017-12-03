@@ -80,8 +80,15 @@
             Telerik.WinControls.UI.CartesianArea cartesianArea4 = new Telerik.WinControls.UI.CartesianArea();
             Telerik.WinControls.UI.CategoricalAxis categoricalAxis4 = new Telerik.WinControls.UI.CategoricalAxis();
             Telerik.WinControls.UI.LinearAxis linearAxis4 = new Telerik.WinControls.UI.LinearAxis();
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn1 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "#");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn2 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "아이디");
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.pvMain = new Telerik.WinControls.UI.RadPageView();
             this.pageGroupAccount = new Telerik.WinControls.UI.RadPageViewItemPage();
@@ -108,6 +115,10 @@
             this.MonthlyMoneyDiffChart = new Telerik.WinControls.UI.RadChartView();
             this.YearlyMoneyChart = new Telerik.WinControls.UI.RadChartView();
             this.pageAccounting = new Telerik.WinControls.UI.RadPageViewPage();
+            this.DeleteTransactionBtn = new Telerik.WinControls.UI.RadButton();
+            this.EditTransactionBtn = new Telerik.WinControls.UI.RadButton();
+            this.NewTransactionBtn = new Telerik.WinControls.UI.RadButton();
+            this.TransactionGridView = new Telerik.WinControls.UI.RadGridView();
             this.pageGroupUser = new Telerik.WinControls.UI.RadPageViewItemPage();
             this.pageSetting = new Telerik.WinControls.UI.RadPageViewPage();
             this.pageLogout = new Telerik.WinControls.UI.RadPageViewPage();
@@ -146,6 +157,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MonthlyMoneyDiffChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearlyMoneyChart)).BeginInit();
+            this.pageAccounting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DeleteTransactionBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EditTransactionBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewTransactionBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionGridView.MasterTemplate)).BeginInit();
             this.pageSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbAdmin)).BeginInit();
             this.gbAdmin.SuspendLayout();
@@ -174,7 +191,7 @@
             this.pvMain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pvMain.Location = new System.Drawing.Point(0, 0);
             this.pvMain.Name = "pvMain";
-            this.pvMain.SelectedPage = this.pageSetting;
+            this.pvMain.SelectedPage = this.pageAccounting;
             this.pvMain.Size = new System.Drawing.Size(1314, 572);
             this.pvMain.TabIndex = 0;
             this.pvMain.ThemeName = "Windows8";
@@ -719,12 +736,111 @@
             // 
             // pageAccounting
             // 
-            this.pageAccounting.ItemSize = new System.Drawing.SizeF(117F, 31F);
+            this.pageAccounting.Controls.Add(this.DeleteTransactionBtn);
+            this.pageAccounting.Controls.Add(this.EditTransactionBtn);
+            this.pageAccounting.Controls.Add(this.NewTransactionBtn);
+            this.pageAccounting.Controls.Add(this.TransactionGridView);
+            this.pageAccounting.ItemSize = new System.Drawing.SizeF(97F, 29F);
             this.pageAccounting.Location = new System.Drawing.Point(154, 5);
             this.pageAccounting.Name = "pageAccounting";
             this.pageAccounting.Size = new System.Drawing.Size(1155, 562);
             this.pageAccounting.Text = "회계";
             this.pageAccounting.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DeleteTransactionBtn
+            // 
+            this.DeleteTransactionBtn.Location = new System.Drawing.Point(227, 5);
+            this.DeleteTransactionBtn.Name = "DeleteTransactionBtn";
+            this.DeleteTransactionBtn.Size = new System.Drawing.Size(106, 42);
+            this.DeleteTransactionBtn.TabIndex = 8;
+            this.DeleteTransactionBtn.Text = "삭제";
+            this.DeleteTransactionBtn.ThemeName = "Windows8";
+            // 
+            // EditTransactionBtn
+            // 
+            this.EditTransactionBtn.Location = new System.Drawing.Point(115, 5);
+            this.EditTransactionBtn.Name = "EditTransactionBtn";
+            this.EditTransactionBtn.Size = new System.Drawing.Size(106, 42);
+            this.EditTransactionBtn.TabIndex = 7;
+            this.EditTransactionBtn.Text = "정보수정";
+            this.EditTransactionBtn.ThemeName = "Windows8";
+            // 
+            // NewTransactionBtn
+            // 
+            this.NewTransactionBtn.Location = new System.Drawing.Point(3, 5);
+            this.NewTransactionBtn.Name = "NewTransactionBtn";
+            this.NewTransactionBtn.Size = new System.Drawing.Size(106, 42);
+            this.NewTransactionBtn.TabIndex = 6;
+            this.NewTransactionBtn.Text = "신규";
+            this.NewTransactionBtn.ThemeName = "Windows8";
+            // 
+            // TransactionGridView
+            // 
+            this.TransactionGridView.AutoSizeRows = true;
+            this.TransactionGridView.EnableCustomDrawing = true;
+            this.TransactionGridView.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransactionGridView.Location = new System.Drawing.Point(3, 53);
+            // 
+            // 
+            // 
+            this.TransactionGridView.MasterTemplate.AllowAddNewRow = false;
+            this.TransactionGridView.MasterTemplate.AllowColumnReorder = false;
+            this.TransactionGridView.MasterTemplate.AllowDeleteRow = false;
+            this.TransactionGridView.MasterTemplate.AllowEditRow = false;
+            this.TransactionGridView.MasterTemplate.AllowRowResize = false;
+            this.TransactionGridView.MasterTemplate.AllowSearchRow = true;
+            this.TransactionGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewCheckBoxColumn2.Checked = Telerik.WinControls.Enumerations.ToggleState.On;
+            gridViewCheckBoxColumn2.DataType = typeof(int);
+            gridViewCheckBoxColumn2.EnableHeaderCheckBox = true;
+            gridViewCheckBoxColumn2.HeaderText = "체크";
+            gridViewCheckBoxColumn2.Name = "columnCheckbox";
+            gridViewCheckBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCheckBoxColumn2.Width = 177;
+            gridViewTextBoxColumn10.HeaderText = "";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "columnId";
+            gridViewTextBoxColumn10.Width = 49;
+            gridViewTextBoxColumn11.HeaderText = "날짜";
+            gridViewTextBoxColumn11.Name = "columnRegistrationDate";
+            gridViewTextBoxColumn11.Width = 99;
+            gridViewTextBoxColumn12.HeaderText = "고객 이름";
+            gridViewTextBoxColumn12.Name = "columnName";
+            gridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn12.Width = 85;
+            gridViewTextBoxColumn13.HeaderText = "금액";
+            gridViewTextBoxColumn13.Name = "columnMemo";
+            gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn13.Width = 158;
+            gridViewTextBoxColumn14.HeaderText = "유형";
+            gridViewTextBoxColumn14.Name = "columnRegistrationState";
+            gridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn14.Width = 137;
+            gridViewTextBoxColumn15.HeaderText = "납부방법";
+            gridViewTextBoxColumn15.Name = "columnEndDate";
+            gridViewTextBoxColumn15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn15.Width = 137;
+            gridViewTextBoxColumn16.HeaderText = "메모";
+            gridViewTextBoxColumn16.Name = "columnPoint";
+            gridViewTextBoxColumn16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn16.Width = 341;
+            this.TransactionGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewCheckBoxColumn2,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16});
+            this.TransactionGridView.MasterTemplate.EnableFiltering = true;
+            this.TransactionGridView.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
+            this.TransactionGridView.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.TransactionGridView.Name = "TransactionGridView";
+            this.TransactionGridView.ReadOnly = true;
+            this.TransactionGridView.Size = new System.Drawing.Size(1149, 499);
+            this.TransactionGridView.TabIndex = 5;
+            this.TransactionGridView.ThemeName = "Windows8";
             // 
             // pageGroupUser
             // 
@@ -792,13 +908,6 @@
             // AdminListView
             // 
             this.AdminListView.AllowEdit = false;
-            listViewDetailColumn1.HeaderText = "#";
-            listViewDetailColumn1.Width = 100F;
-            listViewDetailColumn2.HeaderText = "아이디";
-            listViewDetailColumn2.Width = 800F;
-            this.AdminListView.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
-            listViewDetailColumn1,
-            listViewDetailColumn2});
             this.AdminListView.Location = new System.Drawing.Point(17, 92);
             this.AdminListView.Name = "AdminListView";
             this.AdminListView.Size = new System.Drawing.Size(390, 429);
@@ -836,7 +945,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1310, 569);
             this.Controls.Add(this.pvMain);
@@ -880,6 +989,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MonthlyMoneyDiffChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearlyMoneyChart)).EndInit();
+            this.pageAccounting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DeleteTransactionBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EditTransactionBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewTransactionBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionGridView)).EndInit();
             this.pageSetting.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gbAdmin)).EndInit();
             this.gbAdmin.ResumeLayout(false);
@@ -934,5 +1049,9 @@
         private Telerik.WinControls.UI.RadListView AdminListView;
         private Telerik.WinControls.UI.RadButton NewAdminBtn;
         private Telerik.WinControls.UI.RadButton EditAdminBtn;
+        private Telerik.WinControls.UI.RadButton NewTransactionBtn;
+        private Telerik.WinControls.UI.RadGridView TransactionGridView;
+        private Telerik.WinControls.UI.RadButton EditTransactionBtn;
+        private Telerik.WinControls.UI.RadButton DeleteTransactionBtn;
     }
 }

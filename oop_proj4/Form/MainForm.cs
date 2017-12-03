@@ -28,14 +28,12 @@ namespace oop_proj4
                     this.grdPage.Update();
                 }
             };
-
             this.btnEdit.Click += (s, e) =>
             {
                 int id = Convert.ToInt32(this.grdPage.SelectedRows[0].Cells["columnId"].Value);
                 Member selectedMember = DBManager.Instance().getMember(id);
                 editNewMember(selectedMember, this.grdPage.SelectedRows[0].Index);
             };
-
             this.grdPage.CellDoubleClick += (s, e) =>
             {
                 if (e.ColumnIndex == this.grdPage.Columns["columnCheckbox"].Index)
@@ -50,7 +48,6 @@ namespace oop_proj4
                     editNewMember(selectedMember, rowIndex);
                 }
             };
-
             this.grdPage.CellClick += (s, e) =>
             {
                 if (e.ColumnIndex == this.grdPage.Columns["columnCheckbox"].Index)
@@ -67,7 +64,6 @@ namespace oop_proj4
                         this.grdPage.Rows[rowIndex].Cells["columnCheckbox"].Value = 0;
                 }
             };
-
             this.grdPage.CellPaint += (s, e) =>
             {
                 if (e.Cell != null && e.Cell.RowInfo is GridViewDataRowInfo && e.Cell.ColumnInfo.Name == "columnName")
@@ -88,6 +84,7 @@ namespace oop_proj4
                     }    
                 }
             };
+
 
             this.pageLogout.Paint += (s, e) =>
             {
@@ -199,6 +196,7 @@ namespace oop_proj4
             }
         }
 
+        
         private object[] getRowDataFromMember(Member member)
         {
             return new object[] {
@@ -214,17 +212,38 @@ namespace oop_proj4
                     , member.Memo
                 };
         }
-
         private void appendMemberToGridView(Member member)
         {
             this.grdPage.Rows.Add(this.getRowDataFromMember(member));
         }
-
         private void updateMemberToGridView(Member member, int rowIndex)
         {
             object[] rowdata = this.getRowDataFromMember(member);
             for (int i = 0; i < rowdata.Length; i++)
                 this.grdPage.Rows[rowIndex].Cells[i].Value = rowdata[i];
+        }
+
+        private object[] getRowDataFromTransaction(Transaction transaction)
+        {
+            return new object[] {
+                 0,
+                transaction.Date,
+                DBManager.Instance().getMember(transaction.MemberId).Name,
+                transaction.Amount,
+                transaction.Type,
+                transaction.PayMethod,
+                transaction.Memo
+            };
+        }
+        private void appendTransactionToGridView(Transaction transaction)
+        {
+            this.TransactionGridView.Rows.Add(this.getRowDataFromTransaction(transaction));
+        }
+        private void updateTransactionToGridView (Transaction transaction, int rowIndex)
+        {
+            object[] rowdata = this.getRowDataFromTransaction(transaction);
+            for (int i = 0; i < rowdata.Length; i++)
+                this.TransactionGridView.Rows[rowIndex].Cells[i].Value = rowdata[i];
         }
     }
 }
