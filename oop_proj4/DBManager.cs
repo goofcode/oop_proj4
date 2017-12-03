@@ -65,19 +65,19 @@ namespace oop_proj4
 
             return true;
         }
-        public void AddMember(Member member)
-        {
-            var query = "INSERT INTO Member VALUES (" + member.Id + ", '" + member.Name + "', '" + member.Tel + "', " + member.Gender + ", '" + member.BirthDate + "', " + member.RegisterationState + ", '" + member.EndDate + "', '" + DateTime.Now + "', '" + member.Memo + "')";
-            _instance.ExecuteCommand(query);
-        }
         public void UpdateMember(Member member)
         {
-            var query = "UPDATE Member SET Name = '" + member.Name + "', Tel = '" + member.Tel + "', Gender = " + member.Gender + ", BirthDate = '" + member.BirthDate.ToShortDateString() + "', RegisterationState = " + member.RegisterationState + ", EndDate = " + member.EndDate + ", RegistrationDate = " + member.RegisterationDate + ", Memo = '" + member.Memo + "' WHERE Id = " + member.Id;
+            var query = "UPDATE Member SET Name = '" + member.Name + "', Tel = '" + member.Tel + "', Gender = " + member.Gender + ", BirthDate = '" + member.BirthDate.ToShortDateString() + "', RegisterationState = " + member.RegisterationState + ", EndDate = " + member.EndDate.ToShortDateString() + ", RegisterationDate = '" + member.RegisterationDate.ToShortDateString() + "', Memo = '" + member.Memo + "' WHERE Id = " + member.Id;
             _instance.ExecuteCommand(query);
         }
         public void InsertMember(Member member)
         {
-            var query = "INSERT INTO Member VALUES (" + member.Id + ", '" + member.Name + "', '" + member.Tel + "', " + member.Gender + ", '" + member.BirthDate + "', " + member.RegisterationState + ", '" + member.EndDate + "', '" + member.Memo + "')";
+            var query = "INSERT INTO Member VALUES (" + member.Id + ", '" + member.Name + "', '', '" + member.Tel + "', " + member.Gender + ", '" + member.BirthDate.ToShortDateString() + "', " + member.RegisterationState + ", '" + member.EndDate.ToShortDateString() + "', '" + DateTime.Now.ToShortDateString() + "', " + member.Point + ", '" + member.Memo + "')";
+            _instance.ExecuteCommand(query);
+        }
+        public void DeleteMember(int id)
+        {
+            var query = "DELETE FROM Member WHERE Id = " + id;
             _instance.ExecuteCommand(query);
         }
 
@@ -198,8 +198,7 @@ namespace oop_proj4
             for (int i = 1; i <= 12; i++)
             {
                 MonthMemCount[i] = GetAccMemCount(date);
-                date.AddMonths(1);
-
+                date = date.AddMonths(1);
             }
             LineSeries series = new LineSeries();
             for (int i = 1; i <= 12; i++)
@@ -296,6 +295,55 @@ namespace oop_proj4
             }
             series.ShowLabels = true;
             return series;
+        }
+
+        public int getAutoIncrementIDWithMember()
+        {
+            Table<Member> members = GetTable<Member>();
+            var query = from mem in members
+                        select mem;
+
+            return query.Count() + 1;
+        }
+
+        public int getAutoIncrementIDWithTrasaction()
+        {
+            Table<Transaction> transactions = GetTable<Transaction>();
+            var query = from tran in transactions
+                        select tran;
+
+            return query.Count() + 1;
+        }
+
+        public void UpdateTransaction(Transaction transaction)
+        {
+            var query = "UPDATE 'Transaction' SET MemberId = " + transaction.MemberId + ", Amount = " + transaction.Amount + ", Date = '" + transaction.Date.ToShortDateString() + "', Type = " + transaction.Type + ", PayMethod = " + transaction.PayMethod + ", Memo = '" + transaction.Memo + "' WHERE Id = " + transaction.Id;
+            _instance.ExecuteCommand(query);
+        }
+        public void InsertTransaction(Transaction transaction)
+        {
+            var query = "INSERT INTO 'Transaction' (Id, MemberId, Amount, Date, Type, PayMethod, Memo) VALUES (" + transaction.Id + ", " + transaction.MemberId + ", " + transaction.Amount + ", '" + transaction.Date.ToShortDateString() + "', " + transaction.Type + ", " + transaction.PayMethod + ", '" + transaction.Memo + "')";
+            _instance.ExecuteCommand(query);
+        }
+        public void DeleteTransaction(int id)
+        {
+            var query = "DELETE FROM 'Transaction' WHERE Id = " + id;
+            _instance.ExecuteCommand(query);
+        }
+
+        public Transaction getTransaction(int id)
+        {
+            Table<Transaction> transactions = _instance.GetTable<Transaction>();
+
+            var query = from tran in transactions
+                        where tran.Id == id
+                        select tran;
+
+
+            foreach (var tran in query)
+                return tran;
+
+            return null;
         }
     }
 }

@@ -7,8 +7,8 @@ namespace oop_proj4
     public class Member
     {
         [Flags]
-        enum EGender { Male = 1, Female = 2 }
-        enum ERegistrationState { Doing = 1, Stop = 3, Quit = 4 }
+        public enum EGender { Male = 1, Female = 2 }
+        public enum ERegistrationState { Doing = 1, Stop = 3, Quit = 4 }
 
         [Column(IsPrimaryKey = true, IsDbGenerated = true)] public int Id { get; set; }
         [Column] public string Name { get; set; }

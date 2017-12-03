@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using Telerik.WinControls;
+﻿using System.Windows.Forms;
 
 namespace oop_proj4
 {
-    public partial class NewMember : Telerik.WinControls.UI.RadForm
+    public partial class NewMemberForm : Telerik.WinControls.UI.RadForm
     {
         public const int NEWMEMBER = 1;
         public const int EDITMEMBER = 2;
@@ -18,7 +11,7 @@ namespace oop_proj4
         public DialogResult result { get; set; }
         public int type { get; set; }
 
-        public NewMember()
+        public NewMemberForm()
         {
             InitializeComponent();
 
@@ -29,14 +22,15 @@ namespace oop_proj4
                 if (this.type == NEWMEMBER)
                 {
                     this.returnMember = new Member();
+                    this.returnMember.RegisterationDate = System.DateTime.Now;
                 }
 
                 this.returnMember.Id = int.Parse(txtId.Text);
                 this.returnMember.Name = txtName.Text;
                 this.returnMember.Tel = txtTel.Text;
-                this.returnMember.Gender = int.Parse(txtGender.Text);
+                this.returnMember.Gender = int.Parse(ddlGender.SelectedItem.Tag.ToString());
                 this.returnMember.BirthDate = dtpBirth.Value;
-                this.returnMember.RegisterationState = int.Parse(txtState.Text);
+                this.returnMember.RegisterationState = int.Parse(ddlState.SelectedItem.Tag.ToString());
                 this.returnMember.EndDate = dtpEnd.Value;
                 this.returnMember.Point = int.Parse(txtPoint.Text);
                 this.returnMember.Memo = txtMemo.Text;
@@ -49,6 +43,10 @@ namespace oop_proj4
                 this.result = DialogResult.Cancel;
                 this.Close();
             };
+
+            this.ddlGender.SelectedIndex = 0;
+            this.ddlState.SelectedIndex = 0;
+            this.txtId.Text = DBManager.Instance().getAutoIncrementIDWithMember().ToString();
         }
 
         public void ShowDialog(int type)
@@ -69,8 +67,20 @@ namespace oop_proj4
                 this.txtId.Text = this.returnMember.Id.ToString();
                 this.txtName.Text = this.returnMember.Name;
                 this.txtTel.Text = this.returnMember.Tel;
-                this.txtGender.Text = this.returnMember.Gender.ToString();
-                this.txtState.Text = this.returnMember.RegisterationState.ToString();
+                for (int i = 0; i < this.ddlGender.Items.Count; i++)
+                {
+                    if (int.Parse(this.ddlGender.Items[i].Tag.ToString()) == this.returnMember.Gender)
+                    {
+                        this.ddlGender.SelectedIndex = i;
+                    }
+                }
+                for (int i = 0; i < this.ddlState.Items.Count; i++)
+                {
+                    if (int.Parse(this.ddlState.Items[i].Tag.ToString()) == this.returnMember.RegisterationState)
+                    {
+                        this.ddlState.SelectedIndex = i;
+                    }
+                }
                 this.dtpBirth.Value = this.returnMember.BirthDate;
                 this.dtpEnd.Value = this.returnMember.EndDate;
                 this.txtPoint.Text = this.returnMember.Point.ToString();

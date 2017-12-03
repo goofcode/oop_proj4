@@ -17,8 +17,8 @@ namespace oop_proj4
             
             this.btnNew.Click += (s, e) =>
             {
-                NewMember NewMember = new NewMember();
-                NewMember.ShowDialog(NewMember.NEWMEMBER);
+                NewMemberForm NewMember = new NewMemberForm();
+                NewMember.ShowDialog(NewMemberForm.NEWMEMBER);
 
                 if (NewMember.result == System.Windows.Forms.DialogResult.OK)
                 {
@@ -28,12 +28,31 @@ namespace oop_proj4
                     this.grdPage.Update();
                 }
             };
+
             this.btnEdit.Click += (s, e) =>
             {
                 int id = Convert.ToInt32(this.grdPage.SelectedRows[0].Cells["columnId"].Value);
                 Member selectedMember = DBManager.Instance().getMember(id);
                 editNewMember(selectedMember, this.grdPage.SelectedRows[0].Index);
             };
+
+            this.btnRemove.Click += (s, e) =>
+            {
+                DialogResult dialogResult = RadMessageBox.Show("정말 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    for (int i = this.grdPage.Rows.Count - 1; i >= 0; i--)
+                    {
+                        if ((int)this.grdPage.Rows[i].Cells["columnCheckbox"].Value == 1)
+                        {
+                            DBManager.Instance().DeleteMember(int.Parse(this.grdPage.Rows[i].Cells["columnId"].Value.ToString()));
+                            this.grdPage.Rows.RemoveAt(i);
+                        }
+                    }
+                }
+            };
+
             this.grdPage.CellDoubleClick += (s, e) =>
             {
                 if (e.ColumnIndex == this.grdPage.Columns["columnCheckbox"].Index)
@@ -48,6 +67,7 @@ namespace oop_proj4
                     editNewMember(selectedMember, rowIndex);
                 }
             };
+
             this.grdPage.CellClick += (s, e) =>
             {
                 if (e.ColumnIndex == this.grdPage.Columns["columnCheckbox"].Index)
@@ -64,6 +84,7 @@ namespace oop_proj4
                         this.grdPage.Rows[rowIndex].Cells["columnCheckbox"].Value = 0;
                 }
             };
+
             this.grdPage.CellPaint += (s, e) =>
             {
                 if (e.Cell != null && e.Cell.RowInfo is GridViewDataRowInfo && e.Cell.ColumnInfo.Name == "columnName")
@@ -85,6 +106,76 @@ namespace oop_proj4
                 }
             };
 
+
+            this.NewTransactionBtn.Click += (s, e) =>
+            {
+                NewTransactionForm NewTransaction = new NewTransactionForm();
+                NewTransaction.ShowDialog(NewTransactionForm.NEWTRANSACTION);
+
+                if (NewTransaction.result == System.Windows.Forms.DialogResult.OK)
+                {
+                    DBManager.Instance().InsertTransaction(NewTransaction.returnTransaction);
+                    this.appendTransactionToGridView(NewTransaction.returnTransaction);
+
+                    this.TransactionGridView.Update();
+                }
+            };
+            
+            this.EditTransactionBtn.Click += (s, e) =>
+            {
+                int id = Convert.ToInt32(this.TransactionGridView.SelectedRows[0].Cells["columnId"].Value);
+                Transaction selectedTransaction = DBManager.Instance().getTransaction(id);
+                editNewTransaction(selectedTransaction, this.TransactionGridView.SelectedRows[0].Index);
+            };
+
+            this.DeleteTransactionBtn.Click += (s, e) =>
+            {
+                DialogResult dialogResult = RadMessageBox.Show("정말 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    for (int i = this.TransactionGridView.Rows.Count - 1; i >= 0; i--)
+                    {
+                        if ((int)this.TransactionGridView.Rows[i].Cells["columnCheckbox"].Value == 1)
+                        {
+                            DBManager.Instance().DeleteTransaction(int.Parse(this.TransactionGridView.Rows[i].Cells["columnId"].Value.ToString()));
+                            this.TransactionGridView.Rows.RemoveAt(i);
+                        }
+                    }
+                }
+            };
+
+            this.TransactionGridView.CellDoubleClick += (s, e) =>
+            {
+                if (e.ColumnIndex == this.TransactionGridView.Columns["columnCheckbox"].Index)
+                    return;
+
+                int rowIndex = e.RowIndex;
+
+                if (rowIndex >= 0)
+                {
+                    int id = Convert.ToInt32(this.TransactionGridView.Rows[rowIndex].Cells["columnId"].Value);
+                    Transaction selectedTransaction = DBManager.Instance().getTransaction(id);
+                    editNewTransaction(selectedTransaction, rowIndex);
+                }
+            };
+
+            this.TransactionGridView.CellClick += (s, e) =>
+            {
+                if (e.ColumnIndex == this.TransactionGridView.Columns["columnCheckbox"].Index)
+                {
+                    int rowIndex = e.RowIndex;
+
+                    if (rowIndex < 0)
+                        return;
+
+                    int value = (int)this.TransactionGridView.Rows[rowIndex].Cells["columnCheckbox"].Value;
+                    if (value == 0)
+                        this.TransactionGridView.Rows[rowIndex].Cells["columnCheckbox"].Value = 1;
+                    else
+                        this.TransactionGridView.Rows[rowIndex].Cells["columnCheckbox"].Value = 0;
+                }
+            };
 
             this.pageLogout.Paint += (s, e) =>
             {
@@ -116,7 +207,6 @@ namespace oop_proj4
                     RadMessageBox.Show("마지막 관리자를 삭제할 수 없습니다", "Delete", System.Windows.Forms.MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
             };
-
             this.MemberStatisticPage.Paint += (s, e) =>
             {
                 this.MemberStatisticGenderChart.Series.Clear();
@@ -124,22 +214,6 @@ namespace oop_proj4
                 this.MemberStatisticGenderChart.Series.Add(DBManager.Instance().GetGenderPieSeries());
                 this.MemberStatisticAgeChart.Series.Add(DBManager.Instance().GetAgeGroupPieSeries());
             };
-
-            this.btnRemove.Click += (s, e) =>
-            {
-                DialogResult dialogResult = RadMessageBox.Show("정말 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, RadMessageIcon.Question);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    for (int i = this.grdPage.Rows.Count - 1; i >= 0; i--)
-                    {
-                        if ((int)this.grdPage.Rows[i].Cells["columnCheckbox"].Value == 1)
-                        {
-                            this.grdPage.Rows.RemoveAt(i);
-                        }
-                    }
-                }
-                };
 
             this.YearStatisticPage.Paint += (s, e) =>
             {
@@ -165,14 +239,21 @@ namespace oop_proj4
             {
                 this.appendMemberToGridView(member);
             }
-            this.grdPage.BestFitColumns();  
+            this.grdPage.BestFitColumns();
+
+            Table<Transaction> transactions = DBManager.Instance().GetTable<Transaction>();
+            foreach (Transaction transaction in transactions)
+            {
+                this.appendTransactionToGridView(transaction);
+            }
+            this.TransactionGridView.BestFitColumns();
 
             ConditionalFormattingObject obj = new ConditionalFormattingObject("GenderFormat", ConditionTypes.Equal, "남자", "", true);
-            obj.CellForeColor = System.Drawing.Color.Blue;
+            obj.CellForeColor = Color.Blue;
             this.grdPage.Columns["columnGender"].ConditionalFormattingObjectList.Add(obj);
 
             obj = new ConditionalFormattingObject("GenderFormat", ConditionTypes.Equal, "여자", "", true);
-            obj.CellForeColor = System.Drawing.Color.Red;
+            obj.CellForeColor = Color.Red;
             this.grdPage.Columns["columnGender"].ConditionalFormattingObjectList.Add(obj);
             
             obj = new ConditionalFormattingObject("StateFormat", ConditionTypes.Equal, "정지", "", true);
@@ -180,14 +261,30 @@ namespace oop_proj4
             this.grdPage.Columns["columnRegistrationState"].ConditionalFormattingObjectList.Add(obj);   
 
             obj = new ConditionalFormattingObject("StateFormat", ConditionTypes.Equal, "탈퇴", "", true);
-            obj.RowBackColor = System.Drawing.Color.PaleVioletRed;
+            obj.RowBackColor = Color.PaleVioletRed;
             this.grdPage.Columns["columnRegistrationState"].ConditionalFormattingObjectList.Add(obj);
+
+            ConditionalFormattingObject transactionObj = new ConditionalFormattingObject("In/OutcomeFormat", ConditionTypes.Equal, "수입", "", true);
+            transactionObj.CellForeColor = Color.Blue;
+            this.TransactionGridView.Columns["columnType"].ConditionalFormattingObjectList.Add(transactionObj);
+
+            transactionObj = new ConditionalFormattingObject("In/OutcomeFormat", ConditionTypes.Equal, "지출", "", true);
+            transactionObj.CellForeColor = Color.Red;
+            this.TransactionGridView.Columns["columnType"].ConditionalFormattingObjectList.Add(transactionObj);
+
+            transactionObj = new ConditionalFormattingObject("PayMethodFormat", ConditionTypes.Equal, "카드", "", true);
+            transactionObj.RowBackColor = Color.Wheat;
+            this.TransactionGridView.Columns["columnPayMethod"].ConditionalFormattingObjectList.Add(transactionObj);
+
+            transactionObj = new ConditionalFormattingObject("In/OutcomeFormat", ConditionTypes.Equal, "현금", "", true);
+            transactionObj.RowBackColor = Color.LightCoral;
+            this.TransactionGridView.Columns["columnPayMethod"].ConditionalFormattingObjectList.Add(transactionObj);
         }
 
         private void editNewMember(Member selectedMember, int rowIndex)
         {
-            NewMember editMember = new NewMember();
-            editMember.ShowDialog(NewMember.EDITMEMBER, selectedMember);
+            NewMemberForm editMember = new NewMemberForm();
+            editMember.ShowDialog(NewMemberForm.EDITMEMBER, selectedMember);
 
             if (editMember.result == System.Windows.Forms.DialogResult.OK)
             {
@@ -206,8 +303,8 @@ namespace oop_proj4
                     , member.Tel
                     , member.ToStringGender()
                     , member.ToStringRegistrationState()
-                    , member.EndDate
-                    , member.RegisterationDate
+                    , member.EndDate.ToShortDateString()
+                    , member.RegisterationDate.ToShortDateString()
                     , member.Point
                     , member.Memo
                 };
@@ -223,15 +320,28 @@ namespace oop_proj4
                 this.grdPage.Rows[rowIndex].Cells[i].Value = rowdata[i];
         }
 
+        private void editNewTransaction(Transaction selectedTransacton, int rowIndex)
+        {
+            NewTransactionForm editTransaction = new NewTransactionForm();
+            editTransaction.ShowDialog(NewTransactionForm.EDITTRANSACTION, selectedTransacton);
+
+            if (editTransaction.result == System.Windows.Forms.DialogResult.OK)
+            {
+                DBManager.Instance().UpdateTransaction(editTransaction.returnTransaction);
+                this.updateTransactionToGridView(editTransaction.returnTransaction, rowIndex);
+            }
+        }
+
         private object[] getRowDataFromTransaction(Transaction transaction)
         {
             return new object[] {
                  0,
-                transaction.Date,
+                transaction.Id,
+                transaction.ToStringDate(),
                 DBManager.Instance().getMember(transaction.MemberId).Name,
-                transaction.Amount,
-                transaction.Type,
-                transaction.PayMethod,
+                transaction.ToStringAmount(),
+                transaction.ToStringType(),
+                transaction.ToStringPayMethod(),
                 transaction.Memo
             };
         }

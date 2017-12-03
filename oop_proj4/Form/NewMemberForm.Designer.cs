@@ -1,6 +1,6 @@
 ﻿namespace oop_proj4
 {
-    partial class NewMember
+    partial class NewMemberForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMember));
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMemberForm));
             this.btnCancel = new Telerik.WinControls.UI.RadButton();
             this.btnApply = new Telerik.WinControls.UI.RadButton();
             this.txtMemo = new Telerik.WinControls.UI.RadTextBox();
@@ -42,13 +47,13 @@
             this.txtName = new Telerik.WinControls.UI.RadTextBox();
             this.txtId = new Telerik.WinControls.UI.RadTextBox();
             this.txtTel = new Telerik.WinControls.UI.RadTextBox();
-            this.txtGender = new Telerik.WinControls.UI.RadTextBox();
-            this.txtState = new Telerik.WinControls.UI.RadTextBox();
             this.dtpBirth = new Telerik.WinControls.UI.RadDateTimePicker();
             this.txtEndDate = new Telerik.WinControls.UI.RadTextBox();
             this.dtpEnd = new Telerik.WinControls.UI.RadDateTimePicker();
             this.txtPoint = new Telerik.WinControls.UI.RadTextBox();
             this.txtPointLabel = new Telerik.WinControls.UI.RadTextBox();
+            this.ddlGender = new Telerik.WinControls.UI.RadDropDownList();
+            this.ddlState = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnApply)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMemo)).BeginInit();
@@ -62,13 +67,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGender)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPointLabel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlGender)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,14 +189,17 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(119, 31);
             this.txtName.TabIndex = 18;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtName.ThemeName = "Windows8";
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(316, 39);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(111, 31);
             this.txtId.TabIndex = 19;
+            this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtId.ThemeName = "Windows8";
             // 
             // txtTel
@@ -200,23 +208,8 @@
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(119, 31);
             this.txtTel.TabIndex = 20;
+            this.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTel.ThemeName = "Windows8";
-            // 
-            // txtGender
-            // 
-            this.txtGender.Location = new System.Drawing.Point(316, 70);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(111, 31);
-            this.txtGender.TabIndex = 21;
-            this.txtGender.ThemeName = "Windows8";
-            // 
-            // txtState
-            // 
-            this.txtState.Location = new System.Drawing.Point(95, 99);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(119, 31);
-            this.txtState.TabIndex = 22;
-            this.txtState.ThemeName = "Windows8";
             // 
             // dtpBirth
             // 
@@ -262,6 +255,7 @@
             this.txtPoint.Name = "txtPoint";
             this.txtPoint.Size = new System.Drawing.Size(119, 31);
             this.txtPoint.TabIndex = 24;
+            this.txtPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPoint.ThemeName = "Windows8";
             // 
             // txtPointLabel
@@ -276,18 +270,54 @@
             this.txtPointLabel.Text = "· 포인트";
             this.txtPointLabel.ThemeName = "Windows8";
             // 
-            // NewMember
+            // ddlGender
+            // 
+            radListDataItem1.Tag = "1";
+            radListDataItem1.Text = "남자";
+            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            radListDataItem2.Tag = "2";
+            radListDataItem2.Text = "여자";
+            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ddlGender.Items.Add(radListDataItem1);
+            this.ddlGender.Items.Add(radListDataItem2);
+            this.ddlGender.Location = new System.Drawing.Point(316, 72);
+            this.ddlGender.Name = "ddlGender";
+            this.ddlGender.Size = new System.Drawing.Size(111, 31);
+            this.ddlGender.TabIndex = 37;
+            this.ddlGender.ThemeName = "Windows8";
+            // 
+            // ddlState
+            // 
+            radListDataItem3.Tag = "1";
+            radListDataItem3.Text = "등록";
+            radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            radListDataItem4.Tag = "3";
+            radListDataItem4.Text = "정지";
+            radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            radListDataItem5.Tag = "4";
+            radListDataItem5.Text = "탈퇴";
+            radListDataItem5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ddlState.Items.Add(radListDataItem3);
+            this.ddlState.Items.Add(radListDataItem4);
+            this.ddlState.Items.Add(radListDataItem5);
+            this.ddlState.Location = new System.Drawing.Point(95, 101);
+            this.ddlState.Name = "ddlState";
+            this.ddlState.Size = new System.Drawing.Size(119, 31);
+            this.ddlState.TabIndex = 38;
+            this.ddlState.ThemeName = "Windows8";
+            // 
+            // NewMemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 444);
+            this.Controls.Add(this.ddlState);
+            this.Controls.Add(this.ddlGender);
             this.Controls.Add(this.txtPoint);
             this.Controls.Add(this.txtPointLabel);
             this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.txtEndDate);
             this.Controls.Add(this.dtpBirth);
-            this.Controls.Add(this.txtState);
-            this.Controls.Add(this.txtGender);
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtName);
@@ -304,7 +334,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "NewMember";
+            this.Name = "NewMemberForm";
             // 
             // 
             // 
@@ -326,13 +356,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGender)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtState)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPoint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPointLabel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlGender)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlState)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -353,12 +383,12 @@
         private Telerik.WinControls.UI.RadTextBox txtName;
         private Telerik.WinControls.UI.RadTextBox txtId;
         private Telerik.WinControls.UI.RadTextBox txtTel;
-        private Telerik.WinControls.UI.RadTextBox txtGender;
-        private Telerik.WinControls.UI.RadTextBox txtState;
         private Telerik.WinControls.UI.RadDateTimePicker dtpBirth;
         private Telerik.WinControls.UI.RadTextBox txtEndDate;
         private Telerik.WinControls.UI.RadDateTimePicker dtpEnd;
         private Telerik.WinControls.UI.RadTextBox txtPoint;
         private Telerik.WinControls.UI.RadTextBox txtPointLabel;
+        private Telerik.WinControls.UI.RadDropDownList ddlGender;
+        private Telerik.WinControls.UI.RadDropDownList ddlState;
     }
 }
