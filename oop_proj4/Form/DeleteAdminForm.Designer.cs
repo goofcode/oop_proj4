@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteAdminForm));
             this.DeleteBtn = new Telerik.WinControls.UI.RadButton();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.lblPassword = new Telerik.WinControls.UI.RadLabel();
             this.PasswordTxt = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordTxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -46,14 +47,15 @@
             this.DeleteBtn.Text = "삭제";
             this.DeleteBtn.ThemeName = "Windows8";
             // 
-            // radLabel1
+            // lblPassword
             // 
-            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(24, 32);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(85, 29);
-            this.radLabel1.TabIndex = 6;
-            this.radLabel1.Text = "비밀번호";
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(24, 32);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(233, 29);
+            this.lblPassword.TabIndex = 6;
+            this.lblPassword.Text = "비밀번호를 입력해 주세요.";
+            this.lblPassword.ThemeName = "Windows8";
             // 
             // PasswordTxt
             // 
@@ -64,16 +66,18 @@
             this.PasswordTxt.PasswordChar = '●';
             this.PasswordTxt.Size = new System.Drawing.Size(200, 30);
             this.PasswordTxt.TabIndex = 2;
+            this.PasswordTxt.ThemeName = "Windows8";
             this.PasswordTxt.UseSystemPasswordChar = true;
             // 
             // DeleteAdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 117);
             this.Controls.Add(this.PasswordTxt);
-            this.Controls.Add(this.radLabel1);
+            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.DeleteBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteAdminForm";
             // 
             // 
@@ -82,7 +86,7 @@
             this.Text = "DeleteAdminForm";
             this.ThemeName = "Windows8";
             ((System.ComponentModel.ISupportInitialize)(this.DeleteBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordTxt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -93,7 +97,7 @@
         #endregion
 
         private Telerik.WinControls.UI.RadButton DeleteBtn;
-        private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadLabel lblPassword;
         private Telerik.WinControls.UI.RadTextBox PasswordTxt;
     }
 }

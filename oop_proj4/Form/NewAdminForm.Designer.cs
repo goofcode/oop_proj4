@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewAdminForm));
             this.ConfirmNewPasswordTxt = new Telerik.WinControls.UI.RadTextBox();
             this.SubmintBtn = new Telerik.WinControls.UI.RadButton();
             this.NewPasswordTxt = new Telerik.WinControls.UI.RadTextBox();
@@ -102,7 +103,7 @@
             // 
             // NewAdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 251);
             this.Controls.Add(this.NewIDTxt);
@@ -111,6 +112,7 @@
             this.Controls.Add(this.NewPasswordTxt);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewAdminForm";
             // 
             // 
