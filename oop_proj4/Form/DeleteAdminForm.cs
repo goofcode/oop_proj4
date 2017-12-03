@@ -15,6 +15,10 @@ namespace oop_proj4
         public DeleteAdminForm(string id)
         {
             InitializeComponent();
+            this.PasswordTxt.TextChanged += (s, e) =>
+            {
+                this.DeleteBtn.Enabled = DBManager.Instance().CheckAdmin(id, this.PasswordTxt.Text);
+            };
             this.DeleteBtn.Click += (s, e)=>
             {
                 if (DBManager.Instance().CheckAdmin(id, this.PasswordTxt.Text))

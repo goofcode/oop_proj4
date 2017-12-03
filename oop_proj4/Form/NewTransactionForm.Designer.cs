@@ -74,7 +74,7 @@
             this.dtpDate.Location = new System.Drawing.Point(121, 59);
             this.dtpDate.MaxDate = new System.DateTime(2017, 11, 27, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(250, 31);
+            this.dtpDate.Size = new System.Drawing.Size(250, 35);
             this.dtpDate.TabIndex = 28;
             this.dtpDate.TabStop = false;
             this.dtpDate.Text = "2017-11-27";
@@ -88,7 +88,7 @@
             this.txtDateLabel.Location = new System.Drawing.Point(12, 59);
             this.txtDateLabel.Name = "txtDateLabel";
             this.txtDateLabel.ReadOnly = true;
-            this.txtDateLabel.Size = new System.Drawing.Size(103, 31);
+            this.txtDateLabel.Size = new System.Drawing.Size(103, 35);
             this.txtDateLabel.TabIndex = 29;
             this.txtDateLabel.Text = "· 거래날짜";
             this.txtDateLabel.ThemeName = "Windows8";
@@ -100,7 +100,7 @@
             this.txtNameLabel.Location = new System.Drawing.Point(12, 96);
             this.txtNameLabel.Name = "txtNameLabel";
             this.txtNameLabel.ReadOnly = true;
-            this.txtNameLabel.Size = new System.Drawing.Size(103, 31);
+            this.txtNameLabel.Size = new System.Drawing.Size(103, 35);
             this.txtNameLabel.TabIndex = 31;
             this.txtNameLabel.Text = "· 이름";
             this.txtNameLabel.ThemeName = "Windows8";
@@ -109,7 +109,7 @@
             // 
             this.ddlName.Location = new System.Drawing.Point(122, 96);
             this.ddlName.Name = "ddlName";
-            this.ddlName.Size = new System.Drawing.Size(249, 31);
+            this.ddlName.Size = new System.Drawing.Size(249, 35);
             this.ddlName.TabIndex = 32;
             this.ddlName.ThemeName = "Windows8";
             // 
@@ -120,7 +120,7 @@
             this.txtAmountLabel.Location = new System.Drawing.Point(12, 133);
             this.txtAmountLabel.Name = "txtAmountLabel";
             this.txtAmountLabel.ReadOnly = true;
-            this.txtAmountLabel.Size = new System.Drawing.Size(103, 31);
+            this.txtAmountLabel.Size = new System.Drawing.Size(103, 35);
             this.txtAmountLabel.TabIndex = 33;
             this.txtAmountLabel.Text = "· 금액";
             this.txtAmountLabel.ThemeName = "Windows8";
@@ -129,7 +129,7 @@
             // 
             this.txtAmount.Location = new System.Drawing.Point(121, 133);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(250, 31);
+            this.txtAmount.Size = new System.Drawing.Size(250, 35);
             this.txtAmount.TabIndex = 34;
             // 
             // ddlType
@@ -144,7 +144,7 @@
             this.ddlType.Items.Add(radListDataItem2);
             this.ddlType.Location = new System.Drawing.Point(122, 170);
             this.ddlType.Name = "ddlType";
-            this.ddlType.Size = new System.Drawing.Size(249, 31);
+            this.ddlType.Size = new System.Drawing.Size(249, 35);
             this.ddlType.TabIndex = 36;
             this.ddlType.ThemeName = "Windows8";
             // 
@@ -155,7 +155,7 @@
             this.txtTypeLabel.Location = new System.Drawing.Point(12, 170);
             this.txtTypeLabel.Name = "txtTypeLabel";
             this.txtTypeLabel.ReadOnly = true;
-            this.txtTypeLabel.Size = new System.Drawing.Size(103, 31);
+            this.txtTypeLabel.Size = new System.Drawing.Size(103, 35);
             this.txtTypeLabel.TabIndex = 35;
             this.txtTypeLabel.Text = "· 거래종류";
             this.txtTypeLabel.ThemeName = "Windows8";
@@ -188,7 +188,7 @@
             this.ddlPay.Items.Add(radListDataItem4);
             this.ddlPay.Location = new System.Drawing.Point(122, 207);
             this.ddlPay.Name = "ddlPay";
-            this.ddlPay.Size = new System.Drawing.Size(249, 31);
+            this.ddlPay.Size = new System.Drawing.Size(249, 35);
             this.ddlPay.TabIndex = 40;
             this.ddlPay.ThemeName = "Windows8";
             // 
@@ -199,7 +199,7 @@
             this.txtPayLabel.Location = new System.Drawing.Point(12, 207);
             this.txtPayLabel.Name = "txtPayLabel";
             this.txtPayLabel.ReadOnly = true;
-            this.txtPayLabel.Size = new System.Drawing.Size(103, 31);
+            this.txtPayLabel.Size = new System.Drawing.Size(103, 35);
             this.txtPayLabel.TabIndex = 39;
             this.txtPayLabel.Text = "· 납부방법";
             this.txtPayLabel.ThemeName = "Windows8";
@@ -210,7 +210,7 @@
             this.txtMemoLabel.Location = new System.Drawing.Point(12, 244);
             this.txtMemoLabel.Name = "txtMemoLabel";
             this.txtMemoLabel.ReadOnly = true;
-            this.txtMemoLabel.Size = new System.Drawing.Size(76, 31);
+            this.txtMemoLabel.Size = new System.Drawing.Size(76, 35);
             this.txtMemoLabel.TabIndex = 42;
             this.txtMemoLabel.Text = "· 메모";
             this.txtMemoLabel.ThemeName = "Windows8";
@@ -218,6 +218,7 @@
             // txtMemo
             // 
             this.txtMemo.AutoSize = false;
+            this.txtMemo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtMemo.Location = new System.Drawing.Point(12, 275);
             this.txtMemo.Multiline = true;
             this.txtMemo.Name = "txtMemo";
@@ -230,7 +231,7 @@
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(121, 22);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(250, 31);
+            this.txtId.Size = new System.Drawing.Size(250, 35);
             this.txtId.TabIndex = 44;
             // 
             // txtIdLabel
@@ -240,15 +241,16 @@
             this.txtIdLabel.Location = new System.Drawing.Point(12, 22);
             this.txtIdLabel.Name = "txtIdLabel";
             this.txtIdLabel.ReadOnly = true;
-            this.txtIdLabel.Size = new System.Drawing.Size(103, 31);
+            this.txtIdLabel.Size = new System.Drawing.Size(103, 35);
             this.txtIdLabel.TabIndex = 43;
             this.txtIdLabel.Text = "· 번호";
             this.txtIdLabel.ThemeName = "Windows8";
             // 
             // NewTransactionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(383, 523);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtIdLabel);
@@ -273,7 +275,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "거래내역 추가";
+            this.Text = "주짓수 회원관리 프로그램 - [거래내역 추가하기]";
             this.ThemeName = "Windows8";
             ((System.ComponentModel.ISupportInitialize)(this.dtpDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateLabel)).EndInit();

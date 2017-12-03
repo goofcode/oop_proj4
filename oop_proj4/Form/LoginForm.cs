@@ -4,7 +4,6 @@ namespace oop_proj4
 {
     public partial class LoginForm : Telerik.WinControls.UI.RadForm 
     {
-
         public LoginForm()
         {
             InitializeComponent();
@@ -20,7 +19,7 @@ namespace oop_proj4
                 else
                 {
                     RadMessageBox.SetThemeName(this.ThemeName);
-                    RadMessageBox.Show("Wrong ID or PW", "Error", System.Windows.Forms.MessageBoxButtons.OK, RadMessageIcon.Error);
+                    RadMessageBox.Show("잘못된 접근입니다.", "오류", System.Windows.Forms.MessageBoxButtons.OK, RadMessageIcon.Error);
                 }
             };
         }

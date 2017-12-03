@@ -68,6 +68,7 @@
     <Reference Include="Telerik.WinControls.GridView, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.UI, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="TelerikCommon, Version=2017.3.1017.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
