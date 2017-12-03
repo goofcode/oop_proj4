@@ -85,18 +85,52 @@ namespace oop_proj4
                     using (Font font = new Font("맑은 고딕", 8))
                     {
                         e.Graphics.DrawEllipse(pen, e.Cell.RowInfo.Height / 2 - 5, e.Cell.RowInfo.Height / 2 - 5, 10, 10);
-                    }   
+                    }    
                 }
             };
+
+            this.pageLogout.Paint += (s, e) =>
+            {
+                Program.End();
+            };
+
+            this.EditAdminBtn.Click += (s, e) =>
+            {
+                EditAdminForm editAdminForm = new EditAdminForm();
+                editAdminForm.ShowDialog();
+            };
+            this.NewAdminBtn.Click += (s, e) =>
+            {
+                 NewAdminForm newAdminForm = new NewAdminForm();
+                 newAdminForm.ShowDialog();
+                 this.pageSetting.Refresh();
+            };
+            this.DeleteAminBtn.Click += (s, e) =>
+            {
+                if( this.AdminListView.Items.Count != 1)
+                {
+                    DeleteAdminForm deleteAdminForm = new DeleteAdminForm(this.AdminListView.SelectedItem.Text);
+                    deleteAdminForm.ShowDialog();
+                    this.pageSetting.Refresh();
+                }
+                else
+                {
+                    RadMessageBox.SetThemeName(this.ThemeName);
+                    RadMessageBox.Show("마지막 관리자를 삭제할 수 없습니다", "Delete", System.Windows.Forms.MessageBoxButtons.OK, RadMessageIcon.Info);
+                }
+            };
+
+            this.pageSetting.Paint += (s, e) =>
+            {
+                this.AdminListView.DataSource = DBManager.Instance().GetAdminIdList();
+            };
+            
+
 
             this.MemberStatisticPage.Paint += (s, e) =>
             {
                 this.MemberStatisticGenderChart.Series.Clear();
                 this.MemberStatisticAgeChart.Series.Clear();
-                this.YearlyMoneyChart.Series.Clear();
-                this.MonthlyMoneyDiffChart.Series.Clear();
-                this.YearlyStatisticsMembersChart.Series.Clear();
-                this.YearlyStatisticsMoneyChart.Series.Clear();
                 this.MemberStatisticGenderChart.Series.Add(DBManager.Instance().GetGenderPieSeries());
                 this.MemberStatisticAgeChart.Series.Add(DBManager.Instance().GetAgeGroupPieSeries());
             };
@@ -115,6 +149,22 @@ namespace oop_proj4
                         }
                     }
                 }
+                };
+
+            this.YearStatisticPage.Paint += (s, e) =>
+            {
+                this.YearlyStatisticsMembersChart.Series.Clear();
+                this.YearlyStatisticsMoneyChart.Series.Clear();
+                this.YearlyStatisticsMembersChart.Series.Add(DBManager.Instance().GetAccMemberLineSeries(2017));
+                this.YearlyStatisticsMoneyChart.Series.Add(DBManager.Instance().GetNewMemberLineSeries(2017));
+            };
+
+            this.StatisticsAccountPage.Paint += (s, e) =>
+            {
+                this.YearlyMoneyChart.Series.Clear();
+                this.MonthlyMoneyDiffChart.Series.Clear();
+                this.YearlyMoneyChart.Series.Add(DBManager.Instance().GetTotalAmountLineSeries(2017));
+                this.MonthlyMoneyDiffChart.Series.Add(DBManager.Instance().GetMonOverAmountLineSeries(2017));
 
             };
 

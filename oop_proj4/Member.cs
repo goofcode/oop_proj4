@@ -12,12 +12,14 @@ namespace oop_proj4
 
         [Column(IsPrimaryKey = true, IsDbGenerated = true)] public int Id { get; set; }
         [Column] public string Name { get; set; }
+        [Column] public string NickName { get; set; }
         [Column] public string Tel { get; set; }
         [Column] public int Gender { get; set; }
         [Column] public DateTime BirthDate { get; set; }
         [Column] public int RegisterationState { get; set; }
         [Column] public DateTime EndDate { get; set; }
         [Column] public DateTime RegisterationDate { get; set; }
+        [Column] public int Point { get; set; }
         [Column] public string Memo { get; set; }
 
         public string ToStringGender()
