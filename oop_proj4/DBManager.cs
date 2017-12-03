@@ -49,7 +49,6 @@ namespace oop_proj4
             for (int i = 0; i < data.Length; i++) sBuilder.Append(data[i].ToString("x2"));
             return sBuilder.ToString();
         }
-        
         public bool CheckAdmin(string id, string pw)
         {
             // grab Admin table
