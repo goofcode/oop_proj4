@@ -47,6 +47,8 @@
             this.dtpBirth = new Telerik.WinControls.UI.RadDateTimePicker();
             this.txtEndDate = new Telerik.WinControls.UI.RadTextBox();
             this.dtpEnd = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.txtPoint = new Telerik.WinControls.UI.RadTextBox();
+            this.txtPointLabel = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnApply)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMemo)).BeginInit();
@@ -65,12 +67,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPoint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPointLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(373, 374);
+            this.btnCancel.Location = new System.Drawing.Point(373, 400);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(54, 30);
             this.btnCancel.TabIndex = 8;
@@ -79,7 +83,7 @@
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(316, 374);
+            this.btnApply.Location = new System.Drawing.Point(316, 400);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(51, 30);
             this.btnApply.TabIndex = 9;
@@ -89,7 +93,7 @@
             // txtMemo
             // 
             this.txtMemo.AutoSize = false;
-            this.txtMemo.Location = new System.Drawing.Point(12, 177);
+            this.txtMemo.Location = new System.Drawing.Point(12, 203);
             this.txtMemo.Multiline = true;
             this.txtMemo.Name = "txtMemo";
             this.txtMemo.Size = new System.Drawing.Size(415, 191);
@@ -133,7 +137,7 @@
             // txtMemoLabel
             // 
             this.txtMemoLabel.Enabled = false;
-            this.txtMemoLabel.Location = new System.Drawing.Point(12, 146);
+            this.txtMemoLabel.Location = new System.Drawing.Point(12, 172);
             this.txtMemoLabel.Name = "txtMemoLabel";
             this.txtMemoLabel.ReadOnly = true;
             this.txtMemoLabel.Size = new System.Drawing.Size(76, 31);
@@ -252,11 +256,33 @@
             this.dtpEnd.ThemeName = "Windows8";
             this.dtpEnd.Value = new System.DateTime(2017, 11, 27, 0, 0, 0, 0);
             // 
+            // txtPoint
+            // 
+            this.txtPoint.Location = new System.Drawing.Point(95, 132);
+            this.txtPoint.Name = "txtPoint";
+            this.txtPoint.Size = new System.Drawing.Size(119, 31);
+            this.txtPoint.TabIndex = 24;
+            this.txtPoint.ThemeName = "Windows8";
+            // 
+            // txtPointLabel
+            // 
+            this.txtPointLabel.AcceptsTab = true;
+            this.txtPointLabel.Enabled = false;
+            this.txtPointLabel.Location = new System.Drawing.Point(12, 134);
+            this.txtPointLabel.Name = "txtPointLabel";
+            this.txtPointLabel.ReadOnly = true;
+            this.txtPointLabel.Size = new System.Drawing.Size(76, 31);
+            this.txtPointLabel.TabIndex = 23;
+            this.txtPointLabel.Text = "· 포인트";
+            this.txtPointLabel.ThemeName = "Windows8";
+            // 
             // NewMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 415);
+            this.ClientSize = new System.Drawing.Size(439, 444);
+            this.Controls.Add(this.txtPoint);
+            this.Controls.Add(this.txtPointLabel);
             this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.txtEndDate);
             this.Controls.Add(this.dtpBirth);
@@ -305,6 +331,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPoint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPointLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -330,5 +358,7 @@
         private Telerik.WinControls.UI.RadDateTimePicker dtpBirth;
         private Telerik.WinControls.UI.RadTextBox txtEndDate;
         private Telerik.WinControls.UI.RadDateTimePicker dtpEnd;
+        private Telerik.WinControls.UI.RadTextBox txtPoint;
+        private Telerik.WinControls.UI.RadTextBox txtPointLabel;
     }
 }

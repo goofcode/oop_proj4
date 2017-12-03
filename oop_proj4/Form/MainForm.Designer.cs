@@ -80,6 +80,8 @@
             Telerik.WinControls.UI.CartesianArea cartesianArea4 = new Telerik.WinControls.UI.CartesianArea();
             Telerik.WinControls.UI.CategoricalAxis categoricalAxis4 = new Telerik.WinControls.UI.CategoricalAxis();
             Telerik.WinControls.UI.LinearAxis linearAxis4 = new Telerik.WinControls.UI.LinearAxis();
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn1 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "#");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn2 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "아이디");
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.pvMain = new Telerik.WinControls.UI.RadPageView();
             this.pageGroupAccount = new Telerik.WinControls.UI.RadPageViewItemPage();
@@ -108,14 +110,15 @@
             this.pageAccounting = new Telerik.WinControls.UI.RadPageViewPage();
             this.pageGroupUser = new Telerik.WinControls.UI.RadPageViewItemPage();
             this.pageSetting = new Telerik.WinControls.UI.RadPageViewPage();
+            this.pageLogout = new Telerik.WinControls.UI.RadPageViewPage();
+            this.object_6abb8877_465c_4679_8322_baa7ddac60d1 = new Telerik.WinControls.RootRadElement();
+            this.radDesktopAlert1 = new Telerik.WinControls.UI.RadDesktopAlert(this.components);
+            this.gbAdmin = new Telerik.WinControls.UI.RadGroupBox();
             this.DeleteAminBtn = new Telerik.WinControls.UI.RadButton();
             this.AdminListView = new Telerik.WinControls.UI.RadListView();
             this.NewAdminBtn = new Telerik.WinControls.UI.RadButton();
             this.EditAdminBtn = new Telerik.WinControls.UI.RadButton();
-            this.pageLogout = new Telerik.WinControls.UI.RadPageViewPage();
             this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.object_6abb8877_465c_4679_8322_baa7ddac60d1 = new Telerik.WinControls.RootRadElement();
-            this.radDesktopAlert1 = new Telerik.WinControls.UI.RadDesktopAlert(this.components);
             this.memberBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pvMain)).BeginInit();
             this.pvMain.SuspendLayout();
@@ -144,6 +147,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MonthlyMoneyDiffChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearlyMoneyChart)).BeginInit();
             this.pageSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gbAdmin)).BeginInit();
+            this.gbAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteAminBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdminListView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NewAdminBtn)).BeginInit();
@@ -169,7 +174,7 @@
             this.pvMain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pvMain.Location = new System.Drawing.Point(0, 0);
             this.pvMain.Name = "pvMain";
-            this.pvMain.SelectedPage = this.pageManage;
+            this.pvMain.SelectedPage = this.pageSetting;
             this.pvMain.Size = new System.Drawing.Size(1314, 572);
             this.pvMain.TabIndex = 0;
             this.pvMain.ThemeName = "Windows8";
@@ -181,7 +186,7 @@
             // 
             // pageGroupAccount
             // 
-            this.pageGroupAccount.ItemSize = new System.Drawing.SizeF(97F, 27F);
+            this.pageGroupAccount.ItemSize = new System.Drawing.SizeF(117F, 31F);
             this.pageGroupAccount.ItemType = Telerik.WinControls.UI.PageViewItemType.GroupHeaderItem;
             this.pageGroupAccount.Location = new System.Drawing.Point(0, 0);
             this.pageGroupAccount.Name = "pageGroupAccount";
@@ -194,7 +199,7 @@
             this.pageManage.Controls.Add(this.btnEdit);
             this.pageManage.Controls.Add(this.btnNew);
             this.pageManage.Controls.Add(this.grdPage);
-            this.pageManage.ItemSize = new System.Drawing.SizeF(97F, 29F);
+            this.pageManage.ItemSize = new System.Drawing.SizeF(117F, 31F);
             this.pageManage.Location = new System.Drawing.Point(154, 5);
             this.pageManage.Name = "pageManage";
             this.pageManage.Size = new System.Drawing.Size(1155, 562);
@@ -250,7 +255,7 @@
             gridViewCheckBoxColumn1.HeaderText = "체크";
             gridViewCheckBoxColumn1.Name = "columnCheckbox";
             gridViewCheckBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewCheckBoxColumn1.Width = 160;
+            gridViewCheckBoxColumn1.Width = 159;
             gridViewTextBoxColumn1.HeaderText = "";
             gridViewTextBoxColumn1.IsVisible = false;
             gridViewTextBoxColumn1.Name = "columnId";
@@ -262,19 +267,19 @@
             gridViewTextBoxColumn3.HeaderText = "전화번호";
             gridViewTextBoxColumn3.Name = "columnTel";
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn3.Width = 429;
+            gridViewTextBoxColumn3.Width = 426;
             gridViewTextBoxColumn4.HeaderText = "성별";
             gridViewTextBoxColumn4.Name = "columnGender";
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 97;
+            gridViewTextBoxColumn4.Width = 96;
             gridViewTextBoxColumn5.HeaderText = "등록상태";
             gridViewTextBoxColumn5.Name = "columnRegistrationState";
             gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn5.Width = 100;
+            gridViewTextBoxColumn5.Width = 99;
             gridViewTextBoxColumn6.HeaderText = "마감일";
             gridViewTextBoxColumn6.Name = "columnEndDate";
             gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn6.Width = 102;
+            gridViewTextBoxColumn6.Width = 101;
             gridViewTextBoxColumn7.HeaderText = "등록일";
             gridViewTextBoxColumn7.Name = "columnRegistrationDate";
             gridViewTextBoxColumn7.Width = 48;
@@ -285,7 +290,7 @@
             gridViewTextBoxColumn9.HeaderText = "메모";
             gridViewTextBoxColumn9.Name = "columnMemo";
             gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn9.Width = 110;
+            gridViewTextBoxColumn9.Width = 108;
             this.grdPage.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewCheckBoxColumn1,
             gridViewTextBoxColumn1,
@@ -309,7 +314,7 @@
             // pageStatistics
             // 
             this.pageStatistics.Controls.Add(this.rad);
-            this.pageStatistics.ItemSize = new System.Drawing.SizeF(97F, 29F);
+            this.pageStatistics.ItemSize = new System.Drawing.SizeF(117F, 31F);
             this.pageStatistics.Location = new System.Drawing.Point(154, 5);
             this.pageStatistics.Name = "pageStatistics";
             this.pageStatistics.Size = new System.Drawing.Size(1155, 562);
@@ -340,6 +345,7 @@
             this.MemberStatisticPage.Controls.Add(this.radLabel1);
             this.MemberStatisticPage.Controls.Add(this.MemberStatisticAgeChart);
             this.MemberStatisticPage.Controls.Add(this.MemberStatisticGenderChart);
+            this.MemberStatisticPage.ItemSize = new System.Drawing.SizeF(61F, 24F);
             this.MemberStatisticPage.Location = new System.Drawing.Point(5, 29);
             this.MemberStatisticPage.Name = "MemberStatisticPage";
             this.MemberStatisticPage.Size = new System.Drawing.Size(1145, 528);
@@ -425,6 +431,7 @@
             this.YearStatisticPage.Controls.Add(this.radLabel3);
             this.YearStatisticPage.Controls.Add(this.YearlyStatisticsMoneyChart);
             this.YearStatisticPage.Controls.Add(this.YearlyStatisticsMembersChart);
+            this.YearStatisticPage.ItemSize = new System.Drawing.SizeF(61F, 24F);
             this.YearStatisticPage.Location = new System.Drawing.Point(5, 27);
             this.YearStatisticPage.Name = "YearStatisticPage";
             this.YearStatisticPage.Size = new System.Drawing.Size(1145, 530);
@@ -621,9 +628,10 @@
             this.StatisticsAccountPage.Controls.Add(this.radLabel5);
             this.StatisticsAccountPage.Controls.Add(this.MonthlyMoneyDiffChart);
             this.StatisticsAccountPage.Controls.Add(this.YearlyMoneyChart);
-            this.StatisticsAccountPage.Location = new System.Drawing.Point(5, 29);
+            this.StatisticsAccountPage.ItemSize = new System.Drawing.SizeF(35F, 24F);
+            this.StatisticsAccountPage.Location = new System.Drawing.Point(5, 27);
             this.StatisticsAccountPage.Name = "StatisticsAccountPage";
-            this.StatisticsAccountPage.Size = new System.Drawing.Size(1145, 528);
+            this.StatisticsAccountPage.Size = new System.Drawing.Size(1145, 530);
             this.StatisticsAccountPage.Text = "회계";
             // 
             // radLabel6
@@ -711,7 +719,7 @@
             // 
             // pageAccounting
             // 
-            this.pageAccounting.ItemSize = new System.Drawing.SizeF(97F, 29F);
+            this.pageAccounting.ItemSize = new System.Drawing.SizeF(117F, 31F);
             this.pageAccounting.Location = new System.Drawing.Point(154, 5);
             this.pageAccounting.Name = "pageAccounting";
             this.pageAccounting.Size = new System.Drawing.Size(1155, 562);
@@ -720,7 +728,7 @@
             // 
             // pageGroupUser
             // 
-            this.pageGroupUser.ItemSize = new System.Drawing.SizeF(97F, 27F);
+            this.pageGroupUser.ItemSize = new System.Drawing.SizeF(117F, 31F);
             this.pageGroupUser.ItemType = Telerik.WinControls.UI.PageViewItemType.GroupHeaderItem;
             this.pageGroupUser.Location = new System.Drawing.Point(0, 0);
             this.pageGroupUser.Name = "pageGroupUser";
@@ -729,68 +737,22 @@
             // 
             // pageSetting
             // 
-            this.pageSetting.Controls.Add(this.DeleteAminBtn);
-            this.pageSetting.Controls.Add(this.AdminListView);
-            this.pageSetting.Controls.Add(this.NewAdminBtn);
-            this.pageSetting.Controls.Add(this.EditAdminBtn);
-            this.pageSetting.ItemSize = new System.Drawing.SizeF(97F, 29F);
+            this.pageSetting.Controls.Add(this.gbAdmin);
+            this.pageSetting.ItemSize = new System.Drawing.SizeF(117F, 31F);
             this.pageSetting.Location = new System.Drawing.Point(154, 5);
             this.pageSetting.Name = "pageSetting";
             this.pageSetting.Size = new System.Drawing.Size(1155, 562);
             this.pageSetting.Text = "설정";
             this.pageSetting.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DeleteAminBtn
-            // 
-            this.DeleteAminBtn.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteAminBtn.Location = new System.Drawing.Point(327, 170);
-            this.DeleteAminBtn.Name = "DeleteAminBtn";
-            this.DeleteAminBtn.Size = new System.Drawing.Size(187, 48);
-            this.DeleteAminBtn.TabIndex = 1;
-            this.DeleteAminBtn.Text = "관리자 삭제";
-            this.DeleteAminBtn.ThemeName = "Windows8";
-            // 
-            // AdminListView
-            // 
-            this.AdminListView.Location = new System.Drawing.Point(27, 31);
-            this.AdminListView.Name = "AdminListView";
-            this.AdminListView.Size = new System.Drawing.Size(277, 187);
-            this.AdminListView.TabIndex = 2;
-            this.AdminListView.Text = "radListView1";
-            this.AdminListView.ThemeName = "Windows8";
-            // 
-            // NewAdminBtn
-            // 
-            this.NewAdminBtn.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewAdminBtn.Location = new System.Drawing.Point(327, 31);
-            this.NewAdminBtn.Name = "NewAdminBtn";
-            this.NewAdminBtn.Size = new System.Drawing.Size(187, 48);
-            this.NewAdminBtn.TabIndex = 1;
-            this.NewAdminBtn.Text = "새 관리자 추가";
-            this.NewAdminBtn.ThemeName = "Windows8";
-            // 
-            // EditAdminBtn
-            // 
-            this.EditAdminBtn.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditAdminBtn.Location = new System.Drawing.Point(327, 101);
-            this.EditAdminBtn.Name = "EditAdminBtn";
-            this.EditAdminBtn.Size = new System.Drawing.Size(187, 48);
-            this.EditAdminBtn.TabIndex = 0;
-            this.EditAdminBtn.Text = "현재 관리자 정보 수정";
-            this.EditAdminBtn.ThemeName = "Windows8";
-            // 
             // pageLogout
             // 
-            this.pageLogout.ItemSize = new System.Drawing.SizeF(97F, 29F);
+            this.pageLogout.ItemSize = new System.Drawing.SizeF(117F, 31F);
             this.pageLogout.Location = new System.Drawing.Point(154, 5);
             this.pageLogout.Name = "pageLogout";
             this.pageLogout.Size = new System.Drawing.Size(1155, 562);
             this.pageLogout.Text = "로그아웃";
             this.pageLogout.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // memberBindingSource
-            // 
-            this.memberBindingSource.DataSource = typeof(oop_proj4.Member);
             // 
             // object_6abb8877_465c_4679_8322_baa7ddac60d1
             // 
@@ -801,6 +763,72 @@
             // radDesktopAlert1
             // 
             this.radDesktopAlert1.ThemeName = "Windows8";
+            // 
+            // gbAdmin
+            // 
+            this.gbAdmin.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.gbAdmin.Controls.Add(this.DeleteAminBtn);
+            this.gbAdmin.Controls.Add(this.AdminListView);
+            this.gbAdmin.Controls.Add(this.NewAdminBtn);
+            this.gbAdmin.Controls.Add(this.EditAdminBtn);
+            this.gbAdmin.HeaderText = "관리자 관리";
+            this.gbAdmin.Location = new System.Drawing.Point(3, 7);
+            this.gbAdmin.Name = "gbAdmin";
+            this.gbAdmin.Size = new System.Drawing.Size(427, 545);
+            this.gbAdmin.TabIndex = 4;
+            this.gbAdmin.Text = "관리자 관리";
+            this.gbAdmin.ThemeName = "Windows8";
+            // 
+            // DeleteAminBtn
+            // 
+            this.DeleteAminBtn.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteAminBtn.Location = new System.Drawing.Point(301, 35);
+            this.DeleteAminBtn.Name = "DeleteAminBtn";
+            this.DeleteAminBtn.Size = new System.Drawing.Size(106, 33);
+            this.DeleteAminBtn.TabIndex = 4;
+            this.DeleteAminBtn.Text = "관리자 삭제";
+            this.DeleteAminBtn.ThemeName = "Windows8";
+            // 
+            // AdminListView
+            // 
+            this.AdminListView.AllowEdit = false;
+            listViewDetailColumn1.HeaderText = "#";
+            listViewDetailColumn1.Width = 100F;
+            listViewDetailColumn2.HeaderText = "아이디";
+            listViewDetailColumn2.Width = 800F;
+            this.AdminListView.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
+            listViewDetailColumn1,
+            listViewDetailColumn2});
+            this.AdminListView.Location = new System.Drawing.Point(17, 92);
+            this.AdminListView.Name = "AdminListView";
+            this.AdminListView.Size = new System.Drawing.Size(390, 429);
+            this.AdminListView.TabIndex = 6;
+            this.AdminListView.Text = "radListView1";
+            this.AdminListView.ThemeName = "Windows8";
+            // 
+            // NewAdminBtn
+            // 
+            this.NewAdminBtn.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewAdminBtn.Location = new System.Drawing.Point(17, 35);
+            this.NewAdminBtn.Name = "NewAdminBtn";
+            this.NewAdminBtn.Size = new System.Drawing.Size(130, 33);
+            this.NewAdminBtn.TabIndex = 5;
+            this.NewAdminBtn.Text = "새 관리자 추가";
+            this.NewAdminBtn.ThemeName = "Windows8";
+            // 
+            // EditAdminBtn
+            // 
+            this.EditAdminBtn.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditAdminBtn.Location = new System.Drawing.Point(153, 35);
+            this.EditAdminBtn.Name = "EditAdminBtn";
+            this.EditAdminBtn.Size = new System.Drawing.Size(142, 33);
+            this.EditAdminBtn.TabIndex = 3;
+            this.EditAdminBtn.Text = "관리자 정보 수정";
+            this.EditAdminBtn.ThemeName = "Windows8";
+            // 
+            // memberBindingSource
+            // 
+            this.memberBindingSource.DataSource = typeof(oop_proj4.Member);
             // 
             // memberBindingSource1
             // 
@@ -853,6 +881,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MonthlyMoneyDiffChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearlyMoneyChart)).EndInit();
             this.pageSetting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gbAdmin)).EndInit();
+            this.gbAdmin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DeleteAminBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdminListView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NewAdminBtn)).EndInit();
@@ -899,9 +929,10 @@
         private Telerik.WinControls.UI.RadChartView MonthlyMoneyDiffChart;
         private Telerik.WinControls.UI.RadChartView YearlyMoneyChart;
         private Telerik.WinControls.UI.RadButton btnRemove;
-        private Telerik.WinControls.UI.RadButton EditAdminBtn;
-        private Telerik.WinControls.UI.RadButton NewAdminBtn;
-        private Telerik.WinControls.UI.RadListView AdminListView;
+        private Telerik.WinControls.UI.RadGroupBox gbAdmin;
         private Telerik.WinControls.UI.RadButton DeleteAminBtn;
+        private Telerik.WinControls.UI.RadListView AdminListView;
+        private Telerik.WinControls.UI.RadButton NewAdminBtn;
+        private Telerik.WinControls.UI.RadButton EditAdminBtn;
     }
 }

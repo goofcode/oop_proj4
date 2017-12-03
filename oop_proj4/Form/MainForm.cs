@@ -18,7 +18,7 @@ namespace oop_proj4
             this.btnNew.Click += (s, e) =>
             {
                 NewMember NewMember = new NewMember();
-                NewMember.ShowDialog(1);
+                NewMember.ShowDialog(NewMember.NEWMEMBER);
 
                 if (NewMember.result == System.Windows.Forms.DialogResult.OK)
                 {
@@ -103,7 +103,7 @@ namespace oop_proj4
             {
                  NewAdminForm newAdminForm = new NewAdminForm();
                  newAdminForm.ShowDialog();
-                 this.pageSetting.Refresh();
+                 this.AdminListView.DataSource = DBManager.Instance().GetAdminIdList();
             };
             this.DeleteAminBtn.Click += (s, e) =>
             {
@@ -111,18 +111,13 @@ namespace oop_proj4
                 {
                     DeleteAdminForm deleteAdminForm = new DeleteAdminForm(this.AdminListView.SelectedItem.Text);
                     deleteAdminForm.ShowDialog();
-                    this.pageSetting.Refresh();
+                    this.AdminListView.DataSource = DBManager.Instance().GetAdminIdList();
                 }
                 else
                 {
                     RadMessageBox.SetThemeName(this.ThemeName);
                     RadMessageBox.Show("마지막 관리자를 삭제할 수 없습니다", "Delete", System.Windows.Forms.MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
-            };
-
-            this.pageSetting.Paint += (s, e) =>
-            {
-                this.AdminListView.DataSource = DBManager.Instance().GetAdminIdList();
             };
 
             this.MemberStatisticPage.Paint += (s, e) =>
@@ -166,6 +161,8 @@ namespace oop_proj4
 
             };
 
+            this.AdminListView.DataSource = DBManager.Instance().GetAdminIdList();
+
             Table<Member> members = DBManager.Instance().GetTable<Member>();
             foreach (Member member in members)
             {
@@ -193,7 +190,7 @@ namespace oop_proj4
         private void editNewMember(Member selectedMember, int rowIndex)
         {
             NewMember editMember = new NewMember();
-            editMember.ShowDialog(2, selectedMember);
+            editMember.ShowDialog(NewMember.EDITMEMBER, selectedMember);
 
             if (editMember.result == System.Windows.Forms.DialogResult.OK)
             {

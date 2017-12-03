@@ -33,7 +33,8 @@ namespace oop_proj4
                 return "여자";
             }
 
-            return "외계인";
+            // return "외계인";
+            return "";
         }
 
         public string ToStringRegistrationState()
@@ -51,7 +52,8 @@ namespace oop_proj4
                 return "탈퇴";
             }
 
-            return "스파이";
+            // return "스파이";
+            return "";
         }
     }
 }
