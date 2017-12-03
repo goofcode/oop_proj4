@@ -147,7 +147,6 @@
     </Compile>
     <None Include="database.db" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Member.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

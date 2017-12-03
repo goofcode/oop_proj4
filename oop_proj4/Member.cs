@@ -8,7 +8,7 @@ namespace oop_proj4
     {
         [Flags]
         enum EGender { Male = 1, Female = 2 }
-        enum ERegistrationState { Doing = 0, Stop = 1, Quit = 2 }
+        enum ERegistrationState { Doing = 1, Stop = 3, Quit = 4 }
 
         [Column(IsPrimaryKey = true, IsDbGenerated = true)] public int Id { get; set; }
         [Column] public string Name { get; set; }
@@ -45,7 +45,7 @@ namespace oop_proj4
             else if (RegisterationState == (int)ERegistrationState.Stop)
             {
                 return "정지";
-            } 
+            }
             else if (RegisterationState == (int)ERegistrationState.Quit)
             {
                 return "탈퇴";
@@ -53,6 +53,5 @@ namespace oop_proj4
 
             return "스파이";
         }
-        
     }
 }

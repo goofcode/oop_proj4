@@ -22,7 +22,7 @@ namespace oop_proj4
 
                 if (NewMember.result == System.Windows.Forms.DialogResult.OK)
                 {
-                    DBManager.Instance().insertMember(NewMember.returnMember);
+                    DBManager.Instance().InsertMember(NewMember.returnMember);
                     this.appendMemberToGridView(NewMember.returnMember);
 
                     this.grdPage.Update();
@@ -124,8 +124,6 @@ namespace oop_proj4
             {
                 this.AdminListView.DataSource = DBManager.Instance().GetAdminIdList();
             };
-            
-
 
             this.MemberStatisticPage.Paint += (s, e) =>
             {
@@ -169,7 +167,6 @@ namespace oop_proj4
             };
 
             Table<Member> members = DBManager.Instance().GetTable<Member>();
-
             foreach (Member member in members)
             {
                 this.appendMemberToGridView(member);
@@ -191,10 +188,6 @@ namespace oop_proj4
             obj = new ConditionalFormattingObject("StateFormat", ConditionTypes.Equal, "탈퇴", "", true);
             obj.RowBackColor = System.Drawing.Color.PaleVioletRed;
             this.grdPage.Columns["columnRegistrationState"].ConditionalFormattingObjectList.Add(obj);
-
-            obj = new ConditionalFormattingObject("LeftDayFormat", ConditionTypes.LessOrEqual, "30", "", true);
-            obj.CellForeColor = System.Drawing.Color.Red;
-            this.grdPage.Columns["columnLeftDay"].ConditionalFormattingObjectList.Add(obj);
         }
 
         private void editNewMember(Member selectedMember, int rowIndex)
@@ -204,7 +197,7 @@ namespace oop_proj4
 
             if (editMember.result == System.Windows.Forms.DialogResult.OK)
             {
-                DBManager.Instance().updateMember(editMember.returnMember);
+                DBManager.Instance().UpdateMember(editMember.returnMember);
                 this.updateMemberToGridView(editMember.returnMember, rowIndex);
             }
         }
@@ -219,6 +212,8 @@ namespace oop_proj4
                     , member.ToStringGender()
                     , member.ToStringRegistrationState()
                     , member.EndDate
+                    , member.RegisterationDate
+                    , member.Point
                     , member.Memo
                 };
         }

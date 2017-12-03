@@ -68,12 +68,17 @@ namespace oop_proj4
         }
         public void AddMember(Member member)
         {
-            var query = "INSERT INTO Member VALUES (" + member.Id + ", '" + member.Name + "', '" + member.Tel + "', " + member.Gender + ", '1997-12-23 00:00:00', " + member.RegisterationState + ", 30, '" + DateTime.Now + "', '" + member.Memo + "')";
+            var query = "INSERT INTO Member VALUES (" + member.Id + ", '" + member.Name + "', '" + member.Tel + "', " + member.Gender + ", '" + member.BirthDate + "', " + member.RegisterationState + ", '" + member.EndDate + "', '" + DateTime.Now + "', '" + member.Memo + "')";
             _instance.ExecuteCommand(query);
         }
         public void UpdateMember(Member member)
         {
-            var query = "UPDATE Member SET Name = '" + member.Name + "', Tel = '" + member.Tel + "', Gender = " + member.Gender + ", BirthDate = '" + member.BirthDate.ToShortDateString() + "', RegisterationState = " + member.RegisterationState + ", LeftDay = " + member.LeftDay + ", RegistrationDate = " + member.RegisterationDate + ", Memo = '" + member.Memo + "' WHERE Id = " + member.Id;
+            var query = "UPDATE Member SET Name = '" + member.Name + "', Tel = '" + member.Tel + "', Gender = " + member.Gender + ", BirthDate = '" + member.BirthDate.ToShortDateString() + "', RegisterationState = " + member.RegisterationState + ", EndDate = " + member.EndDate + ", RegistrationDate = " + member.RegisterationDate + ", Memo = '" + member.Memo + "' WHERE Id = " + member.Id;
+            _instance.ExecuteCommand(query);
+        }
+        public void InsertMember(Member member)
+        {
+            var query = "INSERT INTO Member VALUES (" + member.Id + ", '" + member.Name + "', '" + member.Tel + "', " + member.Gender + ", '" + member.BirthDate + "', " + member.RegisterationState + ", '" + member.EndDate + "', '" + member.Memo + "')";
             _instance.ExecuteCommand(query);
         }
 
