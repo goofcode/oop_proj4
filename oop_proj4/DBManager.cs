@@ -10,6 +10,7 @@ using Telerik.Charting;
 using Telerik.WinControls.UI;
 using System;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace oop_proj4
 {
@@ -48,17 +49,7 @@ namespace oop_proj4
             for (int i = 0; i < data.Length; i++) sBuilder.Append(data[i].ToString("x2"));
             return sBuilder.ToString();
         }
-
-        /// <summary>
-        /// Create tables in case of db not found
-        /// * This method needs to be fixed on deployment
-        /// </summary>        
-        /// <summary>
-        /// checks if given id and pw are valid or not
-        /// </summary>
-        /// <param name="id">Admin ID</param>
-        /// <param name="pw">Admin PW</param>
-        /// <returns></returns>
+        
         public bool CheckAdmin(string id, string pw)
         {
             // grab Admin table
@@ -75,17 +66,52 @@ namespace oop_proj4
 
             return true;
         }
-
-        public void insertMember(Member member)
+        public void AddMember(Member member)
         {
             var query = "INSERT INTO Member VALUES (" + member.Id + ", '" + member.Name + "', '" + member.Tel + "', " + member.Gender + ", '1997-12-23 00:00:00', " + member.RegisterationState + ", 30, '" + member.Memo + "')";
             _instance.ExecuteCommand(query);
         }
-
-        public void updateMember(Member member)
+        public void UpdateMember(Member member)
         {
             var query = "UPDATE Member SET Name = '" + member.Name + "', Tel = '" + member.Tel + "', Gender = " + member.Gender + ", BirthDate = '" + member.BirthDate.ToShortDateString() + "', RegisterationState = " + member.RegisterationState + ", LeftDay = " + member.LeftDay + ", Memo = '" + member.Memo + "' WHERE Id = " + member.Id;
             _instance.ExecuteCommand(query);
+        }
+        public void UpdateAdminPW(string pw)
+        {
+            string pwhash = GetMD5HashString(pw);
+            var query = "UPDATE Admin SET Admin_pw = '" + pwhash + "' WHERE Admin_id = '" + Program.AdminId + "'";
+            _instance.ExecuteCommand(query);
+        }
+        public bool IsAdminExist(string id)
+        {
+            Table<Admin> Admins = _instance.GetTable<Admin>();
+            int admin_num = (from admin in Admins
+                             where admin.Admin_id == id
+                             select admin).Count();
+            if (admin_num == 0) return false;
+            return true;
+        }
+        public void AddAdmin(string id, string pw)
+        {
+            var query = "INSERT INTO Admin (Admin_id, Admin_pw) " +
+                "VALUES ('" + id + "', '" + GetMD5HashString(pw) + "')";
+            _instance.ExecuteCommand(query);
+        }
+        public void DeleteAdmin(string id)
+        {
+            var query = "DELETE FROM Admin " +
+    "WHERE Admin_id = '" + id + "'";
+            _instance.ExecuteCommand(query);
+        }
+
+        public ArrayList GetAdminIdList()
+        {
+            ArrayList adminIdList = new ArrayList();
+            Table<Admin> admins = _instance.GetTable<Admin>();
+            foreach(Admin admin in admins)
+                adminIdList.Add(admin.Admin_id);
+            
+            return adminIdList;
         }
 
         public PieSeries GetGenderPieSeries()

@@ -14,6 +14,7 @@ namespace oop_proj4
                 if (DBManager.Instance().CheckAdmin(this.txtID.Text, this.txtPassword.Text))
                 {
                     Program.ShowMainForm();
+                    Program.AdminId = this.txtID.Text;
                     this.Hide();
                 }
                 else
