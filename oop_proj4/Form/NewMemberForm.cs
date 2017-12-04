@@ -44,6 +44,13 @@ namespace oop_proj4
                 this.Close();
             };
 
+            this.dtpBirth.MaxDate = System.DateTime.Now;
+            this.dtpBirth.Value = this.dtpBirth.MaxDate;
+
+            this.dtpEnd.MaxDate = Telerik.WinControls.UI.RadDateTimePicker.MaximumDateTime;
+            this.dtpEnd.MinDate = System.DateTime.Now;
+            this.dtpEnd.Value = this.dtpEnd.MinDate;
+
             this.ddlGender.SelectedIndex = 0;
             this.ddlState.SelectedIndex = 0;
             this.txtId.Text = DBManager.Instance().getAutoIncrementIDWithMember().ToString();

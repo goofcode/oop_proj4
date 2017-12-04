@@ -113,7 +113,7 @@
             this.txtNameLabel.Location = new System.Drawing.Point(12, 41);
             this.txtNameLabel.Name = "txtNameLabel";
             this.txtNameLabel.ReadOnly = true;
-            this.txtNameLabel.Size = new System.Drawing.Size(76, 35);
+            this.txtNameLabel.Size = new System.Drawing.Size(76, 31);
             this.txtNameLabel.TabIndex = 11;
             this.txtNameLabel.Text = "· 이름";
             this.txtNameLabel.ThemeName = "Windows8";
@@ -124,7 +124,7 @@
             this.txtTelLabel.Location = new System.Drawing.Point(12, 71);
             this.txtTelLabel.Name = "txtTelLabel";
             this.txtTelLabel.ReadOnly = true;
-            this.txtTelLabel.Size = new System.Drawing.Size(76, 35);
+            this.txtTelLabel.Size = new System.Drawing.Size(76, 31);
             this.txtTelLabel.TabIndex = 12;
             this.txtTelLabel.Text = "· 연락처";
             this.txtTelLabel.ThemeName = "Windows8";
@@ -136,7 +136,7 @@
             this.txtStateLabel.Location = new System.Drawing.Point(12, 101);
             this.txtStateLabel.Name = "txtStateLabel";
             this.txtStateLabel.ReadOnly = true;
-            this.txtStateLabel.Size = new System.Drawing.Size(76, 35);
+            this.txtStateLabel.Size = new System.Drawing.Size(76, 31);
             this.txtStateLabel.TabIndex = 13;
             this.txtStateLabel.Text = "· 상태";
             this.txtStateLabel.ThemeName = "Windows8";
@@ -147,7 +147,7 @@
             this.txtMemoLabel.Location = new System.Drawing.Point(12, 172);
             this.txtMemoLabel.Name = "txtMemoLabel";
             this.txtMemoLabel.ReadOnly = true;
-            this.txtMemoLabel.Size = new System.Drawing.Size(76, 35);
+            this.txtMemoLabel.Size = new System.Drawing.Size(76, 31);
             this.txtMemoLabel.TabIndex = 14;
             this.txtMemoLabel.Text = "· 메모";
             this.txtMemoLabel.ThemeName = "Windows8";
@@ -158,7 +158,7 @@
             this.txtIdLabel.Location = new System.Drawing.Point(220, 41);
             this.txtIdLabel.Name = "txtIdLabel";
             this.txtIdLabel.ReadOnly = true;
-            this.txtIdLabel.Size = new System.Drawing.Size(83, 35);
+            this.txtIdLabel.Size = new System.Drawing.Size(83, 31);
             this.txtIdLabel.TabIndex = 15;
             this.txtIdLabel.Text = "· 회원번호";
             this.txtIdLabel.ThemeName = "Windows8";
@@ -169,7 +169,7 @@
             this.txtGenderLabel.Location = new System.Drawing.Point(220, 72);
             this.txtGenderLabel.Name = "txtGenderLabel";
             this.txtGenderLabel.ReadOnly = true;
-            this.txtGenderLabel.Size = new System.Drawing.Size(83, 35);
+            this.txtGenderLabel.Size = new System.Drawing.Size(83, 31);
             this.txtGenderLabel.TabIndex = 16;
             this.txtGenderLabel.Text = "· 성별";
             this.txtGenderLabel.ThemeName = "Windows8";
@@ -180,7 +180,7 @@
             this.txtBirthLabel.Location = new System.Drawing.Point(220, 102);
             this.txtBirthLabel.Name = "txtBirthLabel";
             this.txtBirthLabel.ReadOnly = true;
-            this.txtBirthLabel.Size = new System.Drawing.Size(83, 35);
+            this.txtBirthLabel.Size = new System.Drawing.Size(83, 31);
             this.txtBirthLabel.TabIndex = 17;
             this.txtBirthLabel.Text = "· 생일";
             this.txtBirthLabel.ThemeName = "Windows8";
@@ -189,7 +189,7 @@
             // 
             this.txtName.Location = new System.Drawing.Point(95, 39);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(119, 35);
+            this.txtName.Size = new System.Drawing.Size(119, 31);
             this.txtName.TabIndex = 18;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtName.ThemeName = "Windows8";
@@ -199,7 +199,7 @@
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(316, 39);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(111, 35);
+            this.txtId.Size = new System.Drawing.Size(111, 31);
             this.txtId.TabIndex = 19;
             this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtId.ThemeName = "Windows8";
@@ -208,7 +208,7 @@
             // 
             this.txtTel.Location = new System.Drawing.Point(95, 70);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(119, 35);
+            this.txtTel.Size = new System.Drawing.Size(119, 31);
             this.txtTel.TabIndex = 20;
             this.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTel.ThemeName = "Windows8";
@@ -217,14 +217,13 @@
             // 
             this.dtpBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpBirth.Location = new System.Drawing.Point(316, 103);
-            this.dtpBirth.MaxDate = new System.DateTime(2017, 11, 27, 0, 0, 0, 0);
+            this.dtpBirth.MaxDate = new System.DateTime(((long)(0)));
             this.dtpBirth.Name = "dtpBirth";
-            this.dtpBirth.Size = new System.Drawing.Size(111, 35);
+            this.dtpBirth.Size = new System.Drawing.Size(111, 31);
             this.dtpBirth.TabIndex = 24;
             this.dtpBirth.TabStop = false;
-            this.dtpBirth.Text = "2017-11-27";
             this.dtpBirth.ThemeName = "Windows8";
-            this.dtpBirth.Value = new System.DateTime(2017, 11, 27, 0, 0, 0, 0);
+            this.dtpBirth.Value = new System.DateTime(((long)(0)));
             // 
             // txtEndDate
             // 
@@ -233,7 +232,7 @@
             this.txtEndDate.Location = new System.Drawing.Point(220, 133);
             this.txtEndDate.Name = "txtEndDate";
             this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(83, 35);
+            this.txtEndDate.Size = new System.Drawing.Size(83, 31);
             this.txtEndDate.TabIndex = 27;
             this.txtEndDate.Text = "· 마감일";
             this.txtEndDate.ThemeName = "Windows8";
@@ -242,20 +241,19 @@
             // 
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEnd.Location = new System.Drawing.Point(316, 133);
-            this.dtpEnd.MaxDate = new System.DateTime(2017, 11, 27, 0, 0, 0, 0);
+            this.dtpEnd.MaxDate = new System.DateTime(((long)(0)));
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(111, 35);
+            this.dtpEnd.Size = new System.Drawing.Size(111, 31);
             this.dtpEnd.TabIndex = 25;
             this.dtpEnd.TabStop = false;
-            this.dtpEnd.Text = "2017-11-27";
             this.dtpEnd.ThemeName = "Windows8";
-            this.dtpEnd.Value = new System.DateTime(2017, 11, 27, 0, 0, 0, 0);
+            this.dtpEnd.Value = new System.DateTime(((long)(0)));
             // 
             // txtPoint
             // 
             this.txtPoint.Location = new System.Drawing.Point(95, 132);
             this.txtPoint.Name = "txtPoint";
-            this.txtPoint.Size = new System.Drawing.Size(119, 35);
+            this.txtPoint.Size = new System.Drawing.Size(119, 31);
             this.txtPoint.TabIndex = 24;
             this.txtPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPoint.ThemeName = "Windows8";
@@ -267,7 +265,7 @@
             this.txtPointLabel.Location = new System.Drawing.Point(12, 134);
             this.txtPointLabel.Name = "txtPointLabel";
             this.txtPointLabel.ReadOnly = true;
-            this.txtPointLabel.Size = new System.Drawing.Size(76, 35);
+            this.txtPointLabel.Size = new System.Drawing.Size(76, 31);
             this.txtPointLabel.TabIndex = 23;
             this.txtPointLabel.Text = "· 포인트";
             this.txtPointLabel.ThemeName = "Windows8";
@@ -284,7 +282,7 @@
             this.ddlGender.Items.Add(radListDataItem2);
             this.ddlGender.Location = new System.Drawing.Point(316, 72);
             this.ddlGender.Name = "ddlGender";
-            this.ddlGender.Size = new System.Drawing.Size(111, 35);
+            this.ddlGender.Size = new System.Drawing.Size(111, 31);
             this.ddlGender.TabIndex = 37;
             this.ddlGender.ThemeName = "Windows8";
             // 
@@ -304,13 +302,13 @@
             this.ddlState.Items.Add(radListDataItem5);
             this.ddlState.Location = new System.Drawing.Point(95, 101);
             this.ddlState.Name = "ddlState";
-            this.ddlState.Size = new System.Drawing.Size(119, 35);
+            this.ddlState.Size = new System.Drawing.Size(119, 31);
             this.ddlState.TabIndex = 38;
             this.ddlState.ThemeName = "Windows8";
             // 
             // NewMemberForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(439, 444);
