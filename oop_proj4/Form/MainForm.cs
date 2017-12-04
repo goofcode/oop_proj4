@@ -31,9 +31,16 @@ namespace oop_proj4
 
             this.btnEdit.Click += (s, e) =>
             {
-                int id = Convert.ToInt32(this.grdPage.SelectedRows[0].Cells["columnId"].Value);
-                Member selectedMember = DBManager.Instance().getMember(id);
-                editNewMember(selectedMember, this.grdPage.SelectedRows[0].Index);
+                if (this.grdPage.SelectedRows.Count > 0)
+                {
+                    int id = Convert.ToInt32(this.grdPage.SelectedRows[0].Cells["columnId"].Value);
+                    Member selectedMember = DBManager.Instance().getMember(id);
+                    editNewMember(selectedMember, this.grdPage.SelectedRows[0].Index);
+                }
+                else
+                {
+                    RadMessageBox.Show("수정할 회원정보를 클릭해주세요.", "알림", MessageBoxButtons.OK, RadMessageIcon.Info);
+                }
             };
 
             this.btnRemove.Click += (s, e) =>
@@ -123,9 +130,16 @@ namespace oop_proj4
             
             this.EditTransactionBtn.Click += (s, e) =>
             {
-                int id = Convert.ToInt32(this.TransactionGridView.SelectedRows[0].Cells["columnId"].Value);
-                Transaction selectedTransaction = DBManager.Instance().getTransaction(id);
-                editNewTransaction(selectedTransaction, this.TransactionGridView.SelectedRows[0].Index);
+                if (this.TransactionGridView.SelectedRows.Count > 0)
+                {
+                    int id = Convert.ToInt32(this.TransactionGridView.SelectedRows[0].Cells["columnId"].Value);
+                    Transaction selectedTransaction = DBManager.Instance().getTransaction(id);
+                    editNewTransaction(selectedTransaction, this.TransactionGridView.SelectedRows[0].Index);
+                }
+                else
+                {
+                    RadMessageBox.Show("수정할 거래내역을 클릭해주세요.", "알림", MessageBoxButtons.OK, RadMessageIcon.Info);
+                }
             };
 
             this.DeleteTransactionBtn.Click += (s, e) =>

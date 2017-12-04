@@ -59,6 +59,9 @@ namespace oop_proj4
                 }
 
                 getNameFromDatabase();
+
+                this.dtpDate.MaxDate = Telerik.WinControls.UI.RadDateTimePicker.MaximumDateTime;
+                this.dtpDate.Value = System.DateTime.Now;
             };
         }
 
